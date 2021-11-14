@@ -1,0 +1,4 @@
+Warning (10268): Verilog HDL information at SPI_mstr.sv(27): always construct contains both blocking and non-blocking assignments File: I:/ece551~1/modelsim/ex12/SPI_mstr.sv Line: 27
+Warning (10268): Verilog HDL information at SPI_mstr.sv(40): always construct contains both blocking and non-blocking assignments File: I:/ece551~1/modelsim/ex12/SPI_mstr.sv Line: 40
+Info (10281): Verilog HDL Declaration information at SPI_mstr.sv(7): object "shift" differs only in case from object "SHIFT" in the same scope File: I:/ece551~1/modelsim/ex12/SPI_mstr.sv Line: 7
+Info (10281): Verilog HDL Declaration information at rst_synch.sv(3): object "RST_n" differs only in case from object "rst_n" in the same scope File: I:/ece551~1/modelsim/ex12/rst_synch.sv Line: 3

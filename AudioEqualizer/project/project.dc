@@ -1,0 +1,57 @@
+read_file -format sverilog {A2D_intf.sv A2D_with_Pots.sv ADC128S.sv BT_intf.sv EQ_Engine.sv FIR_B1.sv FIR_B2.sv FIR_B3.sv FIR_HP.sv FIR_LP.sv high_freq_queue.sv I2S_Master.sv I2S_Slave.sv low_freq_queue.sv PB_rise.sv PDM.sv RN52.sv rst_synch.sv slide_intf.sv snd_cmd.sv SPI_ADC128S.sv SPI_mstr.sv spkr_drv.sv UART.sv band_scale.v cmdROM.v dualPort1024x16.v dualPort1536x16.v Equalizer.v resp_ROM.v ROM_B1.v ROM_B2.v ROM_B3.v ROM_HP.v ROM_LP.v tone_ROM_lft.v tone_ROM_rght.v}
+
+
+set current_design Equalizer
+
+
+create_clock -name "clk" -period 2.5 -waveform {0 1.25} {clk}
+
+set_dont_touch_network [find port clk]
+
+set_dont_touch [find design dualPort*]
+
+set_dont_touch [find design ROM_*]
+
+set_dont_touch [find design cmdROM]
+
+set prim_inputs [remove_from_collection [all_inputs] [find port clk]]
+
+set_input_delay -clock clk 0.75 $prim_inputs
+
+
+set_output_delay -clock clk 0.75 [all_outputs]
+
+set_load 0.1 [all_outputs]
+
+
+set_max_transition 0.1 [current_design]
+
+	
+set_wire_load_model -name TSMC32K_Lowk_Conservative -library tcbn40lpbwptc
+
+set_driving_cell -lib_cell ND2D2BWP -from_pin A1 -library tcbn40lpbwptc $prim_inputs
+
+set_clock_uncertainty 0.12 clk
+
+compile -map_effort medium
+
+set_fix_hold clk
+
+check_design
+
+ungroup -all -flatten
+
+compile -map_effort medium
+
+check_design
+
+report_area > project_area.txt
+
+report_timing -delay max > project_max_timing.txt
+
+report_timing -delay min > project_min_timing.txt
+
+write -format verilog Equalizer -output Equalizer.vg
+
+
+

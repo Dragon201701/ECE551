@@ -1,0 +1,1122 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/ECE551/Exercise 22
+T_opt
+!s110 1566780730
+V^bF_D3W[D25]gC<N]Ek=[3
+04 9 4 work FIR_LP_tb fast 0
+=1-14b31f2d024b-5d632d39-153-53d0
+o-quiet -auto_acc_if_foreign -work work
+Z0 tCvgOpt 0
+n@_opt
+OL;O;10.6d;65
+vA2D_intf
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1563768126
+!i10b 1
+!s100 <_YSNWI1PO>50IbzbdCKS2
+I4mK3]ROEIF5LjK80CUhPm3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 A2D_intf_sv_unit
+S1
+Z4 dD:/ECE551/VideoEqualizer/project
+Z5 w1556811242
+8D:/ECE551/VideoEqualizer/project/A2D_intf.sv
+FD:/ECE551/VideoEqualizer/project/A2D_intf.sv
+L0 1
+Z6 OL;L;10.6d;65
+r1
+!s85 0
+31
+Z7 !s108 1563768126.000000
+!s107 D:/ECE551/VideoEqualizer/project/A2D_intf.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/ECE551/VideoEqualizer/project/A2D_intf.sv|
+!i113 0
+Z8 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R0
+n@a2@d_intf
+vA2D_with_Pots
+R1
+R2
+!i10b 1
+!s100 ^OUHiDYAUB_i[5AAKAKho0
+IUMIlGJAC<CLlo2D7f_Gd32
+R3
+!s105 A2D_with_Pots_sv_unit
+S1
+R4
+Z9 w1556811244
+8D:/ECE551/VideoEqualizer/project/A2D_with_Pots.sv
+FD:/ECE551/VideoEqualizer/project/A2D_with_Pots.sv
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/ECE551/VideoEqualizer/project/A2D_with_Pots.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/ECE551/VideoEqualizer/project/A2D_with_Pots.sv|
+!i113 0
+R8
+R0
+n@a2@d_with_@pots
+vADC128S
+R1
+R2
+!i10b 1
+!s100 mVh2:Pn919M@E`eRdlI1_3
+IX1cVY1=jPnnnaDW5PC;eE0
+R3
+!s105 ADC128S_sv_unit
+S1
+R4
+R9
+8D:/ECE551/VideoEqualizer/project/ADC128S.sv
+FD:/ECE551/VideoEqualizer/project/ADC128S.sv
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/ECE551/VideoEqualizer/project/ADC128S.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/ECE551/VideoEqualizer/project/ADC128S.sv|
+!i113 0
+R8
+R0
+n@a@d@c128@s
+vband_scale
+Z10 !s110 1563768127
+!i10b 1
+!s100 ?cU=P5Wk1mSbDBYC6QXLW0
+ICPJJ7A3FD3`CTRHc_5g<33
+R3
+R4
+R5
+8D:/ECE551/VideoEqualizer/project/band_scale.v
+FD:/ECE551/VideoEqualizer/project/band_scale.v
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+!s107 D:/ECE551/VideoEqualizer/project/band_scale.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/ECE551/VideoEqualizer/project/band_scale.v|
+!i113 0
+Z11 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R0
+vBT_intf
+R1
+R10
+!i10b 1
+!s100 gYlWiG=DaT]i7jN_g19kU2
+IgKP@S;McClROE3XWLJc<P0
+R3
+!s105 BT_intf_sv_unit
+S1
+R4
+R9
+8D:/ECE551/VideoEqualizer/project/BT_intf.sv
+FD:/ECE551/VideoEqualizer/project/BT_intf.sv
+L0 1
+R6
+r1
+!s85 0
+31
+Z12 !s108 1563768127.000000
+!s107 D:/ECE551/VideoEqualizer/project/BT_intf.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/ECE551/VideoEqualizer/project/BT_intf.sv|
+!i113 0
+R8
+R0
+n@b@t_intf
+vBT_intf_tb
+R1
+R10
+!i10b 1
+!s100 c8h2Kl8?V@PGP0z694?il0
+ISTOD4^OX14A597ceCN5z70
+R3
+!s105 BT_intf_tb_sv_unit
+S1
+R4
+R9
+8D:/ECE551/VideoEqualizer/project/BT_intf_tb.sv
+FD:/ECE551/VideoEqualizer/project/BT_intf_tb.sv
+L0 1
+R6
+r1
+!s85 0
+31
+R12
+!s107 D:/ECE551/VideoEqualizer/project/BT_intf_tb.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/ECE551/VideoEqualizer/project/BT_intf_tb.sv|
+!i113 0
+R8
+R0
+n@b@t_intf_tb
+vcmdROM
+R10
+!i10b 1
+!s100 C6G@16NhT=]SZO3kHo53j2
+Ik=a^h_ngNSI8U=12Vfa[M1
+R3
+R4
+R5
+8D:/ECE551/VideoEqualizer/project/cmdROM.v
+FD:/ECE551/VideoEqualizer/project/cmdROM.v
+L0 1
+R6
+r1
+!s85 0
+31
+R12
+!s107 D:/ECE551/VideoEqualizer/project/cmdROM.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/ECE551/VideoEqualizer/project/cmdROM.v|
+!i113 0
+R11
+R0
+ncmd@r@o@m
+vdualPort1024x16
+Z13 !s110 1563768128
+!i10b 1
+!s100 kYgFML]4CYJ7V15LCTeTS0
+I^Y`k0O?cYgEACOTNFZF0i1
+R3
+R4
+Z14 w1556811248
+8D:/ECE551/VideoEqualizer/project/dualPort1024x16.v
+FD:/ECE551/VideoEqualizer/project/dualPort1024x16.v
+L0 1
+R6
+r1
+!s85 0
+31
+Z15 !s108 1563768128.000000
+!s107 D:/ECE551/VideoEqualizer/project/dualPort1024x16.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/ECE551/VideoEqualizer/project/dualPort1024x16.v|
+!i113 0
+R11
+R0
+ndual@port1024x16
+vdualPort1536x16
+R13
+!i10b 1
+!s100 bNYM:I_zX`>fij9`a9IO02
+IoS8T]:IV038V:;mVi<m=90
+R3
+R4
+R14
+8D:/ECE551/VideoEqualizer/project/dualPort1536x16.v
+FD:/ECE551/VideoEqualizer/project/dualPort1536x16.v
+L0 1
+R6
+r1
+!s85 0
+31
+R15
+!s107 D:/ECE551/VideoEqualizer/project/dualPort1536x16.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/ECE551/VideoEqualizer/project/dualPort1536x16.v|
+!i113 0
+R11
+R0
+ndual@port1536x16
+vEQ_Engine
+R1
+R13
+!i10b 1
+!s100 jF6D60jLO>2Yo??ZbIeeZ0
+I;ZKbD@=EU7gUalzSf9>^:0
+R3
+!s105 EQ_Engine_sv_unit
+S1
+R4
+Z16 w1556811260
+8D:/ECE551/VideoEqualizer/project/EQ_Engine.sv
+FD:/ECE551/VideoEqualizer/project/EQ_Engine.sv
+L0 1
+R6
+r1
+!s85 0
+31
+R15
+!s107 D:/ECE551/VideoEqualizer/project/EQ_Engine.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/ECE551/VideoEqualizer/project/EQ_Engine.sv|
+!i113 0
+R8
+R0
+n@e@q_@engine
+vEqualizer
+Z17 !s110 1563768129
+!i10b 1
+!s100 Wlj63hG;>z9=jTm;XMGDj1
+I@cFDK[eB<h?H_X41HLN<]3
+R3
+R4
+w1556859314
+8D:/ECE551/VideoEqualizer/project/Equalizer.v
+FD:/ECE551/VideoEqualizer/project/Equalizer.v
+L0 1
+R6
+r1
+!s85 0
+31
+R15
+!s107 D:/ECE551/VideoEqualizer/project/Equalizer.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/ECE551/VideoEqualizer/project/Equalizer.v|
+!i113 0
+R11
+R0
+n@equalizer
+vEqualizer_tb
+R1
+R17
+!i10b 1
+!s100 ]YK0W<_9TZ2LWJ:?0^YP@2
+IViCJnaigb6PnUTm]BNR;I2
+R3
+!s105 Equalizer_tb_sv_unit
+S1
+R4
+w1556859800
+8D:/ECE551/VideoEqualizer/project/Equalizer_tb.sv
+FD:/ECE551/VideoEqualizer/project/Equalizer_tb.sv
+L0 1
+R6
+r1
+!s85 0
+31
+Z18 !s108 1563768129.000000
+!s107 D:/ECE551/VideoEqualizer/project/Equalizer_tb.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/ECE551/VideoEqualizer/project/Equalizer_tb.sv|
+!i113 0
+R8
+R0
+n@equalizer_tb
+vFIR_B1
+R1
+R17
+!i10b 1
+!s100 jEmIZ3MhzVUe5Cf>mebI<2
+Iide_9K^SLc<G:55BRNRQ;2
+R3
+!s105 FIR_B1_sv_unit
+S1
+R4
+Z19 w1556811258
+8D:/ECE551/VideoEqualizer/project/FIR_B1.sv
+FD:/ECE551/VideoEqualizer/project/FIR_B1.sv
+L0 1
+R6
+r1
+!s85 0
+31
+R18
+!s107 D:/ECE551/VideoEqualizer/project/FIR_B1.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/ECE551/VideoEqualizer/project/FIR_B1.sv|
+!i113 0
+R8
+R0
+n@f@i@r_@b1
+vFIR_B1_tb
+R1
+R17
+!i10b 1
+!s100 2]QeJ5Ff;9LDdO`@D0ckL1
+IWklNE4kjXn:1Kn;ViAk2A1
+R3
+!s105 FIR_B1_tb_sv_unit
+S1
+R4
+R19
+8D:/ECE551/VideoEqualizer/project/FIR_B1_tb.sv
+FD:/ECE551/VideoEqualizer/project/FIR_B1_tb.sv
+L0 1
+R6
+r1
+!s85 0
+31
+R18
+!s107 D:/ECE551/VideoEqualizer/project/FIR_B1_tb.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/ECE551/VideoEqualizer/project/FIR_B1_tb.sv|
+!i113 0
+R8
+R0
+n@f@i@r_@b1_tb
+vFIR_B2
+R1
+Z20 !s110 1563768130
+!i10b 1
+!s100 HhVW:3Z5JY4hE753B^fXW3
+I>cYdUAkJZziXV=egejUEA3
+R3
+!s105 FIR_B2_sv_unit
+S1
+R4
+R19
+8D:/ECE551/VideoEqualizer/project/FIR_B2.sv
+FD:/ECE551/VideoEqualizer/project/FIR_B2.sv
+L0 1
+R6
+r1
+!s85 0
+31
+Z21 !s108 1563768130.000000
+!s107 D:/ECE551/VideoEqualizer/project/FIR_B2.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/ECE551/VideoEqualizer/project/FIR_B2.sv|
+!i113 0
+R8
+R0
+n@f@i@r_@b2
+vFIR_B2_tb
+R1
+R20
+!i10b 1
+!s100 d@e4I0j^d2U6>J5Ih[7Qh2
+IYnEBEZT:TX_mkoVl09jVF0
+R3
+!s105 FIR_B2_tb_sv_unit
+S1
+R4
+R16
+8D:/ECE551/VideoEqualizer/project/FIR_B2_tb.sv
+FD:/ECE551/VideoEqualizer/project/FIR_B2_tb.sv
+L0 1
+R6
+r1
+!s85 0
+31
+R21
+!s107 D:/ECE551/VideoEqualizer/project/FIR_B2_tb.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/ECE551/VideoEqualizer/project/FIR_B2_tb.sv|
+!i113 0
+R8
+R0
+n@f@i@r_@b2_tb
+vFIR_B3
+R1
+R20
+!i10b 1
+!s100 Tlz3]F:bo6e2UNZjIfEVG2
+Im96D2H<7nj8Gz^T?g8Cag0
+R3
+!s105 FIR_B3_sv_unit
+S1
+R4
+Z22 w1556811262
+8D:/ECE551/VideoEqualizer/project/FIR_B3.sv
+FD:/ECE551/VideoEqualizer/project/FIR_B3.sv
+L0 1
+R6
+r1
+!s85 0
+31
+R21
+!s107 D:/ECE551/VideoEqualizer/project/FIR_B3.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/ECE551/VideoEqualizer/project/FIR_B3.sv|
+!i113 0
+R8
+R0
+n@f@i@r_@b3
+vFIR_B3_tb
+R1
+Z23 !s110 1563768131
+!i10b 1
+!s100 GceXNj058j]1S57>g1W>o0
+I>WImDm>i;jeUNFHCT9Omm0
+R3
+!s105 FIR_B3_tb_sv_unit
+S1
+R4
+R22
+8D:/ECE551/VideoEqualizer/project/FIR_B3_tb.sv
+FD:/ECE551/VideoEqualizer/project/FIR_B3_tb.sv
+L0 1
+R6
+r1
+!s85 0
+31
+Z24 !s108 1563768131.000000
+!s107 D:/ECE551/VideoEqualizer/project/FIR_B3_tb.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/ECE551/VideoEqualizer/project/FIR_B3_tb.sv|
+!i113 0
+R8
+R0
+n@f@i@r_@b3_tb
+vFIR_HP
+R1
+R23
+!i10b 1
+!s100 WTTjid94SiGMUe]G[B4_03
+I6igA9ib6`m6M8jTWALiE<2
+R3
+!s105 FIR_HP_sv_unit
+S1
+R4
+Z25 w1556811264
+8D:/ECE551/VideoEqualizer/project/FIR_HP.sv
+FD:/ECE551/VideoEqualizer/project/FIR_HP.sv
+L0 1
+R6
+r1
+!s85 0
+31
+R24
+!s107 D:/ECE551/VideoEqualizer/project/FIR_HP.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/ECE551/VideoEqualizer/project/FIR_HP.sv|
+!i113 0
+R8
+R0
+n@f@i@r_@h@p
+vFIR_HP_tb
+R1
+Z26 !s110 1563768132
+!i10b 1
+!s100 3D7lWd@7=C3N[Q?maU[EC1
+Id8c3`aQAT66EnPgOD>kfk0
+R3
+!s105 FIR_HP_tb_sv_unit
+S1
+R4
+R25
+8D:/ECE551/VideoEqualizer/project/FIR_HP_tb.sv
+FD:/ECE551/VideoEqualizer/project/FIR_HP_tb.sv
+L0 1
+R6
+r1
+!s85 0
+31
+R24
+!s107 D:/ECE551/VideoEqualizer/project/FIR_HP_tb.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/ECE551/VideoEqualizer/project/FIR_HP_tb.sv|
+!i113 0
+R8
+R0
+n@f@i@r_@h@p_tb
+vFIR_LP
+R1
+R26
+!i10b 1
+!s100 <RY0aQEgOfL2Cmk7i4GDg2
+Izd?EJ@XZdZ_WEUaWlQXaG3
+R3
+!s105 FIR_LP_sv_unit
+S1
+R4
+R25
+8D:/ECE551/VideoEqualizer/project/FIR_LP.sv
+FD:/ECE551/VideoEqualizer/project/FIR_LP.sv
+L0 1
+R6
+r1
+!s85 0
+31
+Z27 !s108 1563768132.000000
+!s107 D:/ECE551/VideoEqualizer/project/FIR_LP.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/ECE551/VideoEqualizer/project/FIR_LP.sv|
+!i113 0
+R8
+R0
+n@f@i@r_@l@p
+vFIR_LP_tb
+R1
+R26
+!i10b 1
+!s100 _ezfHMgjPgFY[]]FZTmGL3
+II2;]GT6A>jTJf::48[d7c0
+R3
+!s105 FIR_LP_tb_sv_unit
+S1
+R4
+R25
+8D:/ECE551/VideoEqualizer/project/FIR_LP_tb.sv
+FD:/ECE551/VideoEqualizer/project/FIR_LP_tb.sv
+L0 1
+R6
+r1
+!s85 0
+31
+R27
+!s107 D:/ECE551/VideoEqualizer/project/FIR_LP_tb.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/ECE551/VideoEqualizer/project/FIR_LP_tb.sv|
+!i113 0
+R8
+R0
+n@f@i@r_@l@p_tb
+vhigh_freq_queue
+R1
+Z28 !s110 1563768133
+!i10b 1
+!s100 ld[Rc_:D7fGOZR[?:b5CE0
+IG4O2`^9E;]3@Plb9XW:hK1
+R3
+!s105 high_freq_queue_sv_unit
+S1
+R4
+R25
+8D:/ECE551/VideoEqualizer/project/high_freq_queue.sv
+FD:/ECE551/VideoEqualizer/project/high_freq_queue.sv
+L0 1
+R6
+r1
+!s85 0
+31
+R27
+!s107 D:/ECE551/VideoEqualizer/project/high_freq_queue.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/ECE551/VideoEqualizer/project/high_freq_queue.sv|
+!i113 0
+R8
+R0
+vhigh_freq_queue_tb
+R1
+R28
+!i10b 1
+!s100 G_16z3QMO0YfXOZ0^PSmK2
+I8XQh7S3ldT78>NQlSd:_M3
+R3
+!s105 high_freq_queue_tb_sv_unit
+S1
+R4
+Z29 w1556811266
+8D:/ECE551/VideoEqualizer/project/high_freq_queue_tb.sv
+FD:/ECE551/VideoEqualizer/project/high_freq_queue_tb.sv
+L0 1
+R6
+r1
+!s85 0
+31
+Z30 !s108 1563768133.000000
+!s107 D:/ECE551/VideoEqualizer/project/high_freq_queue_tb.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/ECE551/VideoEqualizer/project/high_freq_queue_tb.sv|
+!i113 0
+R8
+R0
+vI2S_Master
+R1
+R28
+!i10b 1
+!s100 W;k]ZjAD744oi?oclU?E90
+I66A]1b_7PmCjCW4ZP]_8X1
+R3
+!s105 I2S_Master_sv_unit
+S1
+R4
+R29
+8D:/ECE551/VideoEqualizer/project/I2S_Master.sv
+FD:/ECE551/VideoEqualizer/project/I2S_Master.sv
+L0 1
+R6
+r1
+!s85 0
+31
+R30
+!s107 D:/ECE551/VideoEqualizer/project/I2S_Master.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/ECE551/VideoEqualizer/project/I2S_Master.sv|
+!i113 0
+R8
+R0
+n@i2@s_@master
+vI2S_Slave
+R1
+R28
+!i10b 1
+!s100 B45gLDzA:27^D:3?lh`eL2
+IHO]kMVo;NSoO1PW6L04^C1
+R3
+!s105 I2S_Slave_sv_unit
+S1
+R4
+Z31 w1556811268
+8D:/ECE551/VideoEqualizer/project/I2S_Slave.sv
+FD:/ECE551/VideoEqualizer/project/I2S_Slave.sv
+L0 1
+R6
+r1
+!s85 0
+31
+R30
+!s107 D:/ECE551/VideoEqualizer/project/I2S_Slave.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/ECE551/VideoEqualizer/project/I2S_Slave.sv|
+!i113 0
+R8
+R0
+n@i2@s_@slave
+vLED_drv
+R1
+Z32 !s110 1563768138
+!i10b 1
+!s100 jGQAYVNJ0l^5lLjPma?b`0
+Iz7izff^U>W@Qa[QISm?>I1
+R3
+!s105 LED_drv_sv_unit
+S1
+R4
+w1556908972
+8D:/ECE551/VideoEqualizer/project/LED_drv.sv
+FD:/ECE551/VideoEqualizer/project/LED_drv.sv
+L0 1
+R6
+r1
+!s85 0
+31
+Z33 !s108 1563768138.000000
+!s107 D:/ECE551/VideoEqualizer/project/LED_drv.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/ECE551/VideoEqualizer/project/LED_drv.sv|
+!i113 0
+R8
+R0
+n@l@e@d_drv
+vlow_freq_queue
+R1
+Z34 !s110 1563768134
+!i10b 1
+!s100 D=4g]k?9NTFMDOgPkEA:61
+IkG9z@9gmg6N[b@@KYm_na2
+R3
+!s105 low_freq_queue_sv_unit
+S1
+R4
+R31
+8D:/ECE551/VideoEqualizer/project/low_freq_queue.sv
+FD:/ECE551/VideoEqualizer/project/low_freq_queue.sv
+L0 1
+R6
+r1
+!s85 0
+31
+Z35 !s108 1563768134.000000
+!s107 D:/ECE551/VideoEqualizer/project/low_freq_queue.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/ECE551/VideoEqualizer/project/low_freq_queue.sv|
+!i113 0
+R8
+R0
+vPB_rise
+R1
+R34
+!i10b 1
+!s100 3KVN^`;VadeG=bc;QcnYH2
+IT;gFWi5l5Ubge_flX2>i^3
+R3
+!s105 PB_rise_sv_unit
+S1
+R4
+R31
+8D:/ECE551/VideoEqualizer/project/PB_rise.sv
+FD:/ECE551/VideoEqualizer/project/PB_rise.sv
+L0 1
+R6
+r1
+!s85 0
+31
+R35
+!s107 D:/ECE551/VideoEqualizer/project/PB_rise.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/ECE551/VideoEqualizer/project/PB_rise.sv|
+!i113 0
+R8
+R0
+n@p@b_rise
+vPDM
+R1
+R34
+!i10b 1
+!s100 J^2gPL1]jHi;a6QG:iXge0
+IEdQg:5Qkn>hilL`GBUg1:0
+R3
+!s105 PDM_sv_unit
+S1
+R4
+R31
+8D:/ECE551/VideoEqualizer/project/PDM.sv
+FD:/ECE551/VideoEqualizer/project/PDM.sv
+L0 2
+R6
+r1
+!s85 0
+31
+R35
+!s107 D:/ECE551/VideoEqualizer/project/PDM.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/ECE551/VideoEqualizer/project/PDM.sv|
+!i113 0
+R8
+R0
+n@p@d@m
+vresp_ROM
+R34
+!i10b 1
+!s100 @Czn`ok@4mH;RKdP0Anz]1
+IiFAAIEP0Qja:aWLf;E:5G1
+R3
+R4
+Z36 w1556811276
+8D:/ECE551/VideoEqualizer/project/resp_ROM.v
+FD:/ECE551/VideoEqualizer/project/resp_ROM.v
+L0 1
+R6
+r1
+!s85 0
+31
+R35
+!s107 D:/ECE551/VideoEqualizer/project/resp_ROM.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/ECE551/VideoEqualizer/project/resp_ROM.v|
+!i113 0
+R11
+R0
+nresp_@r@o@m
+vRN52
+R1
+Z37 !s110 1563768135
+!i10b 1
+!s100 M^Vm6bK3H`hH^[dAM8M6o2
+ID0LghC;[67ZY:5[_?^nU>0
+R3
+!s105 RN52_sv_unit
+S1
+R4
+R36
+8D:/ECE551/VideoEqualizer/project/RN52.sv
+FD:/ECE551/VideoEqualizer/project/RN52.sv
+L0 1
+R6
+r1
+!s85 0
+31
+Z38 !s108 1563768135.000000
+!s107 D:/ECE551/VideoEqualizer/project/RN52.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/ECE551/VideoEqualizer/project/RN52.sv|
+!i113 0
+R8
+R0
+n@r@n52
+vROM_B1
+R37
+!i10b 1
+!s100 7kWZAPVWeiDHcgJNkM1]R2
+IB@KcBh3Bcool^_S7^lW630
+R3
+R4
+R36
+8D:/ECE551/VideoEqualizer/project/ROM_B1.v
+FD:/ECE551/VideoEqualizer/project/ROM_B1.v
+L0 1
+R6
+r1
+!s85 0
+31
+R38
+!s107 D:/ECE551/VideoEqualizer/project/ROM_B1.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/ECE551/VideoEqualizer/project/ROM_B1.v|
+!i113 0
+R11
+R0
+n@r@o@m_@b1
+vROM_B2
+R37
+!i10b 1
+!s100 49AVDUoT1i0bibAz<<>Je3
+I5iUl12Db59Mk]N7M@5=RQ0
+R3
+R4
+w1556811272
+8D:/ECE551/VideoEqualizer/project/ROM_B2.v
+FD:/ECE551/VideoEqualizer/project/ROM_B2.v
+L0 1
+R6
+r1
+!s85 0
+31
+R38
+!s107 D:/ECE551/VideoEqualizer/project/ROM_B2.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/ECE551/VideoEqualizer/project/ROM_B2.v|
+!i113 0
+R11
+R0
+n@r@o@m_@b2
+vROM_B3
+R37
+!i10b 1
+!s100 >U0g1H4?FRzXo7dmLcTMl3
+I3j_9X[Q383e164leBS@K[1
+R3
+R4
+Z39 w1556811274
+8D:/ECE551/VideoEqualizer/project/ROM_B3.v
+FD:/ECE551/VideoEqualizer/project/ROM_B3.v
+L0 1
+R6
+r1
+!s85 0
+31
+R38
+!s107 D:/ECE551/VideoEqualizer/project/ROM_B3.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/ECE551/VideoEqualizer/project/ROM_B3.v|
+!i113 0
+R11
+R0
+n@r@o@m_@b3
+vROM_HP
+Z40 !s110 1563768136
+!i10b 1
+!s100 XG7O0ofO[Az;oITQ@V1>k2
+ICim8mT:<dIP1d5>i6Q0Ng2
+R3
+R4
+R39
+8D:/ECE551/VideoEqualizer/project/ROM_HP.v
+FD:/ECE551/VideoEqualizer/project/ROM_HP.v
+L0 1
+R6
+r1
+!s85 0
+31
+Z41 !s108 1563768136.000000
+!s107 D:/ECE551/VideoEqualizer/project/ROM_HP.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/ECE551/VideoEqualizer/project/ROM_HP.v|
+!i113 0
+R11
+R0
+n@r@o@m_@h@p
+vROM_LP
+R40
+!i10b 1
+!s100 UPX2H1?LRoN05]00V8<^g0
+IY:n^P>aADeCHda6438Xe50
+R3
+R4
+R39
+8D:/ECE551/VideoEqualizer/project/ROM_LP.v
+FD:/ECE551/VideoEqualizer/project/ROM_LP.v
+L0 1
+R6
+r1
+!s85 0
+31
+R41
+!s107 D:/ECE551/VideoEqualizer/project/ROM_LP.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/ECE551/VideoEqualizer/project/ROM_LP.v|
+!i113 0
+R11
+R0
+n@r@o@m_@l@p
+vrst_synch
+R1
+R40
+!i10b 1
+!s100 l`NVOK4OLR@XMnCf^cSP[0
+IP^XODiX^kOz^h=53Ba[TS0
+R3
+!s105 rst_synch_sv_unit
+S1
+R4
+Z42 w1556811278
+8D:/ECE551/VideoEqualizer/project/rst_synch.sv
+FD:/ECE551/VideoEqualizer/project/rst_synch.sv
+L0 1
+R6
+r1
+!s85 0
+31
+R41
+!s107 D:/ECE551/VideoEqualizer/project/rst_synch.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/ECE551/VideoEqualizer/project/rst_synch.sv|
+!i113 0
+R8
+R0
+vslide_intf
+R1
+Z43 !s110 1563768137
+!i10b 1
+!s100 Z:bjj^]@f9AS@X^::i:;`2
+IU;h:A^7dZNY]:XlWkMLg53
+R3
+!s105 slide_intf_sv_unit
+S1
+R4
+R36
+8D:/ECE551/VideoEqualizer/project/slide_intf.sv
+FD:/ECE551/VideoEqualizer/project/slide_intf.sv
+L0 1
+R6
+r1
+!s85 0
+31
+R41
+!s107 D:/ECE551/VideoEqualizer/project/slide_intf.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/ECE551/VideoEqualizer/project/slide_intf.sv|
+!i113 0
+R8
+R0
+vsnd_cmd
+R1
+R43
+!i10b 1
+!s100 7m]hU:ZLQR3EV>meAfYkJ1
+IzRl61J`3z89lKe]QTE3221
+R3
+!s105 snd_cmd_sv_unit
+S1
+R4
+R42
+8D:/ECE551/VideoEqualizer/project/snd_cmd.sv
+FD:/ECE551/VideoEqualizer/project/snd_cmd.sv
+L0 1
+R6
+r1
+!s85 0
+31
+Z44 !s108 1563768137.000000
+!s107 D:/ECE551/VideoEqualizer/project/snd_cmd.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/ECE551/VideoEqualizer/project/snd_cmd.sv|
+!i113 0
+R8
+R0
+vSPI_ADC128S
+R1
+R43
+!i10b 1
+!s100 ;E62=i88@ghW83DU@9;CK1
+IdkC3==iAokgZ5JaFIf7fa0
+R3
+!s105 SPI_ADC128S_sv_unit
+S1
+R4
+Z45 w1556811282
+8D:/ECE551/VideoEqualizer/project/SPI_ADC128S.sv
+FD:/ECE551/VideoEqualizer/project/SPI_ADC128S.sv
+L0 1
+R6
+r1
+!s85 0
+31
+R44
+!s107 D:/ECE551/VideoEqualizer/project/SPI_ADC128S.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/ECE551/VideoEqualizer/project/SPI_ADC128S.sv|
+!i113 0
+R8
+R0
+n@s@p@i_@a@d@c128@s
+vSPI_mstr
+R1
+R43
+!i10b 1
+!s100 8_RNjeo^EW2;dH`15cFW@2
+I`30@KH2nGC5IE9LmGe]<k3
+R3
+!s105 SPI_mstr_sv_unit
+S1
+R4
+R45
+8D:/ECE551/VideoEqualizer/project/SPI_mstr.sv
+FD:/ECE551/VideoEqualizer/project/SPI_mstr.sv
+L0 2
+R6
+r1
+!s85 0
+31
+R44
+!s107 D:/ECE551/VideoEqualizer/project/SPI_mstr.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/ECE551/VideoEqualizer/project/SPI_mstr.sv|
+!i113 0
+R8
+R0
+n@s@p@i_mstr
+vspkr_drv
+R1
+R32
+!i10b 1
+!s100 k7UjjEg4[:Ig1_g;4=A8A1
+IcL^?nASEATSZF?jLb_mOG3
+R3
+!s105 spkr_drv_sv_unit
+S1
+R4
+R42
+8D:/ECE551/VideoEqualizer/project/spkr_drv.sv
+FD:/ECE551/VideoEqualizer/project/spkr_drv.sv
+L0 1
+R6
+r1
+!s85 0
+31
+R44
+!s107 D:/ECE551/VideoEqualizer/project/spkr_drv.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/ECE551/VideoEqualizer/project/spkr_drv.sv|
+!i113 0
+R8
+R0
+vtone_ROM_lft
+R32
+!i10b 1
+!s100 1H^IMVM>V_fkZ<YB6:`X;1
+Ia]>@`0PCW3aE^JiIgEnXT3
+R3
+R4
+w1556811280
+8D:/ECE551/VideoEqualizer/project/tone_ROM_lft.v
+FD:/ECE551/VideoEqualizer/project/tone_ROM_lft.v
+L0 1
+R6
+r1
+!s85 0
+31
+R33
+!s107 D:/ECE551/VideoEqualizer/project/tone_ROM_lft.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/ECE551/VideoEqualizer/project/tone_ROM_lft.v|
+!i113 0
+R11
+R0
+ntone_@r@o@m_lft
+vtone_ROM_rght
+R32
+!i10b 1
+!s100 <zn8]6R;^fB<gQnY=@FJ>2
+IieP1Jo^hHc9;3Gf_0f7:f3
+R3
+R4
+R42
+8D:/ECE551/VideoEqualizer/project/tone_ROM_rght.v
+FD:/ECE551/VideoEqualizer/project/tone_ROM_rght.v
+L0 1
+R6
+r1
+!s85 0
+31
+R33
+!s107 D:/ECE551/VideoEqualizer/project/tone_ROM_rght.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|D:/ECE551/VideoEqualizer/project/tone_ROM_rght.v|
+!i113 0
+R11
+R0
+ntone_@r@o@m_rght
+vUART
+R1
+!s110 1563768125
+!i10b 1
+!s100 UNEgJUgGHPmn^Ih<Q7V432
+ISD@W`7b[TiP;kmJ7Y5o3b3
+R3
+!s105 UART_sv_unit
+S1
+R4
+R42
+8D:/ECE551/VideoEqualizer/project/UART.sv
+FD:/ECE551/VideoEqualizer/project/UART.sv
+L0 1
+R6
+r1
+!s85 0
+31
+!s108 1563768125.000000
+!s107 D:/ECE551/VideoEqualizer/project/UART.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|D:/ECE551/VideoEqualizer/project/UART.sv|
+!i113 0
+R8
+R0
+n@u@a@r@t

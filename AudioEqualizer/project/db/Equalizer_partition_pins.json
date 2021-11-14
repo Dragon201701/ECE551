@@ -1,0 +1,69 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "ADC_SS_n",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_MOSI",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_SCLK",
+					"strict" : false
+				},
+				{
+					"name" : "cmd_n",
+					"strict" : false
+				},
+				{
+					"name" : "sht_dwn",
+					"strict" : false
+				},
+				{
+					"name" : "lft_PDM",
+					"strict" : false
+				},
+				{
+					"name" : "rght_PDM",
+					"strict" : false
+				},
+				{
+					"name" : "TX",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "RST_n",
+					"strict" : false
+				},
+				{
+					"name" : "Flt_n",
+					"strict" : false
+				},
+				{
+					"name" : "next_n",
+					"strict" : false
+				},
+				{
+					"name" : "prev_n",
+					"strict" : false
+				},
+				{
+					"name" : "RX",
+					"strict" : false
+				},
+				{
+					"name" : "ADC_MISO",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

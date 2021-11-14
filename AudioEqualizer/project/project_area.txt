@@ -1,0 +1,32 @@
+ 
+****************************************
+Report : area
+Design : Equalizer
+Version: N-2017.09-SP5
+Date   : Thu May  2 12:00:31 2019
+****************************************
+
+Information: Updating design information... (UID-85)
+Warning: Design 'Equalizer' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Library(s) Used:
+
+    tcbn40lpbwptc (File: /cae/apps/data/tsmclibs-2013/digital/Front_End/timing_power_noise/NLDM/tcbn40lpbwp_120b/tcbn40lpbwptc.db)
+
+Number of ports:                         7289
+Number of nets:                         31863
+Number of cells:                        20374
+Number of combinational cells:          18930
+Number of sequential cells:              1323
+Number of macros/black boxes:               0
+Number of buf/inv:                       1911
+Number of references:                     108
+
+Combinational area:              38130.799919
+Buf/Inv area:                     1405.378842
+Noncombinational area:            5709.362398
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                 43840.162318
+Total area:                 undefined
+1

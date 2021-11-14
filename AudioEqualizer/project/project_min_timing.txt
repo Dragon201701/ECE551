@@ -1,0 +1,77 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -max_paths 1
+Design : Equalizer
+Version: N-2017.09-SP5
+Date   : Thu May  2 12:00:32 2019
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: NCCOM   Library: tcbn40lpbwptc
+Wire Load Model Mode: segmented
+
+  Startpoint: iBT/SC/iUART/A008_reg[3]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: iBT/SC/iUART/A008_reg[3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  UART               ZeroWireload          tcbn40lpbwptc
+  SPI_mstr           ZeroWireload          tcbn40lpbwptc
+  PDM_0              ZeroWireload          tcbn40lpbwptc
+  PDM_1              ZeroWireload          tcbn40lpbwptc
+  high_freq_queue    ZeroWireload          tcbn40lpbwptc
+  low_freq_queue     ZeroWireload          tcbn40lpbwptc
+  FIR_LP             ZeroWireload          tcbn40lpbwptc
+  FIR_B1             ZeroWireload          tcbn40lpbwptc
+  FIR_B2             ZeroWireload          tcbn40lpbwptc
+  FIR_B3             ZeroWireload          tcbn40lpbwptc
+  FIR_HP             ZeroWireload          tcbn40lpbwptc
+  band_scale_0       ZeroWireload          tcbn40lpbwptc
+  band_scale_9       ZeroWireload          tcbn40lpbwptc
+  band_scale_8       ZeroWireload          tcbn40lpbwptc
+  band_scale_7       ZeroWireload          tcbn40lpbwptc
+  band_scale_6       ZeroWireload          tcbn40lpbwptc
+  band_scale_5       ZeroWireload          tcbn40lpbwptc
+  band_scale_4       ZeroWireload          tcbn40lpbwptc
+  band_scale_3       ZeroWireload          tcbn40lpbwptc
+  band_scale_2       ZeroWireload          tcbn40lpbwptc
+  band_scale_1       ZeroWireload          tcbn40lpbwptc
+  PB_rise_0          ZeroWireload          tcbn40lpbwptc
+  PB_rise_1          ZeroWireload          tcbn40lpbwptc
+  snd_cmd            ZeroWireload          tcbn40lpbwptc
+  Equalizer          TSMC32K_Lowk_Conservative
+                                           tcbn40lpbwptc
+  A2D_intf           ZeroWireload          tcbn40lpbwptc
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  iBT/SC/iUART/A008_reg[3]/CP (DFCNQD1BWP)                0.00 #     0.00 r
+  iBT/SC/iUART/A008_reg[3]/Q (DFCNQD1BWP)                 0.12       0.12 r
+  iBT/SC/iUART/U80/ZN (OAI32D1BWP)                        0.02       0.15 f
+  iBT/SC/iUART/A008_reg[3]/D (DFCNQD1BWP)                 0.00       0.15 f
+  data arrival time                                                  0.15
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.12       0.12
+  iBT/SC/iUART/A008_reg[3]/CP (DFCNQD1BWP)                0.00       0.12 r
+  library hold time                                       0.03       0.15
+  data required time                                                 0.15
+  --------------------------------------------------------------------------
+  data required time                                                 0.15
+  data arrival time                                                 -0.15
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1

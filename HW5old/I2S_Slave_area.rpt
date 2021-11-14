@@ -1,0 +1,30 @@
+ 
+****************************************
+Report : area
+Design : I2S_Slave
+Version: N-2017.09-SP5
+Date   : Wed Apr 17 14:05:13 2019
+****************************************
+
+Library(s) Used:
+
+    tcbn40lpbwptc (File: /cae/apps/data/tsmclibs-2013/digital/Front_End/timing_power_noise/NLDM/tcbn40lpbwp_120b/tcbn40lpbwptc.db)
+
+Number of ports:                           54
+Number of nets:                           158
+Number of cells:                          150
+Number of combinational cells:             89
+Number of sequential cells:                61
+Number of macros/black boxes:               0
+Number of buf/inv:                         63
+Number of references:                      24
+
+Combinational area:                194.040003
+Buf/Inv area:                      156.996002
+Noncombinational area:             333.043195
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                   527.083198
+Total area:                 undefined
+1

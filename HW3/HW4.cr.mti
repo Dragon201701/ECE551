@@ -1,0 +1,57 @@
+I:/ECE551/HW3/sqrt_tb.v {1 {vlog -work work -vopt -stats=none I:/ECE551/HW3/sqrt_tb.v
+Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
+-- Compiling module sqrt_tb
+
+Top level modules:
+	sqrt_tb
+
+} {} {}} I:/ECE551/HW3/SPI_ADC128S.sv {1 {vlog -work work -vopt -sv -stats=none I:/ECE551/HW3/SPI_ADC128S.sv
+Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
+-- Compiling module SPI_ADC128S
+
+Top level modules:
+	SPI_ADC128S
+
+} {} {}} I:/ECE551/HW3/SPI_mstr.sv {1 {vlog -work work -vopt -sv -stats=none I:/ECE551/HW3/SPI_mstr.sv
+Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
+-- Compiling module SPI_mstr
+
+Top level modules:
+	SPI_mstr
+
+} {} {}} I:/ECE551/HW3/PDM.sv {1 {vlog -work work -vopt -sv -stats=none I:/ECE551/HW3/PDM.sv
+Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
+-- Compiling module PDM
+
+Top level modules:
+	PDM
+
+} {} {}} I:/ECE551/HW3/PDM_tb.sv {1 {vlog -work work -vopt -sv -stats=none I:/ECE551/HW3/PDM_tb.sv
+Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
+-- Compiling module PDM_tb
+
+Top level modules:
+	PDM_tb
+
+} {} {}} I:/ECE551/HW3/ADC128S.sv {1 {vlog -work work -vopt -sv -stats=none I:/ECE551/HW3/ADC128S.sv
+Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
+-- Compiling module ADC128S
+
+Top level modules:
+	ADC128S
+
+} {} {}} I:/ECE551/HW3/SPI_mstr_tb.sv {1 {vlog -work work -vopt -sv -stats=none I:/ECE551/HW3/SPI_mstr_tb.sv
+Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
+-- Compiling module SPI_mstr_tb
+
+Top level modules:
+	SPI_mstr_tb
+
+} {} {}} I:/ECE551/HW3/sqrt.sv {1 {vlog -work work -vopt -sv -stats=none I:/ECE551/HW3/sqrt.sv
+Model Technology ModelSim SE vlog 10.3c Compiler 2014.07 Jul 19 2014
+-- Compiling module sqrt
+
+Top level modules:
+	sqrt
+
+} {} {}}

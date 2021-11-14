@@ -1,0 +1,108 @@
+module sqrt(mag, go, clk, rst_n, sqrt, done);
+	input go, clk, rst_n;
+	input [15:0] mag;
+	output logic done;
+	output logic [7:0] sqrt;
+	logic enable;
+	logic [7:0] count;
+	typedef enum reg [2:0] {SEVENTH, SIXTH, FIFTH, FORTH, THIRD, SECOND, FIRST, ZEROTH} state_t; 
+	state_t state, nxt_state;
+	logic [7:0] result;
+
+
+
+	always_ff @(posedge clk or negedge rst_n) begin
+		if(~rst_n) begin
+			 state <= SEVENTH;
+		end else begin
+			 state <= nxt_state;
+		end
+	end
+
+	always_comb begin
+		done = 0;
+		sqrt = 8'b00000000;
+		result = 8'b00000000;
+		count = 8'b10000000;
+		nxt_state = SEVENTH;
+		case(state) 
+			SEVENTH: begin
+				$display("SEVENTH state: %b",result);
+				$display("%b",count);
+				done = 0;
+				count = 8'b10000000;
+				if(~go) 
+					nxt_state = SEVENTH;
+				else begin
+					if((result+count) * (result+count) <= mag)
+						result = result + count;
+					else
+						result = result;
+					nxt_state = SIXTH;
+				end
+				$display("%b\n",result);
+			end
+			SIXTH: begin
+				count = 8'b01000000;
+				$display("SIXTH state: %b",result);
+				$display("%b",count);
+				if((result+count) * (result+count) <= mag)
+					result = result + count;
+				else
+					result = result;
+				nxt_state = SIXTH;
+				$display("%b\n",result);
+			end
+			FIFTH: begin
+				count = 8'b00100000;
+				if((result+count) * (result+count) <= mag)
+					result = result + count;
+				else
+					result = result;
+				nxt_state = FORTH;
+			end
+			FORTH: begin
+				count = 8'b00010000;
+				if((result+count) * (result+count) <= mag)
+					result = result + count;
+				else
+					result = result;
+				nxt_state = THIRD;
+			end
+			THIRD: begin
+				count = 8'b00001000;
+				if((result+count) * (result+count) <= mag)
+					result = result + count;
+				else
+					result = result;
+				nxt_state = SECOND;
+			end
+			SECOND: begin
+				count = 8'b00000100;
+				if((result+count) * (result+count) <= mag)
+					result = result + count;
+				else
+					result = result;
+				nxt_state = FIRST;
+			end
+			FIRST: begin
+				count = 8'b00000010;
+				if((result+count) * (result+count) <= mag)
+					result = result + count;
+				else
+					result = result;
+				nxt_state = ZEROTH;
+			end
+			default begin
+				count = 8'b00000001;
+				if((result+count) * (result+count) <= mag)
+					result = result + count;
+				else
+					result = result;
+				sqrt = result;
+				done = 1;
+				nxt_state = SEVENTH;
+			end
+		endcase // state
+	end
+endmodule

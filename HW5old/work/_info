@@ -1,0 +1,308 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/ProgramData/App-V/2191B702-5279-4048-91BA-BCF8F2A20B49/3C5B5D32-C303-48A2-8738-F357EDE80167/Root/examples
+vband_scale
+Z0 !s110 1555648582
+!i10b 1
+!s100 ni2;cLW23O0DBXbX::F8R1
+IAIDVB4@VjOg9IT4cdE@hW2
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dD:/ECE551/HW5
+Z3 w1555646813
+8D:/ECE551/HW5/band_scale.v
+FD:/ECE551/HW5/band_scale.v
+L0 1
+Z4 OP;L;10.4a;61
+r1
+!s85 0
+31
+Z5 !s108 1555648582.000000
+!s107 D:/ECE551/HW5/band_scale.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/ECE551/HW5/band_scale.v|
+!s101 -O0
+!i113 1
+Z6 o-work work -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0
+vband_scale_rnd_tb
+R0
+!i10b 1
+!s100 K@l_ViC_9<`de:L@Ib5nU0
+ImVTnjViiH6<=]MKiH0nRR1
+R1
+R2
+R3
+8D:/ECE551/HW5/band_scale_tb.v
+FD:/ECE551/HW5/band_scale_tb.v
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/ECE551/HW5/band_scale_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/ECE551/HW5/band_scale_tb.v|
+!s101 -O0
+!i113 1
+R6
+vcmdROM
+Z7 !s110 1555648583
+!i10b 1
+!s100 8Vf^47ZKzf7R=APebbzXa2
+I::AY?k9FzXcCY:43VlYIE2
+R1
+R2
+R3
+8D:/ECE551/HW5/cmdROM.v
+FD:/ECE551/HW5/cmdROM.v
+L0 1
+R4
+r1
+!s85 0
+31
+Z8 !s108 1555648583.000000
+!s107 D:/ECE551/HW5/cmdROM.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/ECE551/HW5/cmdROM.v|
+!s101 -O0
+!i113 1
+R6
+ncmd@r@o@m
+vdualPort1024x16
+R7
+!i10b 1
+!s100 103[_BNQ1NDXP[QNRkloa1
+I^C^V67WK`VhWlXz6Q]LBI0
+R1
+R2
+w1555566759
+8D:/ECE551/HW5/dualPort1024x16.v
+FD:/ECE551/HW5/dualPort1024x16.v
+L0 1
+R4
+r1
+!s85 0
+31
+R8
+!s107 D:/ECE551/HW5/dualPort1024x16.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/ECE551/HW5/dualPort1024x16.v|
+!s101 -O0
+!i113 1
+R6
+ndual@port1024x16
+vdualPort1536x16
+R7
+!i10b 1
+!s100 :KXE^eiTBHL^:TzYTkhc`2
+I:4KR90[45Ml>e[X5zMcZM3
+R1
+R2
+w1555566777
+8D:/ECE551/HW5/dualPort1536x16.v
+FD:/ECE551/HW5/dualPort1536x16.v
+L0 1
+R4
+r1
+!s85 0
+31
+R8
+!s107 D:/ECE551/HW5/dualPort1536x16.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/ECE551/HW5/dualPort1536x16.v|
+!s101 -O0
+!i113 1
+R6
+ndual@port1536x16
+vI2S_Master
+Z9 DXx6 sv_std 3 std 0 22 WmjPaeP=7F5?QFXzJ>D[Q2
+R7
+!i10b 1
+!s100 PVg@O3TX3TD@R]EZS?88F2
+IzkGnYXMcYiC:]DZ^8eAN^0
+R1
+!s105 I2S_Master_sv_unit
+S1
+R2
+Z10 w1555646814
+8D:/ECE551/HW5/I2S_Master.sv
+FD:/ECE551/HW5/I2S_Master.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R8
+!s107 D:/ECE551/HW5/I2S_Master.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/ECE551/HW5/I2S_Master.sv|
+!s101 -O0
+!i113 1
+Z11 o-work work -sv -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0
+n@i2@s_@master
+vI2S_Slave
+!s110 1555648585
+!i10b 1
+!s100 To6U<=laj<_`5YOSBEjU`2
+I>j<2ZCl5O=^Sbf><JF:KA0
+R1
+R2
+w1555647003
+8D:/ECE551/HW5/I2S_Slave.v
+FD:/ECE551/HW5/I2S_Slave.v
+L0 8
+R4
+r1
+!s85 0
+31
+!s108 1555648585.000000
+!s107 D:/ECE551/HW5/I2S_Slave.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/ECE551/HW5/I2S_Slave.v|
+!s101 -O0
+!i113 1
+R6
+n@i2@s_@slave
+vI2S_Slave_tb
+R9
+Z12 !s110 1555648584
+!i10b 1
+!s100 5MaFa[G<cB@5[VInT5>f^1
+ILW9P^ke>78d44SGSACR7^3
+R1
+!s105 I2S_Slave_tb_sv_unit
+S1
+R2
+w1555647115
+8D:/ECE551/HW5/I2S_Slave_tb.sv
+FD:/ECE551/HW5/I2S_Slave_tb.sv
+L0 2
+R4
+r1
+!s85 0
+31
+R8
+!s107 D:/ECE551/HW5/I2S_Slave_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/ECE551/HW5/I2S_Slave_tb.sv|
+!s101 -O0
+!i113 1
+R11
+n@i2@s_@slave_tb
+vsnd_cmd
+R9
+R12
+!i10b 1
+!s100 zWPcTR6@EMSHSO=BBU=9=3
+IKdQGD`HfQIURoKcdToQNz0
+R1
+!s105 snd_cmd_sv_unit
+S1
+R2
+R10
+8D:/ECE551/HW5/snd_cmd.sv
+FD:/ECE551/HW5/snd_cmd.sv
+L0 1
+R4
+r1
+!s85 0
+31
+Z13 !s108 1555648584.000000
+!s107 D:/ECE551/HW5/snd_cmd.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/ECE551/HW5/snd_cmd.sv|
+!s101 -O0
+!i113 1
+R11
+vSPI_mstr
+R9
+R12
+!i10b 1
+!s100 1d<HV6z9G<eO0b5G]kCX@1
+I;YzaKl[cP7oQNT;1:kQ<@3
+R1
+!s105 SPI_mstr_sv_unit
+S1
+R2
+R10
+8D:/ECE551/HW5/SPI_mstr.sv
+FD:/ECE551/HW5/SPI_mstr.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R13
+!s107 D:/ECE551/HW5/SPI_mstr.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/ECE551/HW5/SPI_mstr.sv|
+!s101 -O0
+!i113 1
+R11
+n@s@p@i_mstr
+vtone_ROM_lft
+R12
+!i10b 1
+!s100 1H^IMVM>V_fkZ<YB6:`X;1
+I7_W9DdfTmJGZ8VQQeGb3`3
+R1
+R2
+R10
+8D:/ECE551/HW5/tone_ROM_lft.v
+FD:/ECE551/HW5/tone_ROM_lft.v
+L0 1
+R4
+r1
+!s85 0
+31
+R13
+!s107 D:/ECE551/HW5/tone_ROM_lft.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/ECE551/HW5/tone_ROM_lft.v|
+!s101 -O0
+!i113 1
+R6
+ntone_@r@o@m_lft
+vtone_ROM_rght
+R12
+!i10b 1
+!s100 <zn8]6R;^fB<gQnY=@FJ>2
+IUTnD_g@K>3I4=<gPS?=113
+R1
+R2
+R10
+8D:/ECE551/HW5/tone_ROM_rght.v
+FD:/ECE551/HW5/tone_ROM_rght.v
+L0 1
+R4
+r1
+!s85 0
+31
+R13
+!s107 D:/ECE551/HW5/tone_ROM_rght.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/ECE551/HW5/tone_ROM_rght.v|
+!s101 -O0
+!i113 1
+R6
+ntone_@r@o@m_rght
+vUART
+R9
+R0
+!i10b 1
+!s100 UNEgJUgGHPmn^Ih<Q7V432
+I2o0:D<Wfk@98c[NVF]]4W3
+R1
+!s105 UART_sv_unit
+S1
+R2
+R10
+8D:/ECE551/HW5/UART.sv
+FD:/ECE551/HW5/UART.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/ECE551/HW5/UART.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/ECE551/HW5/UART.sv|
+!s101 -O0
+!i113 1
+R11
+n@u@a@r@t

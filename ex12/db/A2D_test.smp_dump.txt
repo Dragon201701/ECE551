@@ -1,0 +1,13 @@
+
+State Machine - |A2D_test|A2D_intf:iA2D|state
+Name state.READ state.WAIT state.TRANS state.IDLE 
+state.IDLE 0 0 0 0 
+state.TRANS 0 0 1 1 
+state.WAIT 0 1 0 1 
+state.READ 1 0 0 1 
+
+State Machine - |A2D_test|A2D_intf:iA2D|SPI_mstr:SPI_mstr|state
+Name state.IDLE state.BackPorch state.SHIFT 
+state.IDLE 0 0 0 
+state.SHIFT 1 0 1 
+state.BackPorch 1 1 0 

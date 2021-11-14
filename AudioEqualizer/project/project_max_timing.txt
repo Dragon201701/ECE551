@@ -1,0 +1,119 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : Equalizer
+Version: N-2017.09-SP5
+Date   : Thu May  2 12:00:31 2019
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: NCCOM   Library: tcbn40lpbwptc
+Wire Load Model Mode: segmented
+
+  Startpoint: iEQ/iB4/POT_squared_flopped_reg[13]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: iEQ/band_flopped4_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  UART               ZeroWireload          tcbn40lpbwptc
+  SPI_mstr           ZeroWireload          tcbn40lpbwptc
+  PDM_0              ZeroWireload          tcbn40lpbwptc
+  PDM_1              ZeroWireload          tcbn40lpbwptc
+  high_freq_queue    ZeroWireload          tcbn40lpbwptc
+  low_freq_queue     ZeroWireload          tcbn40lpbwptc
+  FIR_LP             ZeroWireload          tcbn40lpbwptc
+  FIR_B1             ZeroWireload          tcbn40lpbwptc
+  FIR_B2             ZeroWireload          tcbn40lpbwptc
+  FIR_B3             ZeroWireload          tcbn40lpbwptc
+  FIR_HP             ZeroWireload          tcbn40lpbwptc
+  band_scale_0       ZeroWireload          tcbn40lpbwptc
+  band_scale_9       ZeroWireload          tcbn40lpbwptc
+  band_scale_8       ZeroWireload          tcbn40lpbwptc
+  band_scale_7       ZeroWireload          tcbn40lpbwptc
+  band_scale_6       ZeroWireload          tcbn40lpbwptc
+  band_scale_5       ZeroWireload          tcbn40lpbwptc
+  band_scale_4       ZeroWireload          tcbn40lpbwptc
+  band_scale_3       ZeroWireload          tcbn40lpbwptc
+  band_scale_2       ZeroWireload          tcbn40lpbwptc
+  band_scale_1       ZeroWireload          tcbn40lpbwptc
+  PB_rise_0          ZeroWireload          tcbn40lpbwptc
+  PB_rise_1          ZeroWireload          tcbn40lpbwptc
+  snd_cmd            ZeroWireload          tcbn40lpbwptc
+  Equalizer          TSMC32K_Lowk_Conservative
+                                           tcbn40lpbwptc
+  A2D_intf           ZeroWireload          tcbn40lpbwptc
+  band_scale_7_DW02_mult_1
+                     ZeroWireload          tcbn40lpbwptc
+  band_scale_7_DW01_add_2
+                     ZeroWireload          tcbn40lpbwptc
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  iEQ/iB4/POT_squared_flopped_reg[13]/CP (DFCNQD4BWP)     0.00 #     0.00 r
+  iEQ/iB4/POT_squared_flopped_reg[13]/Q (DFCNQD4BWP)      0.15       0.15 r
+  iEQ/iB4/mult_27/A[1] (band_scale_7_DW02_mult_1)         0.00       0.15 r
+  iEQ/iB4/mult_27/U23/ZN (CKND2D0BWP)                     0.05       0.20 f
+  iEQ/iB4/mult_27/U8/ZN (NR3D2BWP)                        0.04       0.25 r
+  iEQ/iB4/mult_27/S2_2_6/CO (FA1D1BWP)                    0.12       0.36 r
+  iEQ/iB4/mult_27/S2_3_6/CO (FA1D0BWP)                    0.12       0.48 r
+  iEQ/iB4/mult_27/S2_4_6/CO (FA1D0BWP)                    0.12       0.60 r
+  iEQ/iB4/mult_27/S2_5_6/CO (FA1D0BWP)                    0.12       0.73 r
+  iEQ/iB4/mult_27/S2_6_6/CO (FA1D0BWP)                    0.12       0.85 r
+  iEQ/iB4/mult_27/S2_7_6/CO (FA1D0BWP)                    0.12       0.98 r
+  iEQ/iB4/mult_27/S2_8_6/CO (FA1D1BWP)                    0.12       1.09 r
+  iEQ/iB4/mult_27/S2_9_6/CO (FA1D1BWP)                    0.11       1.20 r
+  iEQ/iB4/mult_27/S2_10_6/CO (FA1D0BWP)                   0.12       1.33 r
+  iEQ/iB4/mult_27/U35/Z (XOR2D1BWP)                       0.09       1.42 f
+  iEQ/iB4/mult_27/U52/Z (CKXOR2D2BWP)                     0.06       1.48 r
+  iEQ/iB4/mult_27/U57/Z (CKXOR2D2BWP)                     0.08       1.55 f
+  iEQ/iB4/mult_27/U138/ZN (XNR2D1BWP)                     0.08       1.63 r
+  iEQ/iB4/mult_27/FS_1/A[15] (band_scale_7_DW01_add_2)
+                                                          0.00       1.63 r
+  iEQ/iB4/mult_27/FS_1/U52/Z (OR2XD1BWP)                  0.04       1.68 r
+  iEQ/iB4/mult_27/FS_1/U96/ZN (CKND2D1BWP)                0.02       1.70 f
+  iEQ/iB4/mult_27/FS_1/U13/Z (OR3D1BWP)                   0.08       1.78 f
+  iEQ/iB4/mult_27/FS_1/U2/Z (AN3D4BWP)                    0.05       1.83 f
+  iEQ/iB4/mult_27/FS_1/U78/Z (OA21D1BWP)                  0.05       1.88 f
+  iEQ/iB4/mult_27/FS_1/U16/ZN (NR2XD1BWP)                 0.03       1.92 r
+  iEQ/iB4/mult_27/FS_1/U12/ZN (NR2D2BWP)                  0.02       1.93 f
+  iEQ/iB4/mult_27/FS_1/U11/ZN (OAI21D4BWP)                0.02       1.96 r
+  iEQ/iB4/mult_27/FS_1/U14/ZN (IOA21D2BWP)                0.06       2.01 r
+  iEQ/iB4/mult_27/FS_1/U95/ZN (OAI21D1BWP)                0.03       2.04 f
+  iEQ/iB4/mult_27/FS_1/U93/ZN (ND2D1BWP)                  0.02       2.07 r
+  iEQ/iB4/mult_27/FS_1/U5/Z (XOR3D2BWP)                   0.10       2.16 f
+  iEQ/iB4/mult_27/FS_1/SUM[26] (band_scale_7_DW01_add_2)
+                                                          0.00       2.16 f
+  iEQ/iB4/mult_27/PRODUCT[28] (band_scale_7_DW02_mult_1)
+                                                          0.00       2.16 f
+  iEQ/iB4/U34/Z (AO31D4BWP)                               0.10       2.27 f
+  iEQ/iB4/U4/ZN (ND2D2BWP)                                0.03       2.29 r
+  iEQ/iB4/U3/ZN (INVD3BWP)                                0.02       2.32 f
+  iEQ/iB4/U26/ZN (IOA21D1BWP)                             0.05       2.37 f
+  iEQ/iB4/scaled[0] (band_scale_7)                        0.00       2.37 f
+  iEQ/band_flopped4_reg[0]/D (DFCNQD1BWP)                 0.00       2.37 f
+  data arrival time                                                  2.37
+
+  clock clk (rise edge)                                   2.50       2.50
+  clock network delay (ideal)                             0.00       2.50
+  clock uncertainty                                      -0.12       2.38
+  iEQ/band_flopped4_reg[0]/CP (DFCNQD1BWP)                0.00       2.38 r
+  library setup time                                     -0.01       2.37
+  data required time                                                 2.37
+  --------------------------------------------------------------------------
+  data required time                                                 2.37
+  data arrival time                                                 -2.37
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1

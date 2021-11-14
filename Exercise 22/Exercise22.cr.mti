@@ -1,0 +1,263 @@
+{D:/ECE551/Exercise 22/BT_intf_tb.sv} {1 {vlog -work work -sv -stats=none {D:/ECE551/Exercise 22/BT_intf_tb.sv}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module BT_intf_tb
+
+Top level modules:
+	BT_intf_tb
+
+} {} {}} {D:/ECE551/Exercise 22/FIR_B1.sv} {0 {vlog -work work -sv -stats=none {D:/ECE551/Exercise 22/FIR_B1.sv}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module FIR_B1
+** Error (suppressible): D:/ECE551/Exercise 22/FIR_B1.sv(11): (vlog-2388) 'ROM_addr_flop' already declared in this scope (FIR_B1).
+
+** Error: D:/ECE551/Exercise 22/FIR_B1.sv(15): (vlog-2730) Undefined variable: 'rst_addr'.
+
+** Error: D:/ECE551/Exercise 22/FIR_B1.sv(17): (vlog-2730) Undefined variable: 'inc_addr'.
+
+** Error: D:/ECE551/Exercise 22/FIR_B1.sv(33): (vlog-2730) Undefined variable: 'rst_out'.
+
+** Error: D:/ECE551/Exercise 22/FIR_B1.sv(37): (vlog-2730) Undefined variable: 'add'.
+
+** Error: D:/ECE551/Exercise 22/FIR_B1.sv(60): (vlog-2730) Undefined variable: 'rst_addr'.
+
+** Error: D:/ECE551/Exercise 22/FIR_B1.sv(61): (vlog-2730) Undefined variable: 'rst_out'.
+
+** Error: D:/ECE551/Exercise 22/FIR_B1.sv(62): (vlog-2730) Undefined variable: 'inc_addr'.
+
+** Error: D:/ECE551/Exercise 22/FIR_B1.sv(63): (vlog-2730) Undefined variable: 'add'.
+
+
+} {6.0 7.0 8.0 9.0 10.0 11.0 12.0 13.0 14.0 15.0 16.0 17.0 18.0 19.0 20.0 21.0} {}} {D:/ECE551/Exercise 22/resp_ROM.v} {1 {vlog -work work -stats=none {D:/ECE551/Exercise 22/resp_ROM.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module resp_ROM
+
+Top level modules:
+	resp_ROM
+
+} {} {}} {D:/ECE551/Exercise 22/FIR_LP.sv} {0 {vlog -work work -sv -stats=none {D:/ECE551/Exercise 22/FIR_LP.sv}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module FIR_LP
+** Error (suppressible): D:/ECE551/Exercise 22/FIR_LP.sv(11): (vlog-2388) 'ROM_addr_flop' already declared in this scope (FIR_LP).
+
+** Error: D:/ECE551/Exercise 22/FIR_LP.sv(15): (vlog-2730) Undefined variable: 'rst_addr'.
+
+** Error: D:/ECE551/Exercise 22/FIR_LP.sv(17): (vlog-2730) Undefined variable: 'inc_addr'.
+
+** Error: D:/ECE551/Exercise 22/FIR_LP.sv(33): (vlog-2730) Undefined variable: 'rst_out'.
+
+** Error: D:/ECE551/Exercise 22/FIR_LP.sv(37): (vlog-2730) Undefined variable: 'add'.
+
+** Error: D:/ECE551/Exercise 22/FIR_LP.sv(60): (vlog-2730) Undefined variable: 'rst_addr'.
+
+** Error: D:/ECE551/Exercise 22/FIR_LP.sv(61): (vlog-2730) Undefined variable: 'rst_out'.
+
+** Error: D:/ECE551/Exercise 22/FIR_LP.sv(62): (vlog-2730) Undefined variable: 'inc_addr'.
+
+** Error: D:/ECE551/Exercise 22/FIR_LP.sv(63): (vlog-2730) Undefined variable: 'add'.
+
+
+} {6.0 7.0 8.0 9.0 10.0 11.0 12.0 13.0 14.0 15.0 16.0 17.0 18.0 19.0 20.0 21.0} {}} {D:/ECE551/Exercise 22/tone_ROM_lft.v} {1 {vlog -work work -stats=none {D:/ECE551/Exercise 22/tone_ROM_lft.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module tone_ROM_lft
+
+Top level modules:
+	tone_ROM_lft
+
+} {} {}} {D:/ECE551/Exercise 22/rst_synch.sv} {1 {vlog -work work -sv -stats=none {D:/ECE551/Exercise 22/rst_synch.sv}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module rst_synch
+
+Top level modules:
+	rst_synch
+
+} {} {}} {D:/ECE551/Exercise 22/FIR_B3.sv} {0 {vlog -work work -sv -stats=none {D:/ECE551/Exercise 22/FIR_B3.sv}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module FIR_B3
+** Error (suppressible): D:/ECE551/Exercise 22/FIR_B3.sv(11): (vlog-2388) 'ROM_addr_flop' already declared in this scope (FIR_B3).
+
+** Error: D:/ECE551/Exercise 22/FIR_B3.sv(15): (vlog-2730) Undefined variable: 'rst_addr'.
+
+** Error: D:/ECE551/Exercise 22/FIR_B3.sv(17): (vlog-2730) Undefined variable: 'inc_addr'.
+
+** Error: D:/ECE551/Exercise 22/FIR_B3.sv(33): (vlog-2730) Undefined variable: 'rst_out'.
+
+** Error: D:/ECE551/Exercise 22/FIR_B3.sv(37): (vlog-2730) Undefined variable: 'add'.
+
+** Error: D:/ECE551/Exercise 22/FIR_B3.sv(60): (vlog-2730) Undefined variable: 'rst_addr'.
+
+** Error: D:/ECE551/Exercise 22/FIR_B3.sv(61): (vlog-2730) Undefined variable: 'rst_out'.
+
+** Error: D:/ECE551/Exercise 22/FIR_B3.sv(62): (vlog-2730) Undefined variable: 'inc_addr'.
+
+** Error: D:/ECE551/Exercise 22/FIR_B3.sv(63): (vlog-2730) Undefined variable: 'add'.
+
+
+} {6.0 7.0 8.0 9.0 10.0 11.0 12.0 13.0 14.0 15.0 16.0 17.0 18.0 19.0 20.0 21.0} {}} {D:/ECE551/Exercise 22/dualPort1536x16.v} {1 {vlog -work work -stats=none {D:/ECE551/Exercise 22/dualPort1536x16.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module dualPort1536x16
+
+Top level modules:
+	dualPort1536x16
+
+} {} {}} {D:/ECE551/Exercise 22/cmdROM.v} {1 {vlog -work work -stats=none {D:/ECE551/Exercise 22/cmdROM.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module cmdROM
+
+Top level modules:
+	cmdROM
+
+} {} {}} {D:/ECE551/Exercise 22/Equalizer_tb.sv} {0 {vlog -work work -sv -stats=none {D:/ECE551/Exercise 22/Equalizer_tb.sv}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module Equalizer_tb
+** Error: (vlog-13069) D:/ECE551/Exercise 22/Equalizer_tb.sv(38): near "where": syntax error, unexpected IDENTIFIER, expecting '('.
+
+
+} {4.0 5.0} {}} {D:/ECE551/Exercise 22/snd_cmd.sv} {1 {vlog -work work -sv -stats=none {D:/ECE551/Exercise 22/snd_cmd.sv}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module snd_cmd
+
+Top level modules:
+	snd_cmd
+
+} {} {}} {D:/ECE551/Exercise 22/tone_ROM_rght.v} {1 {vlog -work work -stats=none {D:/ECE551/Exercise 22/tone_ROM_rght.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module tone_ROM_rght
+
+Top level modules:
+	tone_ROM_rght
+
+} {} {}} {D:/ECE551/Exercise 22/UART.sv} {1 {vlog -work work -sv -stats=none {D:/ECE551/Exercise 22/UART.sv}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module UART
+
+Top level modules:
+	UART
+
+} {} {}} {D:/ECE551/Exercise 22/PB_rise.sv} {1 {vlog -work work -sv -stats=none {D:/ECE551/Exercise 22/PB_rise.sv}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module PB_rise
+
+Top level modules:
+	PB_rise
+
+} {} {}} {D:/ECE551/Exercise 22/FIR_B2.sv} {1 {vlog -work work -sv -stats=none {D:/ECE551/Exercise 22/FIR_B2.sv}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module FIR_B2
+
+Top level modules:
+	FIR_B2
+
+} {} {}} {D:/ECE551/Exercise 22/ROM_B1.v} {1 {vlog -work work -stats=none {D:/ECE551/Exercise 22/ROM_B1.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module ROM_B1
+
+Top level modules:
+	ROM_B1
+
+} {} {}} {D:/ECE551/Exercise 22/high_freq_queue_tb.sv} {1 {vlog -work work -sv -stats=none {D:/ECE551/Exercise 22/high_freq_queue_tb.sv}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module high_freq_queue_tb
+
+Top level modules:
+	high_freq_queue_tb
+
+} {} {}} {D:/ECE551/Exercise 22/ADC128S.sv} {1 {vlog -work work -sv -stats=none {D:/ECE551/Exercise 22/ADC128S.sv}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module ADC128S
+
+Top level modules:
+	ADC128S
+
+} {} {}} {D:/ECE551/Exercise 22/ROM_B2.v} {1 {vlog -work work -stats=none {D:/ECE551/Exercise 22/ROM_B2.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module ROM_B2
+
+Top level modules:
+	ROM_B2
+
+} {} {}} {D:/ECE551/Exercise 22/BT_intf.sv} {1 {vlog -work work -sv -stats=none {D:/ECE551/Exercise 22/BT_intf.sv}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module BT_intf
+
+Top level modules:
+	BT_intf
+
+} {} {}} {D:/ECE551/Exercise 22/A2D_with_Pots.sv} {1 {vlog -work work -sv -stats=none {D:/ECE551/Exercise 22/A2D_with_Pots.sv}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module A2D_with_Pots
+
+Top level modules:
+	A2D_with_Pots
+
+} {} {}} {D:/ECE551/Exercise 22/Equalizer.v} {1 {vlog -work work -stats=none {D:/ECE551/Exercise 22/Equalizer.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module Equalizer
+
+Top level modules:
+	Equalizer
+
+} {} {}} {D:/ECE551/Exercise 22/ROM_B3.v} {1 {vlog -work work -stats=none {D:/ECE551/Exercise 22/ROM_B3.v}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module ROM_B3
+
+Top level modules:
+	ROM_B3
+
+} {} {}} {D:/ECE551/Exercise 22/RN52.sv} {1 {vlog -work work -sv -stats=none {D:/ECE551/Exercise 22/RN52.sv}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module RN52
+
+Top level modules:
+	RN52
+
+} {} {}} {D:/ECE551/Exercise 22/I2S_Slave.sv} {1 {vlog -work work -sv -stats=none {D:/ECE551/Exercise 22/I2S_Slave.sv}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module I2S_Slave
+
+Top level modules:
+	I2S_Slave
+
+} {} {}} {D:/ECE551/Exercise 22/FIR_HP.sv} {0 {vlog -work work -sv -stats=none {D:/ECE551/Exercise 22/FIR_HP.sv}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module FIR_HP
+** Error (suppressible): D:/ECE551/Exercise 22/FIR_HP.sv(11): (vlog-2388) 'ROM_addr_flop' already declared in this scope (FIR_HP).
+
+** Error: D:/ECE551/Exercise 22/FIR_HP.sv(15): (vlog-2730) Undefined variable: 'rst_addr'.
+
+** Error: D:/ECE551/Exercise 22/FIR_HP.sv(17): (vlog-2730) Undefined variable: 'inc_addr'.
+
+** Error: D:/ECE551/Exercise 22/FIR_HP.sv(33): (vlog-2730) Undefined variable: 'rst_out'.
+
+** Error: D:/ECE551/Exercise 22/FIR_HP.sv(37): (vlog-2730) Undefined variable: 'add'.
+
+** Error: D:/ECE551/Exercise 22/FIR_HP.sv(60): (vlog-2730) Undefined variable: 'rst_addr'.
+
+** Error: D:/ECE551/Exercise 22/FIR_HP.sv(61): (vlog-2730) Undefined variable: 'rst_out'.
+
+** Error: D:/ECE551/Exercise 22/FIR_HP.sv(62): (vlog-2730) Undefined variable: 'inc_addr'.
+
+** Error: D:/ECE551/Exercise 22/FIR_HP.sv(63): (vlog-2730) Undefined variable: 'add'.
+
+
+} {6.0 7.0 8.0 9.0 10.0 11.0 12.0 13.0 14.0 15.0 16.0 17.0 18.0 19.0 20.0 21.0} {}} {D:/ECE551/Exercise 22/I2S_Master.sv} {1 {vlog -work work -sv -stats=none {D:/ECE551/Exercise 22/I2S_Master.sv}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module I2S_Master
+
+Top level modules:
+	I2S_Master
+
+} {} {}} {D:/ECE551/Exercise 22/FIR_B2_tb.sv} {1 {vlog -work work -sv -stats=none {D:/ECE551/Exercise 22/FIR_B2_tb.sv}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module FIR_B2_tb
+
+Top level modules:
+	FIR_B2_tb
+
+} {} {}} {D:/ECE551/Exercise 22/high_freq_queue.sv} {1 {vlog -work work -sv -stats=none {D:/ECE551/Exercise 22/high_freq_queue.sv}
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module high_freq_queue
+
+Top level modules:
+	high_freq_queue
+
+} {} {}}

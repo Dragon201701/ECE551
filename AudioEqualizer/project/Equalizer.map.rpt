@@ -1,0 +1,1422 @@
+Analysis & Synthesis report for Equalizer
+Thu May 02 10:09:07 2019
+Quartus Prime Version 16.1.2 Build 203 01/18/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |Equalizer|EQ_Engine:iEQ|low_freq_queue:ilow_freq|state
+  9. State Machine - |Equalizer|EQ_Engine:iEQ|high_freq_queue:ihigh_freq|state
+ 10. State Machine - |Equalizer|I2S_Slave:iSlave|state
+ 11. State Machine - |Equalizer|BT_intf:iBT|state
+ 12. State Machine - |Equalizer|BT_intf:iBT|snd_cmd:SC|state
+ 13. State Machine - |Equalizer|slide_intf:islide|A2D_intf:iA2D_intf|state
+ 14. State Machine - |Equalizer|slide_intf:islide|A2D_intf:iA2D_intf|SPI_mstr:SPI_mstr|state
+ 15. Registers Removed During Synthesis
+ 16. Removed Registers Triggering Further Register Optimizations
+ 17. General Register Statistics
+ 18. Inverted Register Statistics
+ 19. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 20. Port Connectivity Checks: "BT_intf:iBT|snd_cmd:SC"
+ 21. Port Connectivity Checks: "slide_intf:islide|A2D_intf:iA2D_intf|SPI_mstr:SPI_mstr"
+ 22. Post-Synthesis Netlist Statistics for Top Partition
+ 23. Elapsed Time Per Partition
+ 24. Analysis & Synthesis Messages
+ 25. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu May 02 10:09:07 2019       ;
+; Quartus Prime Version              ; 16.1.2 Build 203 01/18/2017 SJ Lite Edition ;
+; Revision Name                      ; Equalizer                                   ;
+; Top-level Entity Name              ; Equalizer                                   ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 263                                         ;
+;     Total combinational functions  ; 245                                         ;
+;     Dedicated logic registers      ; 171                                         ;
+; Total registers                    ; 171                                         ;
+; Total pins                         ; 26                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE22F17C6       ;                    ;
+; Top-level entity name                                                      ; Equalizer          ; Equalizer          ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; OpenCore Plus hardware evaluation                                          ; Enable             ; Enable             ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                              ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                    ; Library ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------+---------+
+; I2S_Slave.sv                     ; yes             ; User SystemVerilog HDL File        ; I:/ece551~1/modelsim/project/I2S_Slave.sv       ;         ;
+; PDM.sv                           ; yes             ; User SystemVerilog HDL File        ; I:/ece551~1/modelsim/project/PDM.sv             ;         ;
+; ROM_LP.v                         ; yes             ; User Verilog HDL File              ; I:/ece551~1/modelsim/project/ROM_LP.v           ;         ;
+; ROM_HP.v                         ; yes             ; User Verilog HDL File              ; I:/ece551~1/modelsim/project/ROM_HP.v           ;         ;
+; ROM_B3.v                         ; yes             ; User Verilog HDL File              ; I:/ece551~1/modelsim/project/ROM_B3.v           ;         ;
+; ROM_B2.v                         ; yes             ; User Verilog HDL File              ; I:/ece551~1/modelsim/project/ROM_B2.v           ;         ;
+; ROM_B1.v                         ; yes             ; User Verilog HDL File              ; I:/ece551~1/modelsim/project/ROM_B1.v           ;         ;
+; low_freq_queue.sv                ; yes             ; User SystemVerilog HDL File        ; I:/ece551~1/modelsim/project/low_freq_queue.sv  ;         ;
+; high_freq_queue.sv               ; yes             ; User SystemVerilog HDL File        ; I:/ece551~1/modelsim/project/high_freq_queue.sv ;         ;
+; FIR_LP.sv                        ; yes             ; User SystemVerilog HDL File        ; I:/ece551~1/modelsim/project/FIR_LP.sv          ;         ;
+; FIR_HP.sv                        ; yes             ; User SystemVerilog HDL File        ; I:/ece551~1/modelsim/project/FIR_HP.sv          ;         ;
+; FIR_B3.sv                        ; yes             ; User SystemVerilog HDL File        ; I:/ece551~1/modelsim/project/FIR_B3.sv          ;         ;
+; FIR_B2.sv                        ; yes             ; User SystemVerilog HDL File        ; I:/ece551~1/modelsim/project/FIR_B2.sv          ;         ;
+; FIR_B1.sv                        ; yes             ; User SystemVerilog HDL File        ; I:/ece551~1/modelsim/project/FIR_B1.sv          ;         ;
+; EQ_engine.sv                     ; yes             ; User SystemVerilog HDL File        ; I:/ece551~1/modelsim/project/EQ_engine.sv       ;         ;
+; dualPort1536x16.v                ; yes             ; User Verilog HDL File              ; I:/ece551~1/modelsim/project/dualPort1536x16.v  ;         ;
+; dualPort1024x16.v                ; yes             ; User Verilog HDL File              ; I:/ece551~1/modelsim/project/dualPort1024x16.v  ;         ;
+; band_scale.v                     ; yes             ; User Verilog HDL File              ; I:/ece551~1/modelsim/project/band_scale.v       ;         ;
+; UART.sv                          ; yes             ; User SystemVerilog HDL File        ; I:/ece551~1/modelsim/project/UART.sv            ;         ;
+; cmdROM.v                         ; yes             ; User Verilog HDL File              ; I:/ece551~1/modelsim/project/cmdROM.v           ;         ;
+; snd_cmd.sv                       ; yes             ; User SystemVerilog HDL File        ; I:/ece551~1/modelsim/project/snd_cmd.sv         ;         ;
+; SPI_mstr.sv                      ; yes             ; User SystemVerilog HDL File        ; I:/ece551~1/modelsim/project/SPI_mstr.sv        ;         ;
+; spkr_drv.sv                      ; yes             ; User SystemVerilog HDL File        ; I:/ece551~1/modelsim/project/spkr_drv.sv        ;         ;
+; slide_intf.sv                    ; yes             ; User SystemVerilog HDL File        ; I:/ece551~1/modelsim/project/slide_intf.sv      ;         ;
+; Equalizer.v                      ; yes             ; User Verilog HDL File              ; I:/ece551~1/modelsim/project/Equalizer.v        ;         ;
+; BT_intf.sv                       ; yes             ; User SystemVerilog HDL File        ; I:/ece551~1/modelsim/project/BT_intf.sv         ;         ;
+; A2D_intf.sv                      ; yes             ; User SystemVerilog HDL File        ; I:/ece551~1/modelsim/project/A2D_intf.sv        ;         ;
+; rst_synch.sv                     ; yes             ; Auto-Found SystemVerilog HDL File  ; I:/ece551~1/modelsim/project/rst_synch.sv       ;         ;
+; pb_rise.sv                       ; yes             ; Auto-Found SystemVerilog HDL File  ; I:/ece551~1/modelsim/project/pb_rise.sv         ;         ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 263       ;
+;                                             ;           ;
+; Total combinational functions               ; 245       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 81        ;
+;     -- 3 input functions                    ; 53        ;
+;     -- <=2 input functions                  ; 111       ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 170       ;
+;     -- arithmetic mode                      ; 75        ;
+;                                             ;           ;
+; Total registers                             ; 171       ;
+;     -- Dedicated logic registers            ; 171       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 26        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 171       ;
+; Total fan-out                               ; 1351      ;
+; Average fan-out                             ; 2.89      ;
++---------------------------------------------+-----------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                      ;
++------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------+-------------+--------------+
+; Compilation Hierarchy Node   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                               ; Entity Name ; Library Name ;
++------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------+-------------+--------------+
+; |Equalizer                   ; 245 (30)            ; 171 (20)                  ; 0           ; 0            ; 0       ; 0         ; 26   ; 0            ; |Equalizer                                                        ; Equalizer   ; work         ;
+;    |BT_intf:iBT|             ; 144 (35)            ; 92 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Equalizer|BT_intf:iBT                                            ; BT_intf     ; work         ;
+;       |PB_rise:BUT1|         ; 1 (1)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Equalizer|BT_intf:iBT|PB_rise:BUT1                               ; PB_rise     ; work         ;
+;       |PB_rise:BUT2|         ; 1 (1)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Equalizer|BT_intf:iBT|PB_rise:BUT2                               ; PB_rise     ; work         ;
+;       |snd_cmd:SC|           ; 107 (26)            ; 63 (13)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Equalizer|BT_intf:iBT|snd_cmd:SC                                 ; snd_cmd     ; work         ;
+;          |UART:iUART|        ; 81 (81)             ; 50 (50)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Equalizer|BT_intf:iBT|snd_cmd:SC|UART:iUART                      ; UART        ; work         ;
+;    |rst_synch:irst|          ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Equalizer|rst_synch:irst                                         ; rst_synch   ; work         ;
+;    |slide_intf:islide|       ; 46 (4)              ; 39 (4)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Equalizer|slide_intf:islide                                      ; slide_intf  ; work         ;
+;       |A2D_intf:iA2D_intf|   ; 42 (5)              ; 35 (5)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Equalizer|slide_intf:islide|A2D_intf:iA2D_intf                   ; A2D_intf    ; work         ;
+;          |SPI_mstr:SPI_mstr| ; 37 (37)             ; 30 (30)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Equalizer|slide_intf:islide|A2D_intf:iA2D_intf|SPI_mstr:SPI_mstr ; SPI_mstr    ; work         ;
+;    |spkr_drv:ispkr|          ; 25 (0)              ; 18 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Equalizer|spkr_drv:ispkr                                         ; spkr_drv    ; work         ;
+;       |PDM:iPDM1ft|          ; 24 (24)             ; 17 (17)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Equalizer|spkr_drv:ispkr|PDM:iPDM1ft                             ; PDM         ; work         ;
+;       |PDM:iPDMrght|         ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Equalizer|spkr_drv:ispkr|PDM:iPDMrght                            ; PDM         ; work         ;
++------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------+
+; State Machine - |Equalizer|EQ_Engine:iEQ|low_freq_queue:ilow_freq|state ;
++---------------+---------------+------------+----------------------------+
+; Name          ; state.VACANCY ; state.READ ; state.FULL                 ;
++---------------+---------------+------------+----------------------------+
+; state.VACANCY ; 0             ; 0          ; 0                          ;
+; state.FULL    ; 1             ; 0          ; 1                          ;
+; state.READ    ; 1             ; 1          ; 0                          ;
++---------------+---------------+------------+----------------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------+
+; State Machine - |Equalizer|EQ_Engine:iEQ|high_freq_queue:ihigh_freq|state ;
++---------------+---------------+------------+------------------------------+
+; Name          ; state.VACANCY ; state.READ ; state.FULL                   ;
++---------------+---------------+------------+------------------------------+
+; state.VACANCY ; 0             ; 0          ; 0                            ;
+; state.FULL    ; 1             ; 0          ; 1                            ;
+; state.READ    ; 1             ; 1          ; 0                            ;
++---------------+---------------+------------+------------------------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------+
+; State Machine - |Equalizer|I2S_Slave:iSlave|state                ;
++-------------+-------------+------------+------------+------------+
+; Name        ; state.RIGHT ; state.LEFT ; state.SKIP ; state.SYNC ;
++-------------+-------------+------------+------------+------------+
+; state.SYNC  ; 0           ; 0          ; 0          ; 0          ;
+; state.SKIP  ; 0           ; 0          ; 1          ; 1          ;
+; state.LEFT  ; 0           ; 1          ; 0          ; 1          ;
+; state.RIGHT ; 1           ; 0          ; 0          ; 1          ;
++-------------+-------------+------------+------------+------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------+
+; State Machine - |Equalizer|BT_intf:iBT|state                                                             ;
++-------------+------------+------------+------------+------------+-------------+-------------+------------+
+; Name        ; state.Prev ; state.Next ; state.Idle ; state.Name ; state.Start ; state.Check ; state.Wait ;
++-------------+------------+------------+------------+------------+-------------+-------------+------------+
+; state.Wait  ; 0          ; 0          ; 0          ; 0          ; 0           ; 0           ; 0          ;
+; state.Check ; 0          ; 0          ; 0          ; 0          ; 0           ; 1           ; 1          ;
+; state.Start ; 0          ; 0          ; 0          ; 0          ; 1           ; 0           ; 1          ;
+; state.Name  ; 0          ; 0          ; 0          ; 1          ; 0           ; 0           ; 1          ;
+; state.Idle  ; 0          ; 0          ; 1          ; 0          ; 0           ; 0           ; 1          ;
+; state.Next  ; 0          ; 1          ; 0          ; 0          ; 0           ; 0           ; 1          ;
+; state.Prev  ; 1          ; 0          ; 0          ; 0          ; 0           ; 0           ; 1          ;
++-------------+------------+------------+------------+------------+-------------+-------------+------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------+
+; State Machine - |Equalizer|BT_intf:iBT|snd_cmd:SC|state           ;
++-------------+------------+-------------+-------------+------------+
+; Name        ; state.DATA ; state.WAIT2 ; state.WAIT1 ; state.IDLE ;
++-------------+------------+-------------+-------------+------------+
+; state.IDLE  ; 0          ; 0           ; 0           ; 0          ;
+; state.WAIT1 ; 0          ; 0           ; 1           ; 1          ;
+; state.WAIT2 ; 0          ; 1           ; 0           ; 1          ;
+; state.DATA  ; 1          ; 0           ; 0           ; 1          ;
++-------------+------------+-------------+-------------+------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------+
+; State Machine - |Equalizer|slide_intf:islide|A2D_intf:iA2D_intf|state ;
++-------------+------------+------------+-------------+-----------------+
+; Name        ; state.READ ; state.WAIT ; state.TRANS ; state.IDLE      ;
++-------------+------------+------------+-------------+-----------------+
+; state.IDLE  ; 0          ; 0          ; 0           ; 0               ;
+; state.TRANS ; 0          ; 0          ; 1           ; 1               ;
+; state.WAIT  ; 0          ; 1          ; 0           ; 1               ;
+; state.READ  ; 1          ; 0          ; 0           ; 1               ;
++-------------+------------+------------+-------------+-----------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------+
+; State Machine - |Equalizer|slide_intf:islide|A2D_intf:iA2D_intf|SPI_mstr:SPI_mstr|state ;
++-----------------+------------+-----------------+----------------------------------------+
+; Name            ; state.IDLE ; state.BackPorch ; state.SHIFT                            ;
++-----------------+------------+-----------------+----------------------------------------+
+; state.IDLE      ; 0          ; 0               ; 0                                      ;
+; state.SHIFT     ; 1          ; 0               ; 1                                      ;
+; state.BackPorch ; 1          ; 1               ; 0                                      ;
++-----------------+------------+-----------------+----------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                 ;
++----------------------------------------------------------------+-------------------------------------------------------------------+
+; Register name                                                  ; Reason for Removal                                                ;
++----------------------------------------------------------------+-------------------------------------------------------------------+
+; BT_intf:iBT|snd_cmd:SC|sum[0]                                  ; Stuck at GND due to stuck port data_in                            ;
+; spkr_drv:ispkr|PDM:iPDM1ft|counter                             ; Merged with spkr_drv:ispkr|PDM:iPDMrght|counter                   ;
+; EQ_Engine:iEQ|band_scale:iB5|POT_flopped[11]                   ; Merged with EQ_Engine:iEQ|band_scale:iB10|POT_flopped[11]         ;
+; EQ_Engine:iEQ|band_scale:iB5|POT_flopped[10]                   ; Merged with EQ_Engine:iEQ|band_scale:iB10|POT_flopped[10]         ;
+; EQ_Engine:iEQ|band_scale:iB5|POT_flopped[9]                    ; Merged with EQ_Engine:iEQ|band_scale:iB10|POT_flopped[9]          ;
+; EQ_Engine:iEQ|band_scale:iB5|POT_flopped[8]                    ; Merged with EQ_Engine:iEQ|band_scale:iB10|POT_flopped[8]          ;
+; EQ_Engine:iEQ|band_scale:iB5|POT_flopped[7]                    ; Merged with EQ_Engine:iEQ|band_scale:iB10|POT_flopped[7]          ;
+; EQ_Engine:iEQ|band_scale:iB5|POT_flopped[6]                    ; Merged with EQ_Engine:iEQ|band_scale:iB10|POT_flopped[6]          ;
+; EQ_Engine:iEQ|band_scale:iB5|POT_flopped[5]                    ; Merged with EQ_Engine:iEQ|band_scale:iB10|POT_flopped[5]          ;
+; EQ_Engine:iEQ|band_scale:iB5|POT_flopped[4]                    ; Merged with EQ_Engine:iEQ|band_scale:iB10|POT_flopped[4]          ;
+; EQ_Engine:iEQ|band_scale:iB5|POT_flopped[3]                    ; Merged with EQ_Engine:iEQ|band_scale:iB10|POT_flopped[3]          ;
+; EQ_Engine:iEQ|band_scale:iB5|POT_flopped[2]                    ; Merged with EQ_Engine:iEQ|band_scale:iB10|POT_flopped[2]          ;
+; EQ_Engine:iEQ|band_scale:iB5|POT_flopped[1]                    ; Merged with EQ_Engine:iEQ|band_scale:iB10|POT_flopped[1]          ;
+; EQ_Engine:iEQ|band_scale:iB5|POT_flopped[0]                    ; Merged with EQ_Engine:iEQ|band_scale:iB10|POT_flopped[0]          ;
+; EQ_Engine:iEQ|band_scale:iB4|POT_flopped[11]                   ; Merged with EQ_Engine:iEQ|band_scale:iB9|POT_flopped[11]          ;
+; EQ_Engine:iEQ|band_scale:iB4|POT_flopped[10]                   ; Merged with EQ_Engine:iEQ|band_scale:iB9|POT_flopped[10]          ;
+; EQ_Engine:iEQ|band_scale:iB4|POT_flopped[9]                    ; Merged with EQ_Engine:iEQ|band_scale:iB9|POT_flopped[9]           ;
+; EQ_Engine:iEQ|band_scale:iB4|POT_flopped[8]                    ; Merged with EQ_Engine:iEQ|band_scale:iB9|POT_flopped[8]           ;
+; EQ_Engine:iEQ|band_scale:iB4|POT_flopped[7]                    ; Merged with EQ_Engine:iEQ|band_scale:iB9|POT_flopped[7]           ;
+; EQ_Engine:iEQ|band_scale:iB4|POT_flopped[6]                    ; Merged with EQ_Engine:iEQ|band_scale:iB9|POT_flopped[6]           ;
+; EQ_Engine:iEQ|band_scale:iB4|POT_flopped[5]                    ; Merged with EQ_Engine:iEQ|band_scale:iB9|POT_flopped[5]           ;
+; EQ_Engine:iEQ|band_scale:iB4|POT_flopped[4]                    ; Merged with EQ_Engine:iEQ|band_scale:iB9|POT_flopped[4]           ;
+; EQ_Engine:iEQ|band_scale:iB4|POT_flopped[3]                    ; Merged with EQ_Engine:iEQ|band_scale:iB9|POT_flopped[3]           ;
+; EQ_Engine:iEQ|band_scale:iB4|POT_flopped[2]                    ; Merged with EQ_Engine:iEQ|band_scale:iB9|POT_flopped[2]           ;
+; EQ_Engine:iEQ|band_scale:iB4|POT_flopped[1]                    ; Merged with EQ_Engine:iEQ|band_scale:iB9|POT_flopped[1]           ;
+; EQ_Engine:iEQ|band_scale:iB4|POT_flopped[0]                    ; Merged with EQ_Engine:iEQ|band_scale:iB9|POT_flopped[0]           ;
+; EQ_Engine:iEQ|band_scale:iB3|POT_flopped[11]                   ; Merged with EQ_Engine:iEQ|band_scale:iB8|POT_flopped[11]          ;
+; EQ_Engine:iEQ|band_scale:iB3|POT_flopped[10]                   ; Merged with EQ_Engine:iEQ|band_scale:iB8|POT_flopped[10]          ;
+; EQ_Engine:iEQ|band_scale:iB3|POT_flopped[9]                    ; Merged with EQ_Engine:iEQ|band_scale:iB8|POT_flopped[9]           ;
+; EQ_Engine:iEQ|band_scale:iB3|POT_flopped[8]                    ; Merged with EQ_Engine:iEQ|band_scale:iB8|POT_flopped[8]           ;
+; EQ_Engine:iEQ|band_scale:iB3|POT_flopped[7]                    ; Merged with EQ_Engine:iEQ|band_scale:iB8|POT_flopped[7]           ;
+; EQ_Engine:iEQ|band_scale:iB3|POT_flopped[6]                    ; Merged with EQ_Engine:iEQ|band_scale:iB8|POT_flopped[6]           ;
+; EQ_Engine:iEQ|band_scale:iB3|POT_flopped[5]                    ; Merged with EQ_Engine:iEQ|band_scale:iB8|POT_flopped[5]           ;
+; EQ_Engine:iEQ|band_scale:iB3|POT_flopped[4]                    ; Merged with EQ_Engine:iEQ|band_scale:iB8|POT_flopped[4]           ;
+; EQ_Engine:iEQ|band_scale:iB3|POT_flopped[3]                    ; Merged with EQ_Engine:iEQ|band_scale:iB8|POT_flopped[3]           ;
+; EQ_Engine:iEQ|band_scale:iB3|POT_flopped[2]                    ; Merged with EQ_Engine:iEQ|band_scale:iB8|POT_flopped[2]           ;
+; EQ_Engine:iEQ|band_scale:iB3|POT_flopped[1]                    ; Merged with EQ_Engine:iEQ|band_scale:iB8|POT_flopped[1]           ;
+; EQ_Engine:iEQ|band_scale:iB3|POT_flopped[0]                    ; Merged with EQ_Engine:iEQ|band_scale:iB8|POT_flopped[0]           ;
+; EQ_Engine:iEQ|band_scale:iB2|POT_flopped[11]                   ; Merged with EQ_Engine:iEQ|band_scale:iB7|POT_flopped[11]          ;
+; EQ_Engine:iEQ|band_scale:iB2|POT_flopped[10]                   ; Merged with EQ_Engine:iEQ|band_scale:iB7|POT_flopped[10]          ;
+; EQ_Engine:iEQ|band_scale:iB2|POT_flopped[9]                    ; Merged with EQ_Engine:iEQ|band_scale:iB7|POT_flopped[9]           ;
+; EQ_Engine:iEQ|band_scale:iB2|POT_flopped[8]                    ; Merged with EQ_Engine:iEQ|band_scale:iB7|POT_flopped[8]           ;
+; EQ_Engine:iEQ|band_scale:iB2|POT_flopped[7]                    ; Merged with EQ_Engine:iEQ|band_scale:iB7|POT_flopped[7]           ;
+; EQ_Engine:iEQ|band_scale:iB2|POT_flopped[6]                    ; Merged with EQ_Engine:iEQ|band_scale:iB7|POT_flopped[6]           ;
+; EQ_Engine:iEQ|band_scale:iB2|POT_flopped[5]                    ; Merged with EQ_Engine:iEQ|band_scale:iB7|POT_flopped[5]           ;
+; EQ_Engine:iEQ|band_scale:iB2|POT_flopped[4]                    ; Merged with EQ_Engine:iEQ|band_scale:iB7|POT_flopped[4]           ;
+; EQ_Engine:iEQ|band_scale:iB2|POT_flopped[3]                    ; Merged with EQ_Engine:iEQ|band_scale:iB7|POT_flopped[3]           ;
+; EQ_Engine:iEQ|band_scale:iB2|POT_flopped[2]                    ; Merged with EQ_Engine:iEQ|band_scale:iB7|POT_flopped[2]           ;
+; EQ_Engine:iEQ|band_scale:iB2|POT_flopped[1]                    ; Merged with EQ_Engine:iEQ|band_scale:iB7|POT_flopped[1]           ;
+; EQ_Engine:iEQ|band_scale:iB2|POT_flopped[0]                    ; Merged with EQ_Engine:iEQ|band_scale:iB7|POT_flopped[0]           ;
+; EQ_Engine:iEQ|band_scale:iB1|POT_flopped[11]                   ; Merged with EQ_Engine:iEQ|band_scale:iB6|POT_flopped[11]          ;
+; EQ_Engine:iEQ|band_scale:iB1|POT_flopped[10]                   ; Merged with EQ_Engine:iEQ|band_scale:iB6|POT_flopped[10]          ;
+; EQ_Engine:iEQ|band_scale:iB1|POT_flopped[9]                    ; Merged with EQ_Engine:iEQ|band_scale:iB6|POT_flopped[9]           ;
+; EQ_Engine:iEQ|band_scale:iB1|POT_flopped[8]                    ; Merged with EQ_Engine:iEQ|band_scale:iB6|POT_flopped[8]           ;
+; EQ_Engine:iEQ|band_scale:iB1|POT_flopped[7]                    ; Merged with EQ_Engine:iEQ|band_scale:iB6|POT_flopped[7]           ;
+; EQ_Engine:iEQ|band_scale:iB1|POT_flopped[6]                    ; Merged with EQ_Engine:iEQ|band_scale:iB6|POT_flopped[6]           ;
+; EQ_Engine:iEQ|band_scale:iB1|POT_flopped[5]                    ; Merged with EQ_Engine:iEQ|band_scale:iB6|POT_flopped[5]           ;
+; EQ_Engine:iEQ|band_scale:iB1|POT_flopped[4]                    ; Merged with EQ_Engine:iEQ|band_scale:iB6|POT_flopped[4]           ;
+; EQ_Engine:iEQ|band_scale:iB1|POT_flopped[3]                    ; Merged with EQ_Engine:iEQ|band_scale:iB6|POT_flopped[3]           ;
+; EQ_Engine:iEQ|band_scale:iB1|POT_flopped[2]                    ; Merged with EQ_Engine:iEQ|band_scale:iB6|POT_flopped[2]           ;
+; EQ_Engine:iEQ|band_scale:iB1|POT_flopped[1]                    ; Merged with EQ_Engine:iEQ|band_scale:iB6|POT_flopped[1]           ;
+; EQ_Engine:iEQ|band_scale:iB1|POT_flopped[0]                    ; Merged with EQ_Engine:iEQ|band_scale:iB6|POT_flopped[0]           ;
+; EQ_Engine:iEQ|FIR_B2:iFIR_B2|state                             ; Merged with EQ_Engine:iEQ|FIR_HP:iFIR_HP|state                    ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|state                             ; Merged with EQ_Engine:iEQ|FIR_HP:iFIR_HP|state                    ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|state                             ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|state                    ;
+; spkr_drv:ispkr|PDM:iPDMrght|duty_out[15]                       ; Merged with spkr_drv:ispkr|PDM:iPDM1ft|duty_out[15]               ;
+; spkr_drv:ispkr|PDM:iPDMrght|duty_out[14]                       ; Merged with spkr_drv:ispkr|PDM:iPDM1ft|duty_out[14]               ;
+; spkr_drv:ispkr|PDM:iPDMrght|duty_out[13]                       ; Merged with spkr_drv:ispkr|PDM:iPDM1ft|duty_out[13]               ;
+; spkr_drv:ispkr|PDM:iPDMrght|duty_out[12]                       ; Merged with spkr_drv:ispkr|PDM:iPDM1ft|duty_out[12]               ;
+; spkr_drv:ispkr|PDM:iPDMrght|duty_out[11]                       ; Merged with spkr_drv:ispkr|PDM:iPDM1ft|duty_out[11]               ;
+; spkr_drv:ispkr|PDM:iPDMrght|duty_out[10]                       ; Merged with spkr_drv:ispkr|PDM:iPDM1ft|duty_out[10]               ;
+; spkr_drv:ispkr|PDM:iPDMrght|duty_out[9]                        ; Merged with spkr_drv:ispkr|PDM:iPDM1ft|duty_out[9]                ;
+; spkr_drv:ispkr|PDM:iPDMrght|duty_out[8]                        ; Merged with spkr_drv:ispkr|PDM:iPDM1ft|duty_out[8]                ;
+; spkr_drv:ispkr|PDM:iPDMrght|duty_out[7]                        ; Merged with spkr_drv:ispkr|PDM:iPDM1ft|duty_out[7]                ;
+; spkr_drv:ispkr|PDM:iPDMrght|duty_out[6]                        ; Merged with spkr_drv:ispkr|PDM:iPDM1ft|duty_out[6]                ;
+; spkr_drv:ispkr|PDM:iPDMrght|duty_out[5]                        ; Merged with spkr_drv:ispkr|PDM:iPDM1ft|duty_out[5]                ;
+; spkr_drv:ispkr|PDM:iPDMrght|duty_out[4]                        ; Merged with spkr_drv:ispkr|PDM:iPDM1ft|duty_out[4]                ;
+; spkr_drv:ispkr|PDM:iPDMrght|duty_out[3]                        ; Merged with spkr_drv:ispkr|PDM:iPDM1ft|duty_out[3]                ;
+; spkr_drv:ispkr|PDM:iPDMrght|duty_out[2]                        ; Merged with spkr_drv:ispkr|PDM:iPDM1ft|duty_out[2]                ;
+; spkr_drv:ispkr|PDM:iPDMrght|duty_out[1]                        ; Merged with spkr_drv:ispkr|PDM:iPDM1ft|duty_out[1]                ;
+; spkr_drv:ispkr|PDM:iPDMrght|duty_out[0]                        ; Merged with spkr_drv:ispkr|PDM:iPDM1ft|duty_out[0]                ;
+; spkr_drv:ispkr|PDM:iPDMrght|fout[15]                           ; Merged with spkr_drv:ispkr|PDM:iPDM1ft|fout[15]                   ;
+; spkr_drv:ispkr|PDM:iPDMrght|fout[14]                           ; Merged with spkr_drv:ispkr|PDM:iPDM1ft|fout[14]                   ;
+; spkr_drv:ispkr|PDM:iPDMrght|fout[13]                           ; Merged with spkr_drv:ispkr|PDM:iPDM1ft|fout[13]                   ;
+; spkr_drv:ispkr|PDM:iPDMrght|fout[12]                           ; Merged with spkr_drv:ispkr|PDM:iPDM1ft|fout[12]                   ;
+; spkr_drv:ispkr|PDM:iPDMrght|fout[11]                           ; Merged with spkr_drv:ispkr|PDM:iPDM1ft|fout[11]                   ;
+; spkr_drv:ispkr|PDM:iPDMrght|fout[10]                           ; Merged with spkr_drv:ispkr|PDM:iPDM1ft|fout[10]                   ;
+; spkr_drv:ispkr|PDM:iPDMrght|fout[9]                            ; Merged with spkr_drv:ispkr|PDM:iPDM1ft|fout[9]                    ;
+; spkr_drv:ispkr|PDM:iPDMrght|fout[8]                            ; Merged with spkr_drv:ispkr|PDM:iPDM1ft|fout[8]                    ;
+; spkr_drv:ispkr|PDM:iPDMrght|fout[7]                            ; Merged with spkr_drv:ispkr|PDM:iPDM1ft|fout[7]                    ;
+; spkr_drv:ispkr|PDM:iPDMrght|fout[6]                            ; Merged with spkr_drv:ispkr|PDM:iPDM1ft|fout[6]                    ;
+; spkr_drv:ispkr|PDM:iPDMrght|fout[5]                            ; Merged with spkr_drv:ispkr|PDM:iPDM1ft|fout[5]                    ;
+; spkr_drv:ispkr|PDM:iPDMrght|fout[4]                            ; Merged with spkr_drv:ispkr|PDM:iPDM1ft|fout[4]                    ;
+; spkr_drv:ispkr|PDM:iPDMrght|fout[3]                            ; Merged with spkr_drv:ispkr|PDM:iPDM1ft|fout[3]                    ;
+; spkr_drv:ispkr|PDM:iPDMrght|fout[2]                            ; Merged with spkr_drv:ispkr|PDM:iPDM1ft|fout[2]                    ;
+; spkr_drv:ispkr|PDM:iPDMrght|fout[1]                            ; Merged with spkr_drv:ispkr|PDM:iPDM1ft|fout[1]                    ;
+; spkr_drv:ispkr|PDM:iPDMrght|fout[0]                            ; Merged with spkr_drv:ispkr|PDM:iPDM1ft|fout[0]                    ;
+; spkr_drv:ispkr|rght_duty[15]                                   ; Merged with spkr_drv:ispkr|lft_duty[15]                           ;
+; spkr_drv:ispkr|rght_duty[14]                                   ; Merged with spkr_drv:ispkr|lft_duty[14]                           ;
+; spkr_drv:ispkr|rght_duty[13]                                   ; Merged with spkr_drv:ispkr|lft_duty[13]                           ;
+; spkr_drv:ispkr|rght_duty[12]                                   ; Merged with spkr_drv:ispkr|lft_duty[12]                           ;
+; spkr_drv:ispkr|rght_duty[11]                                   ; Merged with spkr_drv:ispkr|lft_duty[11]                           ;
+; spkr_drv:ispkr|rght_duty[10]                                   ; Merged with spkr_drv:ispkr|lft_duty[10]                           ;
+; spkr_drv:ispkr|rght_duty[9]                                    ; Merged with spkr_drv:ispkr|lft_duty[9]                            ;
+; spkr_drv:ispkr|rght_duty[8]                                    ; Merged with spkr_drv:ispkr|lft_duty[8]                            ;
+; spkr_drv:ispkr|rght_duty[7]                                    ; Merged with spkr_drv:ispkr|lft_duty[7]                            ;
+; spkr_drv:ispkr|rght_duty[6]                                    ; Merged with spkr_drv:ispkr|lft_duty[6]                            ;
+; spkr_drv:ispkr|rght_duty[5]                                    ; Merged with spkr_drv:ispkr|lft_duty[5]                            ;
+; spkr_drv:ispkr|rght_duty[4]                                    ; Merged with spkr_drv:ispkr|lft_duty[4]                            ;
+; spkr_drv:ispkr|rght_duty[3]                                    ; Merged with spkr_drv:ispkr|lft_duty[3]                            ;
+; spkr_drv:ispkr|rght_duty[2]                                    ; Merged with spkr_drv:ispkr|lft_duty[2]                            ;
+; spkr_drv:ispkr|rght_duty[1]                                    ; Merged with spkr_drv:ispkr|lft_duty[1]                            ;
+; spkr_drv:ispkr|rght_duty[0]                                    ; Merged with spkr_drv:ispkr|lft_duty[0]                            ;
+; EQ_Engine:iEQ|prod_flopped2[27]                                ; Merged with EQ_Engine:iEQ|prod_flopped1[27]                       ;
+; EQ_Engine:iEQ|prod_flopped2[26]                                ; Merged with EQ_Engine:iEQ|prod_flopped1[26]                       ;
+; EQ_Engine:iEQ|prod_flopped2[25]                                ; Merged with EQ_Engine:iEQ|prod_flopped1[25]                       ;
+; EQ_Engine:iEQ|prod_flopped2[24]                                ; Merged with EQ_Engine:iEQ|prod_flopped1[24]                       ;
+; EQ_Engine:iEQ|prod_flopped2[23]                                ; Merged with EQ_Engine:iEQ|prod_flopped1[23]                       ;
+; EQ_Engine:iEQ|prod_flopped2[22]                                ; Merged with EQ_Engine:iEQ|prod_flopped1[22]                       ;
+; EQ_Engine:iEQ|prod_flopped2[21]                                ; Merged with EQ_Engine:iEQ|prod_flopped1[21]                       ;
+; EQ_Engine:iEQ|prod_flopped2[20]                                ; Merged with EQ_Engine:iEQ|prod_flopped1[20]                       ;
+; EQ_Engine:iEQ|prod_flopped2[19]                                ; Merged with EQ_Engine:iEQ|prod_flopped1[19]                       ;
+; EQ_Engine:iEQ|prod_flopped2[18]                                ; Merged with EQ_Engine:iEQ|prod_flopped1[18]                       ;
+; EQ_Engine:iEQ|prod_flopped2[17]                                ; Merged with EQ_Engine:iEQ|prod_flopped1[17]                       ;
+; EQ_Engine:iEQ|prod_flopped2[16]                                ; Merged with EQ_Engine:iEQ|prod_flopped1[16]                       ;
+; EQ_Engine:iEQ|prod_flopped2[15]                                ; Merged with EQ_Engine:iEQ|prod_flopped1[15]                       ;
+; EQ_Engine:iEQ|prod_flopped2[14]                                ; Merged with EQ_Engine:iEQ|prod_flopped1[14]                       ;
+; EQ_Engine:iEQ|prod_flopped2[13]                                ; Merged with EQ_Engine:iEQ|prod_flopped1[13]                       ;
+; EQ_Engine:iEQ|prod_flopped2[12]                                ; Merged with EQ_Engine:iEQ|prod_flopped1[12]                       ;
+; EQ_Engine:iEQ|sum_flopped2[15]                                 ; Merged with EQ_Engine:iEQ|sum_flopped1[15]                        ;
+; EQ_Engine:iEQ|sum_flopped2[14]                                 ; Merged with EQ_Engine:iEQ|sum_flopped1[14]                        ;
+; EQ_Engine:iEQ|sum_flopped2[13]                                 ; Merged with EQ_Engine:iEQ|sum_flopped1[13]                        ;
+; EQ_Engine:iEQ|sum_flopped2[12]                                 ; Merged with EQ_Engine:iEQ|sum_flopped1[12]                        ;
+; EQ_Engine:iEQ|sum_flopped2[11]                                 ; Merged with EQ_Engine:iEQ|sum_flopped1[11]                        ;
+; EQ_Engine:iEQ|sum_flopped2[10]                                 ; Merged with EQ_Engine:iEQ|sum_flopped1[10]                        ;
+; EQ_Engine:iEQ|sum_flopped2[9]                                  ; Merged with EQ_Engine:iEQ|sum_flopped1[9]                         ;
+; EQ_Engine:iEQ|sum_flopped2[8]                                  ; Merged with EQ_Engine:iEQ|sum_flopped1[8]                         ;
+; EQ_Engine:iEQ|sum_flopped2[7]                                  ; Merged with EQ_Engine:iEQ|sum_flopped1[7]                         ;
+; EQ_Engine:iEQ|sum_flopped2[6]                                  ; Merged with EQ_Engine:iEQ|sum_flopped1[6]                         ;
+; EQ_Engine:iEQ|sum_flopped2[5]                                  ; Merged with EQ_Engine:iEQ|sum_flopped1[5]                         ;
+; EQ_Engine:iEQ|sum_flopped2[4]                                  ; Merged with EQ_Engine:iEQ|sum_flopped1[4]                         ;
+; EQ_Engine:iEQ|sum_flopped2[3]                                  ; Merged with EQ_Engine:iEQ|sum_flopped1[3]                         ;
+; EQ_Engine:iEQ|sum_flopped2[2]                                  ; Merged with EQ_Engine:iEQ|sum_flopped1[2]                         ;
+; EQ_Engine:iEQ|sum_flopped2[1]                                  ; Merged with EQ_Engine:iEQ|sum_flopped1[1]                         ;
+; EQ_Engine:iEQ|sum_flopped2[0]                                  ; Merged with EQ_Engine:iEQ|sum_flopped1[0]                         ;
+; EQ_Engine:iEQ|band_flopped9[15]                                ; Merged with EQ_Engine:iEQ|band_flopped4[15]                       ;
+; EQ_Engine:iEQ|band_flopped9[14]                                ; Merged with EQ_Engine:iEQ|band_flopped4[14]                       ;
+; EQ_Engine:iEQ|band_flopped9[13]                                ; Merged with EQ_Engine:iEQ|band_flopped4[13]                       ;
+; EQ_Engine:iEQ|band_flopped9[12]                                ; Merged with EQ_Engine:iEQ|band_flopped4[12]                       ;
+; EQ_Engine:iEQ|band_flopped9[11]                                ; Merged with EQ_Engine:iEQ|band_flopped4[11]                       ;
+; EQ_Engine:iEQ|band_flopped9[10]                                ; Merged with EQ_Engine:iEQ|band_flopped4[10]                       ;
+; EQ_Engine:iEQ|band_flopped9[9]                                 ; Merged with EQ_Engine:iEQ|band_flopped4[9]                        ;
+; EQ_Engine:iEQ|band_flopped9[8]                                 ; Merged with EQ_Engine:iEQ|band_flopped4[8]                        ;
+; EQ_Engine:iEQ|band_flopped9[7]                                 ; Merged with EQ_Engine:iEQ|band_flopped4[7]                        ;
+; EQ_Engine:iEQ|band_flopped9[6]                                 ; Merged with EQ_Engine:iEQ|band_flopped4[6]                        ;
+; EQ_Engine:iEQ|band_flopped9[5]                                 ; Merged with EQ_Engine:iEQ|band_flopped4[5]                        ;
+; EQ_Engine:iEQ|band_flopped9[4]                                 ; Merged with EQ_Engine:iEQ|band_flopped4[4]                        ;
+; EQ_Engine:iEQ|band_flopped9[3]                                 ; Merged with EQ_Engine:iEQ|band_flopped4[3]                        ;
+; EQ_Engine:iEQ|band_flopped9[2]                                 ; Merged with EQ_Engine:iEQ|band_flopped4[2]                        ;
+; EQ_Engine:iEQ|band_flopped9[1]                                 ; Merged with EQ_Engine:iEQ|band_flopped4[1]                        ;
+; EQ_Engine:iEQ|band_flopped9[0]                                 ; Merged with EQ_Engine:iEQ|band_flopped4[0]                        ;
+; EQ_Engine:iEQ|band_flopped8[15]                                ; Merged with EQ_Engine:iEQ|band_flopped3[15]                       ;
+; EQ_Engine:iEQ|band_flopped8[14]                                ; Merged with EQ_Engine:iEQ|band_flopped3[14]                       ;
+; EQ_Engine:iEQ|band_flopped8[13]                                ; Merged with EQ_Engine:iEQ|band_flopped3[13]                       ;
+; EQ_Engine:iEQ|band_flopped8[12]                                ; Merged with EQ_Engine:iEQ|band_flopped3[12]                       ;
+; EQ_Engine:iEQ|band_flopped8[11]                                ; Merged with EQ_Engine:iEQ|band_flopped3[11]                       ;
+; EQ_Engine:iEQ|band_flopped8[10]                                ; Merged with EQ_Engine:iEQ|band_flopped3[10]                       ;
+; EQ_Engine:iEQ|band_flopped8[9]                                 ; Merged with EQ_Engine:iEQ|band_flopped3[9]                        ;
+; EQ_Engine:iEQ|band_flopped8[8]                                 ; Merged with EQ_Engine:iEQ|band_flopped3[8]                        ;
+; EQ_Engine:iEQ|band_flopped8[7]                                 ; Merged with EQ_Engine:iEQ|band_flopped3[7]                        ;
+; EQ_Engine:iEQ|band_flopped8[6]                                 ; Merged with EQ_Engine:iEQ|band_flopped3[6]                        ;
+; EQ_Engine:iEQ|band_flopped8[5]                                 ; Merged with EQ_Engine:iEQ|band_flopped3[5]                        ;
+; EQ_Engine:iEQ|band_flopped8[4]                                 ; Merged with EQ_Engine:iEQ|band_flopped3[4]                        ;
+; EQ_Engine:iEQ|band_flopped8[3]                                 ; Merged with EQ_Engine:iEQ|band_flopped3[3]                        ;
+; EQ_Engine:iEQ|band_flopped8[2]                                 ; Merged with EQ_Engine:iEQ|band_flopped3[2]                        ;
+; EQ_Engine:iEQ|band_flopped8[1]                                 ; Merged with EQ_Engine:iEQ|band_flopped3[1]                        ;
+; EQ_Engine:iEQ|band_flopped8[0]                                 ; Merged with EQ_Engine:iEQ|band_flopped3[0]                        ;
+; EQ_Engine:iEQ|band_flopped7[15]                                ; Merged with EQ_Engine:iEQ|band_flopped2[15]                       ;
+; EQ_Engine:iEQ|band_flopped7[14]                                ; Merged with EQ_Engine:iEQ|band_flopped2[14]                       ;
+; EQ_Engine:iEQ|band_flopped7[13]                                ; Merged with EQ_Engine:iEQ|band_flopped2[13]                       ;
+; EQ_Engine:iEQ|band_flopped7[12]                                ; Merged with EQ_Engine:iEQ|band_flopped2[12]                       ;
+; EQ_Engine:iEQ|band_flopped7[11]                                ; Merged with EQ_Engine:iEQ|band_flopped2[11]                       ;
+; EQ_Engine:iEQ|band_flopped7[10]                                ; Merged with EQ_Engine:iEQ|band_flopped2[10]                       ;
+; EQ_Engine:iEQ|band_flopped7[9]                                 ; Merged with EQ_Engine:iEQ|band_flopped2[9]                        ;
+; EQ_Engine:iEQ|band_flopped7[8]                                 ; Merged with EQ_Engine:iEQ|band_flopped2[8]                        ;
+; EQ_Engine:iEQ|band_flopped7[7]                                 ; Merged with EQ_Engine:iEQ|band_flopped2[7]                        ;
+; EQ_Engine:iEQ|band_flopped7[6]                                 ; Merged with EQ_Engine:iEQ|band_flopped2[6]                        ;
+; EQ_Engine:iEQ|band_flopped7[5]                                 ; Merged with EQ_Engine:iEQ|band_flopped2[5]                        ;
+; EQ_Engine:iEQ|band_flopped7[4]                                 ; Merged with EQ_Engine:iEQ|band_flopped2[4]                        ;
+; EQ_Engine:iEQ|band_flopped7[3]                                 ; Merged with EQ_Engine:iEQ|band_flopped2[3]                        ;
+; EQ_Engine:iEQ|band_flopped7[2]                                 ; Merged with EQ_Engine:iEQ|band_flopped2[2]                        ;
+; EQ_Engine:iEQ|band_flopped7[1]                                 ; Merged with EQ_Engine:iEQ|band_flopped2[1]                        ;
+; EQ_Engine:iEQ|band_flopped7[0]                                 ; Merged with EQ_Engine:iEQ|band_flopped2[0]                        ;
+; EQ_Engine:iEQ|band_flopped6[15]                                ; Merged with EQ_Engine:iEQ|band_flopped1[15]                       ;
+; EQ_Engine:iEQ|band_flopped6[14]                                ; Merged with EQ_Engine:iEQ|band_flopped1[14]                       ;
+; EQ_Engine:iEQ|band_flopped6[13]                                ; Merged with EQ_Engine:iEQ|band_flopped1[13]                       ;
+; EQ_Engine:iEQ|band_flopped6[12]                                ; Merged with EQ_Engine:iEQ|band_flopped1[12]                       ;
+; EQ_Engine:iEQ|band_flopped6[11]                                ; Merged with EQ_Engine:iEQ|band_flopped1[11]                       ;
+; EQ_Engine:iEQ|band_flopped6[10]                                ; Merged with EQ_Engine:iEQ|band_flopped1[10]                       ;
+; EQ_Engine:iEQ|band_flopped6[9]                                 ; Merged with EQ_Engine:iEQ|band_flopped1[9]                        ;
+; EQ_Engine:iEQ|band_flopped6[8]                                 ; Merged with EQ_Engine:iEQ|band_flopped1[8]                        ;
+; EQ_Engine:iEQ|band_flopped6[7]                                 ; Merged with EQ_Engine:iEQ|band_flopped1[7]                        ;
+; EQ_Engine:iEQ|band_flopped6[6]                                 ; Merged with EQ_Engine:iEQ|band_flopped1[6]                        ;
+; EQ_Engine:iEQ|band_flopped6[5]                                 ; Merged with EQ_Engine:iEQ|band_flopped1[5]                        ;
+; EQ_Engine:iEQ|band_flopped6[4]                                 ; Merged with EQ_Engine:iEQ|band_flopped1[4]                        ;
+; EQ_Engine:iEQ|band_flopped6[3]                                 ; Merged with EQ_Engine:iEQ|band_flopped1[3]                        ;
+; EQ_Engine:iEQ|band_flopped6[2]                                 ; Merged with EQ_Engine:iEQ|band_flopped1[2]                        ;
+; EQ_Engine:iEQ|band_flopped6[1]                                 ; Merged with EQ_Engine:iEQ|band_flopped1[1]                        ;
+; EQ_Engine:iEQ|band_flopped6[0]                                 ; Merged with EQ_Engine:iEQ|band_flopped1[0]                        ;
+; EQ_Engine:iEQ|band_flopped5[15]                                ; Merged with EQ_Engine:iEQ|band_flopped10[15]                      ;
+; EQ_Engine:iEQ|band_flopped5[14]                                ; Merged with EQ_Engine:iEQ|band_flopped10[14]                      ;
+; EQ_Engine:iEQ|band_flopped5[13]                                ; Merged with EQ_Engine:iEQ|band_flopped10[13]                      ;
+; EQ_Engine:iEQ|band_flopped5[12]                                ; Merged with EQ_Engine:iEQ|band_flopped10[12]                      ;
+; EQ_Engine:iEQ|band_flopped5[11]                                ; Merged with EQ_Engine:iEQ|band_flopped10[11]                      ;
+; EQ_Engine:iEQ|band_flopped5[10]                                ; Merged with EQ_Engine:iEQ|band_flopped10[10]                      ;
+; EQ_Engine:iEQ|band_flopped5[9]                                 ; Merged with EQ_Engine:iEQ|band_flopped10[9]                       ;
+; EQ_Engine:iEQ|band_flopped5[8]                                 ; Merged with EQ_Engine:iEQ|band_flopped10[8]                       ;
+; EQ_Engine:iEQ|band_flopped5[7]                                 ; Merged with EQ_Engine:iEQ|band_flopped10[7]                       ;
+; EQ_Engine:iEQ|band_flopped5[6]                                 ; Merged with EQ_Engine:iEQ|band_flopped10[6]                       ;
+; EQ_Engine:iEQ|band_flopped5[5]                                 ; Merged with EQ_Engine:iEQ|band_flopped10[5]                       ;
+; EQ_Engine:iEQ|band_flopped5[4]                                 ; Merged with EQ_Engine:iEQ|band_flopped10[4]                       ;
+; EQ_Engine:iEQ|band_flopped5[3]                                 ; Merged with EQ_Engine:iEQ|band_flopped10[3]                       ;
+; EQ_Engine:iEQ|band_flopped5[2]                                 ; Merged with EQ_Engine:iEQ|band_flopped10[2]                       ;
+; EQ_Engine:iEQ|band_flopped5[1]                                 ; Merged with EQ_Engine:iEQ|band_flopped10[1]                       ;
+; EQ_Engine:iEQ|band_flopped5[0]                                 ; Merged with EQ_Engine:iEQ|band_flopped10[0]                       ;
+; EQ_Engine:iEQ|FIR_B2:iFIR_B2|rght_full_out[30]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[30]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|lft_full_out[30]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[30]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|rght_full_out[30]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[30]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|lft_full_out[30]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[30]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|rght_full_out[30]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[30]         ;
+; EQ_Engine:iEQ|FIR_B2:iFIR_B2|rght_full_out[29]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[29]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|lft_full_out[29]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[29]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|rght_full_out[29]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[29]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|lft_full_out[29]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[29]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|rght_full_out[29]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[29]         ;
+; EQ_Engine:iEQ|FIR_B2:iFIR_B2|rght_full_out[28]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[28]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|lft_full_out[28]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[28]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|rght_full_out[28]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[28]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|lft_full_out[28]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[28]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|rght_full_out[28]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[28]         ;
+; EQ_Engine:iEQ|FIR_B2:iFIR_B2|rght_full_out[27]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[27]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|lft_full_out[27]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[27]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|rght_full_out[27]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[27]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|lft_full_out[27]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[27]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|rght_full_out[27]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[27]         ;
+; EQ_Engine:iEQ|FIR_B2:iFIR_B2|rght_full_out[26]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[26]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|lft_full_out[26]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[26]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|rght_full_out[26]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[26]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|lft_full_out[26]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[26]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|rght_full_out[26]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[26]         ;
+; EQ_Engine:iEQ|FIR_B2:iFIR_B2|rght_full_out[25]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[25]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|lft_full_out[25]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[25]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|rght_full_out[25]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[25]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|lft_full_out[25]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[25]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|rght_full_out[25]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[25]         ;
+; EQ_Engine:iEQ|FIR_B2:iFIR_B2|rght_full_out[24]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[24]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|lft_full_out[24]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[24]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|rght_full_out[24]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[24]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|lft_full_out[24]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[24]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|rght_full_out[24]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[24]         ;
+; EQ_Engine:iEQ|FIR_B2:iFIR_B2|rght_full_out[23]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[23]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|lft_full_out[23]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[23]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|rght_full_out[23]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[23]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|lft_full_out[23]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[23]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|rght_full_out[23]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[23]         ;
+; EQ_Engine:iEQ|FIR_B2:iFIR_B2|rght_full_out[22]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[22]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|lft_full_out[22]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[22]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|rght_full_out[22]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[22]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|lft_full_out[22]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[22]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|rght_full_out[22]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[22]         ;
+; EQ_Engine:iEQ|FIR_B2:iFIR_B2|rght_full_out[21]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[21]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|lft_full_out[21]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[21]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|rght_full_out[21]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[21]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|lft_full_out[21]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[21]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|rght_full_out[21]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[21]         ;
+; EQ_Engine:iEQ|FIR_B2:iFIR_B2|rght_full_out[20]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[20]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|lft_full_out[20]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[20]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|rght_full_out[20]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[20]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|lft_full_out[20]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[20]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|rght_full_out[20]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[20]         ;
+; EQ_Engine:iEQ|FIR_B2:iFIR_B2|rght_full_out[19]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[19]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|lft_full_out[19]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[19]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|rght_full_out[19]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[19]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|lft_full_out[19]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[19]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|rght_full_out[19]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[19]         ;
+; EQ_Engine:iEQ|FIR_B2:iFIR_B2|rght_full_out[18]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[18]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|lft_full_out[18]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[18]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|rght_full_out[18]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[18]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|lft_full_out[18]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[18]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|rght_full_out[18]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[18]         ;
+; EQ_Engine:iEQ|FIR_B2:iFIR_B2|rght_full_out[17]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[17]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|lft_full_out[17]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[17]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|rght_full_out[17]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[17]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|lft_full_out[17]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[17]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|rght_full_out[17]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[17]         ;
+; EQ_Engine:iEQ|FIR_B2:iFIR_B2|rght_full_out[16]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[16]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|lft_full_out[16]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[16]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|rght_full_out[16]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[16]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|lft_full_out[16]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[16]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|rght_full_out[16]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[16]         ;
+; EQ_Engine:iEQ|FIR_B2:iFIR_B2|rght_full_out[15]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[15]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|lft_full_out[15]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[15]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|rght_full_out[15]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[15]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|lft_full_out[15]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[15]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|rght_full_out[15]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[15]         ;
+; EQ_Engine:iEQ|band_scale:iB9|POT_squared_flopped[23]           ; Merged with EQ_Engine:iEQ|band_scale:iB4|POT_squared_flopped[23]  ;
+; EQ_Engine:iEQ|band_scale:iB9|POT_squared_flopped[22]           ; Merged with EQ_Engine:iEQ|band_scale:iB4|POT_squared_flopped[22]  ;
+; EQ_Engine:iEQ|band_scale:iB9|POT_squared_flopped[21]           ; Merged with EQ_Engine:iEQ|band_scale:iB4|POT_squared_flopped[21]  ;
+; EQ_Engine:iEQ|band_scale:iB9|POT_squared_flopped[20]           ; Merged with EQ_Engine:iEQ|band_scale:iB4|POT_squared_flopped[20]  ;
+; EQ_Engine:iEQ|band_scale:iB9|POT_squared_flopped[19]           ; Merged with EQ_Engine:iEQ|band_scale:iB4|POT_squared_flopped[19]  ;
+; EQ_Engine:iEQ|band_scale:iB9|POT_squared_flopped[18]           ; Merged with EQ_Engine:iEQ|band_scale:iB4|POT_squared_flopped[18]  ;
+; EQ_Engine:iEQ|band_scale:iB9|POT_squared_flopped[17]           ; Merged with EQ_Engine:iEQ|band_scale:iB4|POT_squared_flopped[17]  ;
+; EQ_Engine:iEQ|band_scale:iB9|POT_squared_flopped[16]           ; Merged with EQ_Engine:iEQ|band_scale:iB4|POT_squared_flopped[16]  ;
+; EQ_Engine:iEQ|band_scale:iB9|POT_squared_flopped[15]           ; Merged with EQ_Engine:iEQ|band_scale:iB4|POT_squared_flopped[15]  ;
+; EQ_Engine:iEQ|band_scale:iB9|POT_squared_flopped[14]           ; Merged with EQ_Engine:iEQ|band_scale:iB4|POT_squared_flopped[14]  ;
+; EQ_Engine:iEQ|band_scale:iB9|POT_squared_flopped[13]           ; Merged with EQ_Engine:iEQ|band_scale:iB4|POT_squared_flopped[13]  ;
+; EQ_Engine:iEQ|band_scale:iB9|POT_squared_flopped[12]           ; Merged with EQ_Engine:iEQ|band_scale:iB4|POT_squared_flopped[12]  ;
+; EQ_Engine:iEQ|band_scale:iB8|POT_squared_flopped[23]           ; Merged with EQ_Engine:iEQ|band_scale:iB3|POT_squared_flopped[23]  ;
+; EQ_Engine:iEQ|band_scale:iB8|POT_squared_flopped[22]           ; Merged with EQ_Engine:iEQ|band_scale:iB3|POT_squared_flopped[22]  ;
+; EQ_Engine:iEQ|band_scale:iB8|POT_squared_flopped[21]           ; Merged with EQ_Engine:iEQ|band_scale:iB3|POT_squared_flopped[21]  ;
+; EQ_Engine:iEQ|band_scale:iB8|POT_squared_flopped[20]           ; Merged with EQ_Engine:iEQ|band_scale:iB3|POT_squared_flopped[20]  ;
+; EQ_Engine:iEQ|band_scale:iB8|POT_squared_flopped[19]           ; Merged with EQ_Engine:iEQ|band_scale:iB3|POT_squared_flopped[19]  ;
+; EQ_Engine:iEQ|band_scale:iB8|POT_squared_flopped[18]           ; Merged with EQ_Engine:iEQ|band_scale:iB3|POT_squared_flopped[18]  ;
+; EQ_Engine:iEQ|band_scale:iB8|POT_squared_flopped[17]           ; Merged with EQ_Engine:iEQ|band_scale:iB3|POT_squared_flopped[17]  ;
+; EQ_Engine:iEQ|band_scale:iB8|POT_squared_flopped[16]           ; Merged with EQ_Engine:iEQ|band_scale:iB3|POT_squared_flopped[16]  ;
+; EQ_Engine:iEQ|band_scale:iB8|POT_squared_flopped[15]           ; Merged with EQ_Engine:iEQ|band_scale:iB3|POT_squared_flopped[15]  ;
+; EQ_Engine:iEQ|band_scale:iB8|POT_squared_flopped[14]           ; Merged with EQ_Engine:iEQ|band_scale:iB3|POT_squared_flopped[14]  ;
+; EQ_Engine:iEQ|band_scale:iB8|POT_squared_flopped[13]           ; Merged with EQ_Engine:iEQ|band_scale:iB3|POT_squared_flopped[13]  ;
+; EQ_Engine:iEQ|band_scale:iB8|POT_squared_flopped[12]           ; Merged with EQ_Engine:iEQ|band_scale:iB3|POT_squared_flopped[12]  ;
+; EQ_Engine:iEQ|FIR_B1:iFIR_B1|rght_full_out[30]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[30]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|lft_full_out[30]                  ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[30]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|rght_full_out[30]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[30]         ;
+; EQ_Engine:iEQ|FIR_B1:iFIR_B1|rght_full_out[29]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[29]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|lft_full_out[29]                  ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[29]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|rght_full_out[29]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[29]         ;
+; EQ_Engine:iEQ|FIR_B1:iFIR_B1|rght_full_out[28]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[28]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|lft_full_out[28]                  ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[28]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|rght_full_out[28]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[28]         ;
+; EQ_Engine:iEQ|FIR_B1:iFIR_B1|rght_full_out[27]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[27]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|lft_full_out[27]                  ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[27]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|rght_full_out[27]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[27]         ;
+; EQ_Engine:iEQ|FIR_B1:iFIR_B1|rght_full_out[26]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[26]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|lft_full_out[26]                  ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[26]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|rght_full_out[26]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[26]         ;
+; EQ_Engine:iEQ|FIR_B1:iFIR_B1|rght_full_out[25]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[25]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|lft_full_out[25]                  ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[25]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|rght_full_out[25]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[25]         ;
+; EQ_Engine:iEQ|FIR_B1:iFIR_B1|rght_full_out[24]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[24]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|lft_full_out[24]                  ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[24]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|rght_full_out[24]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[24]         ;
+; EQ_Engine:iEQ|FIR_B1:iFIR_B1|rght_full_out[23]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[23]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|lft_full_out[23]                  ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[23]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|rght_full_out[23]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[23]         ;
+; EQ_Engine:iEQ|FIR_B1:iFIR_B1|rght_full_out[22]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[22]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|lft_full_out[22]                  ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[22]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|rght_full_out[22]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[22]         ;
+; EQ_Engine:iEQ|FIR_B1:iFIR_B1|rght_full_out[21]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[21]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|lft_full_out[21]                  ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[21]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|rght_full_out[21]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[21]         ;
+; EQ_Engine:iEQ|FIR_B1:iFIR_B1|rght_full_out[20]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[20]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|lft_full_out[20]                  ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[20]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|rght_full_out[20]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[20]         ;
+; EQ_Engine:iEQ|FIR_B1:iFIR_B1|rght_full_out[19]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[19]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|lft_full_out[19]                  ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[19]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|rght_full_out[19]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[19]         ;
+; EQ_Engine:iEQ|FIR_B1:iFIR_B1|rght_full_out[18]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[18]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|lft_full_out[18]                  ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[18]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|rght_full_out[18]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[18]         ;
+; EQ_Engine:iEQ|FIR_B1:iFIR_B1|rght_full_out[17]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[17]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|lft_full_out[17]                  ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[17]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|rght_full_out[17]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[17]         ;
+; EQ_Engine:iEQ|FIR_B1:iFIR_B1|rght_full_out[16]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[16]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|lft_full_out[16]                  ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[16]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|rght_full_out[16]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[16]         ;
+; EQ_Engine:iEQ|FIR_B1:iFIR_B1|rght_full_out[15]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[15]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|lft_full_out[15]                  ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[15]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|rght_full_out[15]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[15]         ;
+; EQ_Engine:iEQ|band_scale:iB7|POT_squared_flopped[23]           ; Merged with EQ_Engine:iEQ|band_scale:iB2|POT_squared_flopped[23]  ;
+; EQ_Engine:iEQ|band_scale:iB7|POT_squared_flopped[22]           ; Merged with EQ_Engine:iEQ|band_scale:iB2|POT_squared_flopped[22]  ;
+; EQ_Engine:iEQ|band_scale:iB7|POT_squared_flopped[21]           ; Merged with EQ_Engine:iEQ|band_scale:iB2|POT_squared_flopped[21]  ;
+; EQ_Engine:iEQ|band_scale:iB7|POT_squared_flopped[20]           ; Merged with EQ_Engine:iEQ|band_scale:iB2|POT_squared_flopped[20]  ;
+; EQ_Engine:iEQ|band_scale:iB7|POT_squared_flopped[19]           ; Merged with EQ_Engine:iEQ|band_scale:iB2|POT_squared_flopped[19]  ;
+; EQ_Engine:iEQ|band_scale:iB7|POT_squared_flopped[18]           ; Merged with EQ_Engine:iEQ|band_scale:iB2|POT_squared_flopped[18]  ;
+; EQ_Engine:iEQ|band_scale:iB7|POT_squared_flopped[17]           ; Merged with EQ_Engine:iEQ|band_scale:iB2|POT_squared_flopped[17]  ;
+; EQ_Engine:iEQ|band_scale:iB7|POT_squared_flopped[16]           ; Merged with EQ_Engine:iEQ|band_scale:iB2|POT_squared_flopped[16]  ;
+; EQ_Engine:iEQ|band_scale:iB7|POT_squared_flopped[15]           ; Merged with EQ_Engine:iEQ|band_scale:iB2|POT_squared_flopped[15]  ;
+; EQ_Engine:iEQ|band_scale:iB7|POT_squared_flopped[14]           ; Merged with EQ_Engine:iEQ|band_scale:iB2|POT_squared_flopped[14]  ;
+; EQ_Engine:iEQ|band_scale:iB7|POT_squared_flopped[13]           ; Merged with EQ_Engine:iEQ|band_scale:iB2|POT_squared_flopped[13]  ;
+; EQ_Engine:iEQ|band_scale:iB7|POT_squared_flopped[12]           ; Merged with EQ_Engine:iEQ|band_scale:iB2|POT_squared_flopped[12]  ;
+; EQ_Engine:iEQ|band_scale:iB6|POT_squared_flopped[23]           ; Merged with EQ_Engine:iEQ|band_scale:iB1|POT_squared_flopped[23]  ;
+; EQ_Engine:iEQ|band_scale:iB6|POT_squared_flopped[22]           ; Merged with EQ_Engine:iEQ|band_scale:iB1|POT_squared_flopped[22]  ;
+; EQ_Engine:iEQ|band_scale:iB6|POT_squared_flopped[21]           ; Merged with EQ_Engine:iEQ|band_scale:iB1|POT_squared_flopped[21]  ;
+; EQ_Engine:iEQ|band_scale:iB6|POT_squared_flopped[20]           ; Merged with EQ_Engine:iEQ|band_scale:iB1|POT_squared_flopped[20]  ;
+; EQ_Engine:iEQ|band_scale:iB6|POT_squared_flopped[19]           ; Merged with EQ_Engine:iEQ|band_scale:iB1|POT_squared_flopped[19]  ;
+; EQ_Engine:iEQ|band_scale:iB6|POT_squared_flopped[18]           ; Merged with EQ_Engine:iEQ|band_scale:iB1|POT_squared_flopped[18]  ;
+; EQ_Engine:iEQ|band_scale:iB6|POT_squared_flopped[17]           ; Merged with EQ_Engine:iEQ|band_scale:iB1|POT_squared_flopped[17]  ;
+; EQ_Engine:iEQ|band_scale:iB6|POT_squared_flopped[16]           ; Merged with EQ_Engine:iEQ|band_scale:iB1|POT_squared_flopped[16]  ;
+; EQ_Engine:iEQ|band_scale:iB6|POT_squared_flopped[15]           ; Merged with EQ_Engine:iEQ|band_scale:iB1|POT_squared_flopped[15]  ;
+; EQ_Engine:iEQ|band_scale:iB6|POT_squared_flopped[14]           ; Merged with EQ_Engine:iEQ|band_scale:iB1|POT_squared_flopped[14]  ;
+; EQ_Engine:iEQ|band_scale:iB6|POT_squared_flopped[13]           ; Merged with EQ_Engine:iEQ|band_scale:iB1|POT_squared_flopped[13]  ;
+; EQ_Engine:iEQ|band_scale:iB6|POT_squared_flopped[12]           ; Merged with EQ_Engine:iEQ|band_scale:iB1|POT_squared_flopped[12]  ;
+; EQ_Engine:iEQ|band_scale:iB5|POT_squared_flopped[23]           ; Merged with EQ_Engine:iEQ|band_scale:iB10|POT_squared_flopped[23] ;
+; EQ_Engine:iEQ|band_scale:iB5|POT_squared_flopped[22]           ; Merged with EQ_Engine:iEQ|band_scale:iB10|POT_squared_flopped[22] ;
+; EQ_Engine:iEQ|band_scale:iB5|POT_squared_flopped[21]           ; Merged with EQ_Engine:iEQ|band_scale:iB10|POT_squared_flopped[21] ;
+; EQ_Engine:iEQ|band_scale:iB5|POT_squared_flopped[20]           ; Merged with EQ_Engine:iEQ|band_scale:iB10|POT_squared_flopped[20] ;
+; EQ_Engine:iEQ|band_scale:iB5|POT_squared_flopped[19]           ; Merged with EQ_Engine:iEQ|band_scale:iB10|POT_squared_flopped[19] ;
+; EQ_Engine:iEQ|band_scale:iB5|POT_squared_flopped[18]           ; Merged with EQ_Engine:iEQ|band_scale:iB10|POT_squared_flopped[18] ;
+; EQ_Engine:iEQ|band_scale:iB5|POT_squared_flopped[17]           ; Merged with EQ_Engine:iEQ|band_scale:iB10|POT_squared_flopped[17] ;
+; EQ_Engine:iEQ|band_scale:iB5|POT_squared_flopped[16]           ; Merged with EQ_Engine:iEQ|band_scale:iB10|POT_squared_flopped[16] ;
+; EQ_Engine:iEQ|band_scale:iB5|POT_squared_flopped[15]           ; Merged with EQ_Engine:iEQ|band_scale:iB10|POT_squared_flopped[15] ;
+; EQ_Engine:iEQ|band_scale:iB5|POT_squared_flopped[14]           ; Merged with EQ_Engine:iEQ|band_scale:iB10|POT_squared_flopped[14] ;
+; EQ_Engine:iEQ|band_scale:iB5|POT_squared_flopped[13]           ; Merged with EQ_Engine:iEQ|band_scale:iB10|POT_squared_flopped[13] ;
+; EQ_Engine:iEQ|band_scale:iB5|POT_squared_flopped[12]           ; Merged with EQ_Engine:iEQ|band_scale:iB10|POT_squared_flopped[12] ;
+; EQ_Engine:iEQ|FIR_B2:iFIR_B2|rght_full_out[31]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[31]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|lft_full_out[31]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[31]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|rght_full_out[31]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[31]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|lft_full_out[31]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[31]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|rght_full_out[31]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[31]         ;
+; EQ_Engine:iEQ|FIR_B2:iFIR_B2|rght_full_out[14]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[14]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|lft_full_out[14]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[14]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|rght_full_out[14]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[14]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|lft_full_out[14]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[14]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|rght_full_out[14]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[14]         ;
+; EQ_Engine:iEQ|FIR_B2:iFIR_B2|rght_full_out[13]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[13]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|lft_full_out[13]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[13]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|rght_full_out[13]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[13]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|lft_full_out[13]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[13]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|rght_full_out[13]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[13]         ;
+; EQ_Engine:iEQ|FIR_B2:iFIR_B2|rght_full_out[12]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[12]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|lft_full_out[12]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[12]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|rght_full_out[12]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[12]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|lft_full_out[12]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[12]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|rght_full_out[12]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[12]         ;
+; EQ_Engine:iEQ|FIR_B2:iFIR_B2|rght_full_out[11]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[11]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|lft_full_out[11]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[11]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|rght_full_out[11]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[11]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|lft_full_out[11]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[11]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|rght_full_out[11]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[11]         ;
+; EQ_Engine:iEQ|FIR_B2:iFIR_B2|rght_full_out[10]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[10]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|lft_full_out[10]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[10]         ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|rght_full_out[10]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[10]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|lft_full_out[10]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[10]         ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|rght_full_out[10]                 ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[10]         ;
+; EQ_Engine:iEQ|FIR_B2:iFIR_B2|rght_full_out[9]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[9]          ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|lft_full_out[9]                   ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[9]          ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|rght_full_out[9]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[9]          ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|lft_full_out[9]                   ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[9]          ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|rght_full_out[9]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[9]          ;
+; EQ_Engine:iEQ|FIR_B2:iFIR_B2|rght_full_out[8]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[8]          ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|lft_full_out[8]                   ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[8]          ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|rght_full_out[8]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[8]          ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|lft_full_out[8]                   ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[8]          ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|rght_full_out[8]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[8]          ;
+; EQ_Engine:iEQ|FIR_B2:iFIR_B2|rght_full_out[7]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[7]          ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|lft_full_out[7]                   ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[7]          ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|rght_full_out[7]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[7]          ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|lft_full_out[7]                   ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[7]          ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|rght_full_out[7]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[7]          ;
+; EQ_Engine:iEQ|FIR_B2:iFIR_B2|rght_full_out[6]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[6]          ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|lft_full_out[6]                   ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[6]          ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|rght_full_out[6]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[6]          ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|lft_full_out[6]                   ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[6]          ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|rght_full_out[6]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[6]          ;
+; EQ_Engine:iEQ|FIR_B2:iFIR_B2|rght_full_out[5]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[5]          ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|lft_full_out[5]                   ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[5]          ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|rght_full_out[5]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[5]          ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|lft_full_out[5]                   ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[5]          ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|rght_full_out[5]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[5]          ;
+; EQ_Engine:iEQ|FIR_B2:iFIR_B2|rght_full_out[4]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[4]          ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|lft_full_out[4]                   ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[4]          ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|rght_full_out[4]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[4]          ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|lft_full_out[4]                   ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[4]          ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|rght_full_out[4]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[4]          ;
+; EQ_Engine:iEQ|FIR_B2:iFIR_B2|rght_full_out[3]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[3]          ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|lft_full_out[3]                   ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[3]          ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|rght_full_out[3]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[3]          ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|lft_full_out[3]                   ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[3]          ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|rght_full_out[3]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[3]          ;
+; EQ_Engine:iEQ|FIR_B2:iFIR_B2|rght_full_out[2]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[2]          ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|lft_full_out[2]                   ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[2]          ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|rght_full_out[2]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[2]          ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|lft_full_out[2]                   ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[2]          ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|rght_full_out[2]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[2]          ;
+; EQ_Engine:iEQ|FIR_B2:iFIR_B2|rght_full_out[1]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[1]          ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|lft_full_out[1]                   ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[1]          ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|rght_full_out[1]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[1]          ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|lft_full_out[1]                   ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[1]          ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|rght_full_out[1]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[1]          ;
+; EQ_Engine:iEQ|FIR_B2:iFIR_B2|rght_full_out[0]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[0]          ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|lft_full_out[0]                   ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[0]          ;
+; EQ_Engine:iEQ|FIR_B3:iFIR_B3|rght_full_out[0]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[0]          ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|lft_full_out[0]                   ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[0]          ;
+; EQ_Engine:iEQ|FIR_HP:iFIR_HP|rght_full_out[0]                  ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[0]          ;
+; EQ_Engine:iEQ|FIR_B1:iFIR_B1|rght_full_out[31]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[31]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|lft_full_out[31]                  ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[31]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|rght_full_out[31]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[31]         ;
+; EQ_Engine:iEQ|FIR_B1:iFIR_B1|rght_full_out[14]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[14]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|lft_full_out[14]                  ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[14]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|rght_full_out[14]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[14]         ;
+; EQ_Engine:iEQ|FIR_B1:iFIR_B1|rght_full_out[13]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[13]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|lft_full_out[13]                  ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[13]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|rght_full_out[13]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[13]         ;
+; EQ_Engine:iEQ|FIR_B1:iFIR_B1|rght_full_out[12]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[12]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|lft_full_out[12]                  ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[12]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|rght_full_out[12]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[12]         ;
+; EQ_Engine:iEQ|FIR_B1:iFIR_B1|rght_full_out[11]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[11]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|lft_full_out[11]                  ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[11]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|rght_full_out[11]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[11]         ;
+; EQ_Engine:iEQ|FIR_B1:iFIR_B1|rght_full_out[10]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[10]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|lft_full_out[10]                  ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[10]         ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|rght_full_out[10]                 ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[10]         ;
+; EQ_Engine:iEQ|FIR_B1:iFIR_B1|rght_full_out[9]                  ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[9]          ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|lft_full_out[9]                   ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[9]          ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|rght_full_out[9]                  ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[9]          ;
+; EQ_Engine:iEQ|FIR_B1:iFIR_B1|rght_full_out[8]                  ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[8]          ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|lft_full_out[8]                   ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[8]          ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|rght_full_out[8]                  ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[8]          ;
+; EQ_Engine:iEQ|FIR_B1:iFIR_B1|rght_full_out[7]                  ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[7]          ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|lft_full_out[7]                   ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[7]          ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|rght_full_out[7]                  ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[7]          ;
+; EQ_Engine:iEQ|FIR_B1:iFIR_B1|rght_full_out[6]                  ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[6]          ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|lft_full_out[6]                   ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[6]          ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|rght_full_out[6]                  ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[6]          ;
+; EQ_Engine:iEQ|FIR_B1:iFIR_B1|rght_full_out[5]                  ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[5]          ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|lft_full_out[5]                   ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[5]          ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|rght_full_out[5]                  ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[5]          ;
+; EQ_Engine:iEQ|FIR_B1:iFIR_B1|rght_full_out[4]                  ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[4]          ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|lft_full_out[4]                   ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[4]          ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|rght_full_out[4]                  ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[4]          ;
+; EQ_Engine:iEQ|FIR_B1:iFIR_B1|rght_full_out[3]                  ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[3]          ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|lft_full_out[3]                   ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[3]          ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|rght_full_out[3]                  ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[3]          ;
+; EQ_Engine:iEQ|FIR_B1:iFIR_B1|rght_full_out[2]                  ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[2]          ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|lft_full_out[2]                   ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[2]          ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|rght_full_out[2]                  ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[2]          ;
+; EQ_Engine:iEQ|FIR_B1:iFIR_B1|rght_full_out[1]                  ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[1]          ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|lft_full_out[1]                   ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[1]          ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|rght_full_out[1]                  ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[1]          ;
+; EQ_Engine:iEQ|FIR_B1:iFIR_B1|rght_full_out[0]                  ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[0]          ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|lft_full_out[0]                   ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[0]          ;
+; EQ_Engine:iEQ|FIR_LP:iFIR_LP|rght_full_out[0]                  ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[0]          ;
+; BT_intf:iBT|timer[0]                                           ; Merged with spkr_drv:ispkr|PDM:iPDMrght|counter                   ;
+; EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[0..30]               ; Merged with EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[31]         ;
+; EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[0..30]               ; Merged with EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[31]         ;
+; EQ_Engine:iEQ|FIR_B2:iFIR_B2|lft_full_out[31]                  ; Stuck at GND due to stuck port data_in                            ;
+; EQ_Engine:iEQ|FIR_B1:iFIR_B1|lft_full_out[31]                  ; Stuck at GND due to stuck port data_in                            ;
+; EQ_Engine:iEQ|band_flopped1[0..15]                             ; Stuck at GND due to stuck port data_in                            ;
+; EQ_Engine:iEQ|band_flopped2[0..15]                             ; Stuck at GND due to stuck port data_in                            ;
+; EQ_Engine:iEQ|band_flopped3[0..15]                             ; Stuck at GND due to stuck port data_in                            ;
+; EQ_Engine:iEQ|band_flopped4[0..15]                             ; Stuck at GND due to stuck port data_in                            ;
+; EQ_Engine:iEQ|band_flopped10[0..15]                            ; Stuck at GND due to stuck port data_in                            ;
+; EQ_Engine:iEQ|sum_flopped1[0..15]                              ; Stuck at GND due to stuck port data_in                            ;
+; EQ_Engine:iEQ|prod_flopped1[12,13]                             ; Stuck at GND due to stuck port data_in                            ;
+; spkr_drv:ispkr|lft_duty[0,1]                                   ; Stuck at GND due to stuck port data_in                            ;
+; spkr_drv:ispkr|PDM:iPDM1ft|duty_out[0,1]                       ; Stuck at GND due to stuck port data_in                            ;
+; EQ_Engine:iEQ|prod_flopped1[14]                                ; Stuck at GND due to stuck port data_in                            ;
+; spkr_drv:ispkr|lft_duty[2]                                     ; Stuck at GND due to stuck port data_in                            ;
+; spkr_drv:ispkr|PDM:iPDM1ft|duty_out[2]                         ; Stuck at GND due to stuck port data_in                            ;
+; EQ_Engine:iEQ|prod_flopped1[15..25]                            ; Stuck at GND due to stuck port data_in                            ;
+; spkr_drv:ispkr|lft_duty[3..13]                                 ; Stuck at GND due to stuck port data_in                            ;
+; spkr_drv:ispkr|PDM:iPDM1ft|duty_out[3..13]                     ; Stuck at GND due to stuck port data_in                            ;
+; EQ_Engine:iEQ|prod_flopped1[26,27]                             ; Stuck at GND due to stuck port data_in                            ;
+; spkr_drv:ispkr|lft_duty[14,15]                                 ; Stuck at GND due to stuck port data_in                            ;
+; spkr_drv:ispkr|PDM:iPDM1ft|duty_out[14]                        ; Stuck at GND due to stuck port data_in                            ;
+; I2S_Slave:iSlave|state~4                                       ; Lost fanout                                                       ;
+; I2S_Slave:iSlave|state~5                                       ; Lost fanout                                                       ;
+; BT_intf:iBT|state~4                                            ; Lost fanout                                                       ;
+; BT_intf:iBT|state~5                                            ; Lost fanout                                                       ;
+; BT_intf:iBT|state~6                                            ; Lost fanout                                                       ;
+; BT_intf:iBT|snd_cmd:SC|state~4                                 ; Lost fanout                                                       ;
+; BT_intf:iBT|snd_cmd:SC|state~5                                 ; Lost fanout                                                       ;
+; slide_intf:islide|A2D_intf:iA2D_intf|state~4                   ; Lost fanout                                                       ;
+; slide_intf:islide|A2D_intf:iA2D_intf|state~5                   ; Lost fanout                                                       ;
+; slide_intf:islide|A2D_intf:iA2D_intf|SPI_mstr:SPI_mstr|state~6 ; Lost fanout                                                       ;
+; EQ_Engine:iEQ|low_freq_queue:ilow_freq|new_ptr[0..9]           ; Lost fanout                                                       ;
+; I2S_Slave:iSlave|bit_cntr[0..4]                                ; Lost fanout                                                       ;
+; EQ_Engine:iEQ|vld_low_imm                                      ; Lost fanout                                                       ;
+; EQ_Engine:iEQ|low_freq_queue:ilow_freq|read_ptr[0..9]          ; Lost fanout                                                       ;
+; EQ_Engine:iEQ|low_freq_queue:ilow_freq|old_ptr[0..9]           ; Lost fanout                                                       ;
+; EQ_Engine:iEQ|high_freq_queue:ihigh_freq|new_ptr[0..10]        ; Lost fanout                                                       ;
+; EQ_Engine:iEQ|high_freq_queue:ihigh_freq|read_ptr[0..10]       ; Lost fanout                                                       ;
+; EQ_Engine:iEQ|high_freq_queue:ihigh_freq|old_ptr[0..10]        ; Lost fanout                                                       ;
+; I2S_Slave:iSlave|sclk_itm2                                     ; Lost fanout                                                       ;
+; I2S_Slave:iSlave|sclk_itm3                                     ; Lost fanout                                                       ;
+; I2S_Slave:iSlave|ws_itm2                                       ; Lost fanout                                                       ;
+; I2S_Slave:iSlave|ws_itm3                                       ; Lost fanout                                                       ;
+; EQ_Engine:iEQ|low_freq_queue:ilow_freq|queuefull               ; Lost fanout                                                       ;
+; EQ_Engine:iEQ|high_freq_queue:ihigh_freq|queuefull             ; Lost fanout                                                       ;
+; I2S_Slave:iSlave|sclk_itm1                                     ; Lost fanout                                                       ;
+; I2S_Slave:iSlave|ws_itm1                                       ; Lost fanout                                                       ;
+; EQ_Engine:iEQ|low_freq_queue:ilow_freq|state.FULL              ; Lost fanout                                                       ;
+; EQ_Engine:iEQ|low_freq_queue:ilow_freq|state.READ              ; Lost fanout                                                       ;
+; EQ_Engine:iEQ|low_freq_queue:ilow_freq|state.VACANCY           ; Lost fanout                                                       ;
+; EQ_Engine:iEQ|high_freq_queue:ihigh_freq|state.FULL            ; Lost fanout                                                       ;
+; EQ_Engine:iEQ|high_freq_queue:ihigh_freq|state.READ            ; Lost fanout                                                       ;
+; EQ_Engine:iEQ|high_freq_queue:ihigh_freq|state.VACANCY         ; Lost fanout                                                       ;
+; I2S_Slave:iSlave|state.SYNC                                    ; Lost fanout                                                       ;
+; I2S_Slave:iSlave|state.SKIP                                    ; Lost fanout                                                       ;
+; I2S_Slave:iSlave|state.LEFT                                    ; Lost fanout                                                       ;
+; I2S_Slave:iSlave|state.RIGHT                                   ; Lost fanout                                                       ;
+; Total Number of Removed Registers = 846                        ;                                                                   ;
++----------------------------------------------------------------+-------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                              ;
++-------------------------------------------------------+---------------------------+--------------------------------------------------------------------------------------+
+; Register name                                         ; Reason for Removal        ; Registers Removed due to This Register                                               ;
++-------------------------------------------------------+---------------------------+--------------------------------------------------------------------------------------+
+; EQ_Engine:iEQ|high_freq_queue:ihigh_freq|read_ptr[10] ; Lost Fanouts              ; EQ_Engine:iEQ|high_freq_queue:ihigh_freq|read_ptr[9],                                ;
+;                                                       ;                           ; EQ_Engine:iEQ|high_freq_queue:ihigh_freq|read_ptr[8],                                ;
+;                                                       ;                           ; EQ_Engine:iEQ|high_freq_queue:ihigh_freq|read_ptr[7],                                ;
+;                                                       ;                           ; EQ_Engine:iEQ|high_freq_queue:ihigh_freq|read_ptr[6],                                ;
+;                                                       ;                           ; EQ_Engine:iEQ|high_freq_queue:ihigh_freq|read_ptr[5],                                ;
+;                                                       ;                           ; EQ_Engine:iEQ|high_freq_queue:ihigh_freq|read_ptr[4],                                ;
+;                                                       ;                           ; EQ_Engine:iEQ|high_freq_queue:ihigh_freq|read_ptr[3],                                ;
+;                                                       ;                           ; EQ_Engine:iEQ|high_freq_queue:ihigh_freq|read_ptr[2],                                ;
+;                                                       ;                           ; EQ_Engine:iEQ|high_freq_queue:ihigh_freq|read_ptr[1],                                ;
+;                                                       ;                           ; EQ_Engine:iEQ|high_freq_queue:ihigh_freq|read_ptr[0],                                ;
+;                                                       ;                           ; EQ_Engine:iEQ|high_freq_queue:ihigh_freq|old_ptr[10],                                ;
+;                                                       ;                           ; EQ_Engine:iEQ|high_freq_queue:ihigh_freq|old_ptr[9],                                 ;
+;                                                       ;                           ; EQ_Engine:iEQ|high_freq_queue:ihigh_freq|old_ptr[8],                                 ;
+;                                                       ;                           ; EQ_Engine:iEQ|high_freq_queue:ihigh_freq|old_ptr[7],                                 ;
+;                                                       ;                           ; EQ_Engine:iEQ|high_freq_queue:ihigh_freq|old_ptr[6],                                 ;
+;                                                       ;                           ; EQ_Engine:iEQ|high_freq_queue:ihigh_freq|old_ptr[5],                                 ;
+;                                                       ;                           ; EQ_Engine:iEQ|high_freq_queue:ihigh_freq|old_ptr[4],                                 ;
+;                                                       ;                           ; EQ_Engine:iEQ|high_freq_queue:ihigh_freq|old_ptr[3],                                 ;
+;                                                       ;                           ; EQ_Engine:iEQ|high_freq_queue:ihigh_freq|old_ptr[2],                                 ;
+;                                                       ;                           ; EQ_Engine:iEQ|high_freq_queue:ihigh_freq|old_ptr[1],                                 ;
+;                                                       ;                           ; EQ_Engine:iEQ|high_freq_queue:ihigh_freq|old_ptr[0],                                 ;
+;                                                       ;                           ; EQ_Engine:iEQ|high_freq_queue:ihigh_freq|queuefull,                                  ;
+;                                                       ;                           ; EQ_Engine:iEQ|high_freq_queue:ihigh_freq|state.FULL,                                 ;
+;                                                       ;                           ; EQ_Engine:iEQ|high_freq_queue:ihigh_freq|state.READ                                  ;
+; EQ_Engine:iEQ|low_freq_queue:ilow_freq|read_ptr[9]    ; Lost Fanouts              ; EQ_Engine:iEQ|low_freq_queue:ilow_freq|read_ptr[8],                                  ;
+;                                                       ;                           ; EQ_Engine:iEQ|low_freq_queue:ilow_freq|read_ptr[7],                                  ;
+;                                                       ;                           ; EQ_Engine:iEQ|low_freq_queue:ilow_freq|read_ptr[6],                                  ;
+;                                                       ;                           ; EQ_Engine:iEQ|low_freq_queue:ilow_freq|read_ptr[5],                                  ;
+;                                                       ;                           ; EQ_Engine:iEQ|low_freq_queue:ilow_freq|read_ptr[4],                                  ;
+;                                                       ;                           ; EQ_Engine:iEQ|low_freq_queue:ilow_freq|read_ptr[3],                                  ;
+;                                                       ;                           ; EQ_Engine:iEQ|low_freq_queue:ilow_freq|read_ptr[2],                                  ;
+;                                                       ;                           ; EQ_Engine:iEQ|low_freq_queue:ilow_freq|read_ptr[1],                                  ;
+;                                                       ;                           ; EQ_Engine:iEQ|low_freq_queue:ilow_freq|read_ptr[0],                                  ;
+;                                                       ;                           ; EQ_Engine:iEQ|low_freq_queue:ilow_freq|old_ptr[9],                                   ;
+;                                                       ;                           ; EQ_Engine:iEQ|low_freq_queue:ilow_freq|old_ptr[8],                                   ;
+;                                                       ;                           ; EQ_Engine:iEQ|low_freq_queue:ilow_freq|old_ptr[7],                                   ;
+;                                                       ;                           ; EQ_Engine:iEQ|low_freq_queue:ilow_freq|old_ptr[6],                                   ;
+;                                                       ;                           ; EQ_Engine:iEQ|low_freq_queue:ilow_freq|old_ptr[5],                                   ;
+;                                                       ;                           ; EQ_Engine:iEQ|low_freq_queue:ilow_freq|old_ptr[4],                                   ;
+;                                                       ;                           ; EQ_Engine:iEQ|low_freq_queue:ilow_freq|old_ptr[3],                                   ;
+;                                                       ;                           ; EQ_Engine:iEQ|low_freq_queue:ilow_freq|old_ptr[2],                                   ;
+;                                                       ;                           ; EQ_Engine:iEQ|low_freq_queue:ilow_freq|old_ptr[0],                                   ;
+;                                                       ;                           ; EQ_Engine:iEQ|low_freq_queue:ilow_freq|old_ptr[1],                                   ;
+;                                                       ;                           ; EQ_Engine:iEQ|low_freq_queue:ilow_freq|queuefull,                                    ;
+;                                                       ;                           ; EQ_Engine:iEQ|low_freq_queue:ilow_freq|state.FULL,                                   ;
+;                                                       ;                           ; EQ_Engine:iEQ|low_freq_queue:ilow_freq|state.READ                                    ;
+; EQ_Engine:iEQ|band_flopped1[15]                       ; Stuck at GND              ; EQ_Engine:iEQ|sum_flopped1[15], EQ_Engine:iEQ|prod_flopped1[22],                     ;
+;                                                       ; due to stuck port data_in ; EQ_Engine:iEQ|prod_flopped1[19], EQ_Engine:iEQ|prod_flopped1[18],                    ;
+;                                                       ;                           ; spkr_drv:ispkr|lft_duty[10], spkr_drv:ispkr|lft_duty[7], spkr_drv:ispkr|lft_duty[6], ;
+;                                                       ;                           ; spkr_drv:ispkr|PDM:iPDM1ft|duty_out[10], spkr_drv:ispkr|PDM:iPDM1ft|duty_out[7],     ;
+;                                                       ;                           ; spkr_drv:ispkr|PDM:iPDM1ft|duty_out[6], EQ_Engine:iEQ|prod_flopped1[26],             ;
+;                                                       ;                           ; spkr_drv:ispkr|lft_duty[14], spkr_drv:ispkr|PDM:iPDM1ft|duty_out[14]                 ;
+; EQ_Engine:iEQ|band_flopped1[13]                       ; Stuck at GND              ; EQ_Engine:iEQ|sum_flopped1[13], EQ_Engine:iEQ|prod_flopped1[13],                     ;
+;                                                       ; due to stuck port data_in ; spkr_drv:ispkr|lft_duty[1], spkr_drv:ispkr|PDM:iPDM1ft|duty_out[1],                  ;
+;                                                       ;                           ; I2S_Slave:iSlave|bit_cntr[4], I2S_Slave:iSlave|bit_cntr[3],                          ;
+;                                                       ;                           ; I2S_Slave:iSlave|bit_cntr[2], I2S_Slave:iSlave|bit_cntr[1],                          ;
+;                                                       ;                           ; I2S_Slave:iSlave|bit_cntr[0], I2S_Slave:iSlave|sclk_itm2, I2S_Slave:iSlave|sclk_itm1 ;
+; I2S_Slave:iSlave|state~4                              ; Lost Fanouts              ; I2S_Slave:iSlave|sclk_itm3, I2S_Slave:iSlave|ws_itm2, I2S_Slave:iSlave|ws_itm3,      ;
+;                                                       ;                           ; I2S_Slave:iSlave|ws_itm1, I2S_Slave:iSlave|state.SYNC, I2S_Slave:iSlave|state.SKIP,  ;
+;                                                       ;                           ; I2S_Slave:iSlave|state.LEFT, I2S_Slave:iSlave|state.RIGHT                            ;
+; EQ_Engine:iEQ|band_flopped1[14]                       ; Stuck at GND              ; EQ_Engine:iEQ|sum_flopped1[14], EQ_Engine:iEQ|prod_flopped1[14],                     ;
+;                                                       ; due to stuck port data_in ; spkr_drv:ispkr|lft_duty[2], spkr_drv:ispkr|PDM:iPDM1ft|duty_out[2],                  ;
+;                                                       ;                           ; EQ_Engine:iEQ|prod_flopped1[15], spkr_drv:ispkr|lft_duty[3],                         ;
+;                                                       ;                           ; spkr_drv:ispkr|PDM:iPDM1ft|duty_out[3]                                               ;
+; EQ_Engine:iEQ|high_freq_queue:ihigh_freq|new_ptr[10]  ; Lost Fanouts              ; EQ_Engine:iEQ|high_freq_queue:ihigh_freq|new_ptr[9],                                 ;
+;                                                       ;                           ; EQ_Engine:iEQ|high_freq_queue:ihigh_freq|new_ptr[8],                                 ;
+;                                                       ;                           ; EQ_Engine:iEQ|high_freq_queue:ihigh_freq|new_ptr[7],                                 ;
+;                                                       ;                           ; EQ_Engine:iEQ|high_freq_queue:ihigh_freq|new_ptr[6],                                 ;
+;                                                       ;                           ; EQ_Engine:iEQ|high_freq_queue:ihigh_freq|new_ptr[5],                                 ;
+;                                                       ;                           ; EQ_Engine:iEQ|high_freq_queue:ihigh_freq|new_ptr[4],                                 ;
+;                                                       ;                           ; EQ_Engine:iEQ|high_freq_queue:ihigh_freq|new_ptr[3]                                  ;
+; EQ_Engine:iEQ|band_flopped1[12]                       ; Stuck at GND              ; EQ_Engine:iEQ|sum_flopped1[12], EQ_Engine:iEQ|prod_flopped1[12],                     ;
+;                                                       ; due to stuck port data_in ; spkr_drv:ispkr|lft_duty[0], spkr_drv:ispkr|PDM:iPDM1ft|duty_out[0]                   ;
+; EQ_Engine:iEQ|prod_flopped1[25]                       ; Stuck at GND              ; spkr_drv:ispkr|lft_duty[13], spkr_drv:ispkr|PDM:iPDM1ft|duty_out[13]                 ;
+;                                                       ; due to stuck port data_in ;                                                                                      ;
+; EQ_Engine:iEQ|prod_flopped1[24]                       ; Stuck at GND              ; spkr_drv:ispkr|lft_duty[12], spkr_drv:ispkr|PDM:iPDM1ft|duty_out[12]                 ;
+;                                                       ; due to stuck port data_in ;                                                                                      ;
+; EQ_Engine:iEQ|prod_flopped1[23]                       ; Stuck at GND              ; spkr_drv:ispkr|lft_duty[11], spkr_drv:ispkr|PDM:iPDM1ft|duty_out[11]                 ;
+;                                                       ; due to stuck port data_in ;                                                                                      ;
+; EQ_Engine:iEQ|prod_flopped1[21]                       ; Stuck at GND              ; spkr_drv:ispkr|lft_duty[9], spkr_drv:ispkr|PDM:iPDM1ft|duty_out[9]                   ;
+;                                                       ; due to stuck port data_in ;                                                                                      ;
+; EQ_Engine:iEQ|prod_flopped1[20]                       ; Stuck at GND              ; spkr_drv:ispkr|lft_duty[8], spkr_drv:ispkr|PDM:iPDM1ft|duty_out[8]                   ;
+;                                                       ; due to stuck port data_in ;                                                                                      ;
+; EQ_Engine:iEQ|prod_flopped1[17]                       ; Stuck at GND              ; spkr_drv:ispkr|lft_duty[5], spkr_drv:ispkr|PDM:iPDM1ft|duty_out[5]                   ;
+;                                                       ; due to stuck port data_in ;                                                                                      ;
+; EQ_Engine:iEQ|prod_flopped1[16]                       ; Stuck at GND              ; spkr_drv:ispkr|lft_duty[4], spkr_drv:ispkr|PDM:iPDM1ft|duty_out[4]                   ;
+;                                                       ; due to stuck port data_in ;                                                                                      ;
+; EQ_Engine:iEQ|band_flopped1[11]                       ; Stuck at GND              ; EQ_Engine:iEQ|sum_flopped1[11]                                                       ;
+;                                                       ; due to stuck port data_in ;                                                                                      ;
+; EQ_Engine:iEQ|band_flopped1[10]                       ; Stuck at GND              ; EQ_Engine:iEQ|sum_flopped1[10]                                                       ;
+;                                                       ; due to stuck port data_in ;                                                                                      ;
+; EQ_Engine:iEQ|band_flopped1[9]                        ; Stuck at GND              ; EQ_Engine:iEQ|sum_flopped1[9]                                                        ;
+;                                                       ; due to stuck port data_in ;                                                                                      ;
+; EQ_Engine:iEQ|band_flopped1[8]                        ; Stuck at GND              ; EQ_Engine:iEQ|sum_flopped1[8]                                                        ;
+;                                                       ; due to stuck port data_in ;                                                                                      ;
+; EQ_Engine:iEQ|band_flopped1[7]                        ; Stuck at GND              ; EQ_Engine:iEQ|sum_flopped1[7]                                                        ;
+;                                                       ; due to stuck port data_in ;                                                                                      ;
+; EQ_Engine:iEQ|band_flopped1[6]                        ; Stuck at GND              ; EQ_Engine:iEQ|sum_flopped1[6]                                                        ;
+;                                                       ; due to stuck port data_in ;                                                                                      ;
+; EQ_Engine:iEQ|band_flopped1[5]                        ; Stuck at GND              ; EQ_Engine:iEQ|sum_flopped1[5]                                                        ;
+;                                                       ; due to stuck port data_in ;                                                                                      ;
+; EQ_Engine:iEQ|band_flopped1[4]                        ; Stuck at GND              ; EQ_Engine:iEQ|sum_flopped1[4]                                                        ;
+;                                                       ; due to stuck port data_in ;                                                                                      ;
+; EQ_Engine:iEQ|band_flopped1[3]                        ; Stuck at GND              ; EQ_Engine:iEQ|sum_flopped1[3]                                                        ;
+;                                                       ; due to stuck port data_in ;                                                                                      ;
+; EQ_Engine:iEQ|band_flopped1[2]                        ; Stuck at GND              ; EQ_Engine:iEQ|sum_flopped1[2]                                                        ;
+;                                                       ; due to stuck port data_in ;                                                                                      ;
+; EQ_Engine:iEQ|band_flopped1[1]                        ; Stuck at GND              ; EQ_Engine:iEQ|sum_flopped1[1]                                                        ;
+;                                                       ; due to stuck port data_in ;                                                                                      ;
+; EQ_Engine:iEQ|band_flopped1[0]                        ; Stuck at GND              ; EQ_Engine:iEQ|sum_flopped1[0]                                                        ;
+;                                                       ; due to stuck port data_in ;                                                                                      ;
+; EQ_Engine:iEQ|prod_flopped1[27]                       ; Stuck at GND              ; spkr_drv:ispkr|lft_duty[15]                                                          ;
+;                                                       ; due to stuck port data_in ;                                                                                      ;
+; EQ_Engine:iEQ|low_freq_queue:ilow_freq|new_ptr[9]     ; Lost Fanouts              ; EQ_Engine:iEQ|vld_low_imm                                                            ;
++-------------------------------------------------------+---------------------------+--------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 171   ;
+; Number of registers using Synchronous Clear  ; 24    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 160   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 98    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                 ;
++--------------------------------------------------------------------+---------+
+; Inverted Register                                                  ; Fan out ;
++--------------------------------------------------------------------+---------+
+; slide_intf:islide|A2D_intf:iA2D_intf|SPI_mstr:SPI_mstr|SS_n        ; 2       ;
+; slide_intf:islide|A2D_intf:iA2D_intf|SPI_mstr:SPI_mstr|SCLK_div[3] ; 4       ;
+; BT_intf:iBT|snd_cmd:SC|UART:iUART|A007[0]                          ; 1       ;
+; slide_intf:islide|A2D_intf:iA2D_intf|SPI_mstr:SPI_mstr|SCLK_div[1] ; 5       ;
+; slide_intf:islide|A2D_intf:iA2D_intf|SPI_mstr:SPI_mstr|SCLK_div[0] ; 6       ;
+; BT_intf:iBT|snd_cmd:SC|UART:iUART|A007[1]                          ; 1       ;
+; BT_intf:iBT|snd_cmd:SC|UART:iUART|A009[8]                          ; 3       ;
+; BT_intf:iBT|snd_cmd:SC|UART:iUART|A009[7]                          ; 3       ;
+; BT_intf:iBT|snd_cmd:SC|UART:iUART|A009[5]                          ; 3       ;
+; BT_intf:iBT|snd_cmd:SC|UART:iUART|A009[4]                          ; 3       ;
+; BT_intf:iBT|snd_cmd:SC|UART:iUART|A009[1]                          ; 3       ;
+; BT_intf:iBT|snd_cmd:SC|UART:iUART|A007[2]                          ; 1       ;
+; BT_intf:iBT|snd_cmd:SC|UART:iUART|A007[3]                          ; 1       ;
+; slide_intf:islide|chnnl[0]                                         ; 4       ;
+; BT_intf:iBT|snd_cmd:SC|UART:iUART|A007[4]                          ; 1       ;
+; BT_intf:iBT|snd_cmd:SC|UART:iUART|A003[7]                          ; 3       ;
+; BT_intf:iBT|snd_cmd:SC|UART:iUART|A003[6]                          ; 2       ;
+; BT_intf:iBT|snd_cmd:SC|UART:iUART|A003[4]                          ; 3       ;
+; BT_intf:iBT|snd_cmd:SC|UART:iUART|A003[3]                          ; 2       ;
+; BT_intf:iBT|snd_cmd:SC|UART:iUART|A003[0]                          ; 5       ;
+; BT_intf:iBT|snd_cmd:SC|UART:iUART|A007[5]                          ; 1       ;
+; BT_intf:iBT|snd_cmd:SC|UART:iUART|B002                             ; 10      ;
+; BT_intf:iBT|snd_cmd:SC|UART:iUART|A007[6]                          ; 1       ;
+; BT_intf:iBT|snd_cmd:SC|UART:iUART|B001                             ; 1       ;
+; BT_intf:iBT|snd_cmd:SC|UART:iUART|A007[7]                          ; 1       ;
+; BT_intf:iBT|snd_cmd:SC|UART:iUART|A007[8]                          ; 2       ;
+; Total number of inverted registers = 26                            ;         ;
++--------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------+
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |Equalizer|I2S_Slave:iSlave|bit_cntr[4]                                         ;
+; 3:1                ; 18 bits   ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |Equalizer|slide_intf:islide|A2D_intf:iA2D_intf|SPI_mstr:SPI_mstr|shift_reg[0]  ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |Equalizer|slide_intf:islide|A2D_intf:iA2D_intf|SPI_mstr:SPI_mstr|shift_reg[12] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Equalizer|BT_intf:iBT|snd_cmd:SC|UART:iUART|A009[0]                            ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |Equalizer|BT_intf:iBT|snd_cmd:SC|addr[0]                                       ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |Equalizer|BT_intf:iBT|snd_cmd:SC|addr[1]                                       ;
+; 3:1                ; 19 bits   ; 38 LEs        ; 19 LEs               ; 19 LEs                 ; Yes        ; |Equalizer|count_shtdwn[9]                                                      ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Equalizer|BT_intf:iBT|snd_cmd:SC|UART:iUART|A008[3]                            ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Equalizer|BT_intf:iBT|snd_cmd:SC|UART:iUART|A002[1]                            ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |Equalizer|EQ_Engine:iEQ|low_freq_queue:ilow_freq|read_ptr[8]                   ;
+; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; Yes        ; |Equalizer|EQ_Engine:iEQ|high_freq_queue:ihigh_freq|read_ptr[1]                 ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |Equalizer|BT_intf:iBT|snd_cmd:SC|UART:iUART|A003[1]                            ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |Equalizer|BT_intf:iBT|snd_cmd:SC|UART:iUART|A009[7]                            ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |Equalizer|BT_intf:iBT|snd_cmd:SC|UART:iUART|A007[4]                            ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |Equalizer|BT_intf:iBT|snd_cmd:SC|UART:iUART|A003[7]                            ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Equalizer|I2S_Slave:iSlave|Selector2                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------+
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "BT_intf:iBT|snd_cmd:SC" ;
++--------------+-------+----------+------------------+
+; Port         ; Type  ; Severity ; Details          ;
++--------------+-------+----------+------------------+
+; cmd_len[0]   ; Input ; Info     ; Stuck at GND     ;
+; cmd_start[3] ; Input ; Info     ; Stuck at GND     ;
+; cmd_start[0] ; Input ; Info     ; Stuck at GND     ;
++--------------+-------+----------+------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "slide_intf:islide|A2D_intf:iA2D_intf|SPI_mstr:SPI_mstr"                                        ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                             ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+; wt_data[15..14] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; wt_data[10..0]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; rd_data[15..12] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 26                          ;
+; cycloneiii_ff         ; 171                         ;
+;     CLR               ; 71                          ;
+;     ENA               ; 9                           ;
+;     ENA CLR           ; 65                          ;
+;     ENA CLR SCLR      ; 24                          ;
+;     plain             ; 2                           ;
+; cycloneiii_lcell_comb ; 251                         ;
+;     arith             ; 75                          ;
+;         2 data inputs ; 56                          ;
+;         3 data inputs ; 19                          ;
+;     normal            ; 176                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 16                          ;
+;         2 data inputs ; 44                          ;
+;         3 data inputs ; 34                          ;
+;         4 data inputs ; 81                          ;
+;                       ;                             ;
+; Max LUT depth         ; 5.50                        ;
+; Average LUT depth     ; 2.80                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:03     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 16.1.2 Build 203 01/18/2017 SJ Lite Edition
+    Info: Processing started: Thu May 02 10:08:38 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Equalizer -c Equalizer
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file i2s_slave.sv
+    Info (12023): Found entity 1: I2S_Slave File: I:/ece551~1/modelsim/project/I2S_Slave.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file pdm.sv
+    Info (12023): Found entity 1: PDM File: I:/ece551~1/modelsim/project/PDM.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file rom_lp.v
+    Info (12023): Found entity 1: ROM_LP File: I:/ece551~1/modelsim/project/ROM_LP.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file rom_hp.v
+    Info (12023): Found entity 1: ROM_HP File: I:/ece551~1/modelsim/project/ROM_HP.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file rom_b3.v
+    Info (12023): Found entity 1: ROM_B3 File: I:/ece551~1/modelsim/project/ROM_B3.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file rom_b2.v
+    Info (12023): Found entity 1: ROM_B2 File: I:/ece551~1/modelsim/project/ROM_B2.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file rom_b1.v
+    Info (12023): Found entity 1: ROM_B1 File: I:/ece551~1/modelsim/project/ROM_B1.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file low_freq_queue.sv
+    Info (12023): Found entity 1: low_freq_queue File: I:/ece551~1/modelsim/project/low_freq_queue.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file high_freq_queue.sv
+    Info (12023): Found entity 1: high_freq_queue File: I:/ece551~1/modelsim/project/high_freq_queue.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file fir_lp.sv
+    Info (12023): Found entity 1: FIR_LP File: I:/ece551~1/modelsim/project/FIR_LP.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file fir_hp.sv
+    Info (12023): Found entity 1: FIR_HP File: I:/ece551~1/modelsim/project/FIR_HP.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file fir_b3.sv
+    Info (12023): Found entity 1: FIR_B3 File: I:/ece551~1/modelsim/project/FIR_B3.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file fir_b2.sv
+    Info (12023): Found entity 1: FIR_B2 File: I:/ece551~1/modelsim/project/FIR_B2.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file fir_b1.sv
+    Info (12023): Found entity 1: FIR_B1 File: I:/ece551~1/modelsim/project/FIR_B1.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file eq_engine.sv
+    Info (12023): Found entity 1: EQ_Engine File: I:/ece551~1/modelsim/project/EQ_engine.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file dualport1536x16.v
+    Info (12023): Found entity 1: dualPort1536x16 File: I:/ece551~1/modelsim/project/dualPort1536x16.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file dualport1024x16.v
+    Info (12023): Found entity 1: dualPort1024x16 File: I:/ece551~1/modelsim/project/dualPort1024x16.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file band_scale.v
+    Info (12023): Found entity 1: band_scale File: I:/ece551~1/modelsim/project/band_scale.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file uart.sv
+    Info (12023): Found entity 1: UART File: I:/ece551~1/modelsim/project/UART.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file cmdrom.v
+    Info (12023): Found entity 1: cmdROM File: I:/ece551~1/modelsim/project/cmdROM.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file snd_cmd.sv
+    Info (12023): Found entity 1: snd_cmd File: I:/ece551~1/modelsim/project/snd_cmd.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file spi_mstr.sv
+    Info (12023): Found entity 1: SPI_mstr File: I:/ece551~1/modelsim/project/SPI_mstr.sv Line: 2
+Warning (12019): Can't analyze file -- file rst_synch.v is missing
+Info (12021): Found 1 design units, including 1 entities, in source file spkr_drv.sv
+    Info (12023): Found entity 1: spkr_drv File: I:/ece551~1/modelsim/project/spkr_drv.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file slide_intf.sv
+    Info (12023): Found entity 1: slide_intf File: I:/ece551~1/modelsim/project/slide_intf.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file resp_rom.v
+    Info (12023): Found entity 1: resp_ROM File: I:/ece551~1/modelsim/project/resp_ROM.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file equalizer.v
+    Info (12023): Found entity 1: Equalizer File: I:/ece551~1/modelsim/project/Equalizer.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file bt_intf.sv
+    Info (12023): Found entity 1: BT_intf File: I:/ece551~1/modelsim/project/BT_intf.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file a2d_intf.sv
+    Info (12023): Found entity 1: A2D_intf File: I:/ece551~1/modelsim/project/A2D_intf.sv Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at SPI_mstr.sv(36): created implicit net for "full" File: I:/ece551~1/modelsim/project/SPI_mstr.sv Line: 36
+Warning (10236): Verilog HDL Implicit Net warning at A2D_intf.sv(12): created implicit net for "done" File: I:/ece551~1/modelsim/project/A2D_intf.sv Line: 12
+Info (12127): Elaborating entity "Equalizer" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at Equalizer.v(73): truncated value with size 32 to match size of target (19) File: I:/ece551~1/modelsim/project/Equalizer.v Line: 73
+Warning (12125): Using design file rst_synch.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: rst_synch File: I:/ece551~1/modelsim/project/rst_synch.sv Line: 1
+Info (12128): Elaborating entity "rst_synch" for hierarchy "rst_synch:irst" File: I:/ece551~1/modelsim/project/Equalizer.v Line: 38
+Info (12128): Elaborating entity "slide_intf" for hierarchy "slide_intf:islide" File: I:/ece551~1/modelsim/project/Equalizer.v Line: 43
+Info (12128): Elaborating entity "A2D_intf" for hierarchy "slide_intf:islide|A2D_intf:iA2D_intf" File: I:/ece551~1/modelsim/project/slide_intf.sv Line: 11
+Info (12128): Elaborating entity "SPI_mstr" for hierarchy "slide_intf:islide|A2D_intf:iA2D_intf|SPI_mstr:SPI_mstr" File: I:/ece551~1/modelsim/project/A2D_intf.sv Line: 12
+Warning (10230): Verilog HDL assignment warning at SPI_mstr.sv(19): truncated value with size 32 to match size of target (5) File: I:/ece551~1/modelsim/project/SPI_mstr.sv Line: 19
+Warning (10230): Verilog HDL assignment warning at SPI_mstr.sv(24): truncated value with size 32 to match size of target (1) File: I:/ece551~1/modelsim/project/SPI_mstr.sv Line: 24
+Warning (10230): Verilog HDL assignment warning at SPI_mstr.sv(33): truncated value with size 32 to match size of target (4) File: I:/ece551~1/modelsim/project/SPI_mstr.sv Line: 33
+Warning (10230): Verilog HDL assignment warning at SPI_mstr.sv(36): truncated value with size 32 to match size of target (1) File: I:/ece551~1/modelsim/project/SPI_mstr.sv Line: 36
+Warning (10230): Verilog HDL assignment warning at SPI_mstr.sv(37): truncated value with size 32 to match size of target (1) File: I:/ece551~1/modelsim/project/SPI_mstr.sv Line: 37
+Info (12128): Elaborating entity "BT_intf" for hierarchy "BT_intf:iBT" File: I:/ece551~1/modelsim/project/Equalizer.v Line: 47
+Warning (10230): Verilog HDL assignment warning at BT_intf.sv(29): truncated value with size 32 to match size of target (17) File: I:/ece551~1/modelsim/project/BT_intf.sv Line: 29
+Warning (12125): Using design file pb_rise.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: PB_rise File: I:/ece551~1/modelsim/project/pb_rise.sv Line: 1
+Info (12128): Elaborating entity "PB_rise" for hierarchy "BT_intf:iBT|PB_rise:BUT1" File: I:/ece551~1/modelsim/project/BT_intf.sv Line: 15
+Warning (10230): Verilog HDL assignment warning at pb_rise.sv(19): truncated value with size 32 to match size of target (1) File: I:/ece551~1/modelsim/project/pb_rise.sv Line: 19
+Info (12128): Elaborating entity "snd_cmd" for hierarchy "BT_intf:iBT|snd_cmd:SC" File: I:/ece551~1/modelsim/project/BT_intf.sv Line: 19
+Warning (10230): Verilog HDL assignment warning at snd_cmd.sv(23): truncated value with size 32 to match size of target (5) File: I:/ece551~1/modelsim/project/snd_cmd.sv Line: 23
+Warning (10230): Verilog HDL assignment warning at snd_cmd.sv(34): truncated value with size 32 to match size of target (1) File: I:/ece551~1/modelsim/project/snd_cmd.sv Line: 34
+Warning (10230): Verilog HDL assignment warning at snd_cmd.sv(75): truncated value with size 32 to match size of target (1) File: I:/ece551~1/modelsim/project/snd_cmd.sv Line: 75
+Info (12128): Elaborating entity "UART" for hierarchy "BT_intf:iBT|snd_cmd:SC|UART:iUART" File: I:/ece551~1/modelsim/project/snd_cmd.sv Line: 15
+Warning (10230): Verilog HDL assignment warning at UART.sv(52): truncated value with size 32 to match size of target (4) File: I:/ece551~1/modelsim/project/UART.sv Line: 52
+Warning (10230): Verilog HDL assignment warning at UART.sv(61): truncated value with size 32 to match size of target (9) File: I:/ece551~1/modelsim/project/UART.sv Line: 61
+Warning (10230): Verilog HDL assignment warning at UART.sv(129): truncated value with size 32 to match size of target (4) File: I:/ece551~1/modelsim/project/UART.sv Line: 129
+Warning (10230): Verilog HDL assignment warning at UART.sv(141): truncated value with size 32 to match size of target (9) File: I:/ece551~1/modelsim/project/UART.sv Line: 141
+Info (12128): Elaborating entity "cmdROM" for hierarchy "BT_intf:iBT|snd_cmd:SC|cmdROM:icmdROM" File: I:/ece551~1/modelsim/project/snd_cmd.sv Line: 16
+Warning (10034): Output port "dout" at cmdROM.v(5) has no driver File: I:/ece551~1/modelsim/project/cmdROM.v Line: 5
+Warning (12158): Entity "cmdROM" contains only dangling pins File: I:/ece551~1/modelsim/project/snd_cmd.sv Line: 16
+Info (12128): Elaborating entity "I2S_Slave" for hierarchy "I2S_Slave:iSlave" File: I:/ece551~1/modelsim/project/Equalizer.v Line: 53
+Warning (10230): Verilog HDL assignment warning at I2S_Slave.sv(21): truncated value with size 32 to match size of target (1) File: I:/ece551~1/modelsim/project/I2S_Slave.sv Line: 21
+Warning (10230): Verilog HDL assignment warning at I2S_Slave.sv(37): truncated value with size 32 to match size of target (1) File: I:/ece551~1/modelsim/project/I2S_Slave.sv Line: 37
+Warning (10230): Verilog HDL assignment warning at I2S_Slave.sv(49): truncated value with size 32 to match size of target (5) File: I:/ece551~1/modelsim/project/I2S_Slave.sv Line: 49
+Warning (10230): Verilog HDL assignment warning at I2S_Slave.sv(53): truncated value with size 32 to match size of target (1) File: I:/ece551~1/modelsim/project/I2S_Slave.sv Line: 53
+Warning (10230): Verilog HDL assignment warning at I2S_Slave.sv(54): truncated value with size 32 to match size of target (1) File: I:/ece551~1/modelsim/project/I2S_Slave.sv Line: 54
+Warning (10230): Verilog HDL assignment warning at I2S_Slave.sv(55): truncated value with size 32 to match size of target (1) File: I:/ece551~1/modelsim/project/I2S_Slave.sv Line: 55
+Info (10264): Verilog HDL Case Statement information at I2S_Slave.sv(81): all case item expressions in this case statement are onehot File: I:/ece551~1/modelsim/project/I2S_Slave.sv Line: 81
+Info (12128): Elaborating entity "EQ_Engine" for hierarchy "EQ_Engine:iEQ" File: I:/ece551~1/modelsim/project/Equalizer.v Line: 59
+Info (12128): Elaborating entity "high_freq_queue" for hierarchy "EQ_Engine:iEQ|high_freq_queue:ihigh_freq" File: I:/ece551~1/modelsim/project/EQ_engine.sv Line: 32
+Warning (10230): Verilog HDL assignment warning at high_freq_queue.sv(80): truncated value with size 32 to match size of target (11) File: I:/ece551~1/modelsim/project/high_freq_queue.sv Line: 80
+Warning (10230): Verilog HDL assignment warning at high_freq_queue.sv(93): truncated value with size 32 to match size of target (11) File: I:/ece551~1/modelsim/project/high_freq_queue.sv Line: 93
+Warning (10230): Verilog HDL assignment warning at high_freq_queue.sv(113): truncated value with size 32 to match size of target (11) File: I:/ece551~1/modelsim/project/high_freq_queue.sv Line: 113
+Info (12128): Elaborating entity "dualPort1536x16" for hierarchy "EQ_Engine:iEQ|high_freq_queue:ihigh_freq|dualPort1536x16:lMem" File: I:/ece551~1/modelsim/project/high_freq_queue.sv Line: 14
+Warning (10034): Output port "rdata" at dualPort1536x16.v(8) has no driver File: I:/ece551~1/modelsim/project/dualPort1536x16.v Line: 8
+Warning (12158): Entity "dualPort1536x16" contains only dangling pins File: I:/ece551~1/modelsim/project/high_freq_queue.sv Line: 14
+Info (12128): Elaborating entity "low_freq_queue" for hierarchy "EQ_Engine:iEQ|low_freq_queue:ilow_freq" File: I:/ece551~1/modelsim/project/EQ_engine.sv Line: 33
+Warning (10230): Verilog HDL assignment warning at low_freq_queue.sv(80): truncated value with size 32 to match size of target (10) File: I:/ece551~1/modelsim/project/low_freq_queue.sv Line: 80
+Warning (10230): Verilog HDL assignment warning at low_freq_queue.sv(93): truncated value with size 32 to match size of target (10) File: I:/ece551~1/modelsim/project/low_freq_queue.sv Line: 93
+Warning (10230): Verilog HDL assignment warning at low_freq_queue.sv(113): truncated value with size 32 to match size of target (10) File: I:/ece551~1/modelsim/project/low_freq_queue.sv Line: 113
+Info (12128): Elaborating entity "dualPort1024x16" for hierarchy "EQ_Engine:iEQ|low_freq_queue:ilow_freq|dualPort1024x16:lMem" File: I:/ece551~1/modelsim/project/low_freq_queue.sv Line: 14
+Warning (10034): Output port "rdata" at dualPort1024x16.v(8) has no driver File: I:/ece551~1/modelsim/project/dualPort1024x16.v Line: 8
+Warning (12158): Entity "dualPort1024x16" contains only dangling pins File: I:/ece551~1/modelsim/project/low_freq_queue.sv Line: 14
+Info (12128): Elaborating entity "FIR_LP" for hierarchy "EQ_Engine:iEQ|FIR_LP:iFIR_LP" File: I:/ece551~1/modelsim/project/EQ_engine.sv Line: 65
+Warning (10036): Verilog HDL or VHDL warning at FIR_LP.sv(5): object "inc_addr" assigned a value but never read File: I:/ece551~1/modelsim/project/FIR_LP.sv Line: 5
+Warning (10230): Verilog HDL assignment warning at FIR_LP.sv(18): truncated value with size 32 to match size of target (10) File: I:/ece551~1/modelsim/project/FIR_LP.sv Line: 18
+Info (12128): Elaborating entity "ROM_LP" for hierarchy "EQ_Engine:iEQ|FIR_LP:iFIR_LP|ROM_LP:romLP" File: I:/ece551~1/modelsim/project/FIR_LP.sv Line: 9
+Warning (10034): Output port "dout" at ROM_LP.v(5) has no driver File: I:/ece551~1/modelsim/project/ROM_LP.v Line: 5
+Warning (12158): Entity "ROM_LP" contains only dangling pins File: I:/ece551~1/modelsim/project/FIR_LP.sv Line: 9
+Info (12128): Elaborating entity "FIR_B1" for hierarchy "EQ_Engine:iEQ|FIR_B1:iFIR_B1" File: I:/ece551~1/modelsim/project/EQ_engine.sv Line: 66
+Warning (10036): Verilog HDL or VHDL warning at FIR_B1.sv(5): object "inc_addr" assigned a value but never read File: I:/ece551~1/modelsim/project/FIR_B1.sv Line: 5
+Warning (10230): Verilog HDL assignment warning at FIR_B1.sv(18): truncated value with size 32 to match size of target (10) File: I:/ece551~1/modelsim/project/FIR_B1.sv Line: 18
+Info (12128): Elaborating entity "ROM_B1" for hierarchy "EQ_Engine:iEQ|FIR_B1:iFIR_B1|ROM_B1:romB1" File: I:/ece551~1/modelsim/project/FIR_B1.sv Line: 9
+Warning (10034): Output port "dout" at ROM_B1.v(5) has no driver File: I:/ece551~1/modelsim/project/ROM_B1.v Line: 5
+Warning (12158): Entity "ROM_B1" contains only dangling pins File: I:/ece551~1/modelsim/project/FIR_B1.sv Line: 9
+Info (12128): Elaborating entity "FIR_B2" for hierarchy "EQ_Engine:iEQ|FIR_B2:iFIR_B2" File: I:/ece551~1/modelsim/project/EQ_engine.sv Line: 67
+Warning (10036): Verilog HDL or VHDL warning at FIR_B2.sv(5): object "inc_addr" assigned a value but never read File: I:/ece551~1/modelsim/project/FIR_B2.sv Line: 5
+Warning (10230): Verilog HDL assignment warning at FIR_B2.sv(18): truncated value with size 32 to match size of target (10) File: I:/ece551~1/modelsim/project/FIR_B2.sv Line: 18
+Info (12128): Elaborating entity "ROM_B2" for hierarchy "EQ_Engine:iEQ|FIR_B2:iFIR_B2|ROM_B2:romB2" File: I:/ece551~1/modelsim/project/FIR_B2.sv Line: 9
+Warning (10034): Output port "dout" at ROM_B2.v(5) has no driver File: I:/ece551~1/modelsim/project/ROM_B2.v Line: 5
+Warning (12158): Entity "ROM_B2" contains only dangling pins File: I:/ece551~1/modelsim/project/FIR_B2.sv Line: 9
+Info (12128): Elaborating entity "FIR_B3" for hierarchy "EQ_Engine:iEQ|FIR_B3:iFIR_B3" File: I:/ece551~1/modelsim/project/EQ_engine.sv Line: 68
+Warning (10036): Verilog HDL or VHDL warning at FIR_B3.sv(5): object "inc_addr" assigned a value but never read File: I:/ece551~1/modelsim/project/FIR_B3.sv Line: 5
+Warning (10230): Verilog HDL assignment warning at FIR_B3.sv(18): truncated value with size 32 to match size of target (10) File: I:/ece551~1/modelsim/project/FIR_B3.sv Line: 18
+Info (12128): Elaborating entity "ROM_B3" for hierarchy "EQ_Engine:iEQ|FIR_B3:iFIR_B3|ROM_B3:romB3" File: I:/ece551~1/modelsim/project/FIR_B3.sv Line: 9
+Warning (10034): Output port "dout" at ROM_B3.v(5) has no driver File: I:/ece551~1/modelsim/project/ROM_B3.v Line: 5
+Warning (12158): Entity "ROM_B3" contains only dangling pins File: I:/ece551~1/modelsim/project/FIR_B3.sv Line: 9
+Info (12128): Elaborating entity "FIR_HP" for hierarchy "EQ_Engine:iEQ|FIR_HP:iFIR_HP" File: I:/ece551~1/modelsim/project/EQ_engine.sv Line: 69
+Warning (10036): Verilog HDL or VHDL warning at FIR_HP.sv(5): object "inc_addr" assigned a value but never read File: I:/ece551~1/modelsim/project/FIR_HP.sv Line: 5
+Warning (10230): Verilog HDL assignment warning at FIR_HP.sv(18): truncated value with size 32 to match size of target (10) File: I:/ece551~1/modelsim/project/FIR_HP.sv Line: 18
+Info (12128): Elaborating entity "ROM_HP" for hierarchy "EQ_Engine:iEQ|FIR_HP:iFIR_HP|ROM_HP:romHP" File: I:/ece551~1/modelsim/project/FIR_HP.sv Line: 9
+Warning (10034): Output port "dout" at ROM_HP.v(5) has no driver File: I:/ece551~1/modelsim/project/ROM_HP.v Line: 5
+Warning (12158): Entity "ROM_HP" contains only dangling pins File: I:/ece551~1/modelsim/project/FIR_HP.sv Line: 9
+Info (12128): Elaborating entity "band_scale" for hierarchy "EQ_Engine:iEQ|band_scale:iB1" File: I:/ece551~1/modelsim/project/EQ_engine.sv Line: 121
+Info (12128): Elaborating entity "spkr_drv" for hierarchy "spkr_drv:ispkr" File: I:/ece551~1/modelsim/project/Equalizer.v Line: 65
+Info (12128): Elaborating entity "PDM" for hierarchy "spkr_drv:ispkr|PDM:iPDM1ft" File: I:/ece551~1/modelsim/project/spkr_drv.sv Line: 8
+Warning (10230): Verilog HDL assignment warning at PDM.sv(19): truncated value with size 32 to match size of target (1) File: I:/ece551~1/modelsim/project/PDM.sv Line: 19
+Warning (10230): Verilog HDL assignment warning at PDM.sv(22): truncated value with size 32 to match size of target (1) File: I:/ece551~1/modelsim/project/PDM.sv Line: 22
+Warning (10230): Verilog HDL assignment warning at PDM.sv(34): truncated value with size 32 to match size of target (1) File: I:/ece551~1/modelsim/project/PDM.sv Line: 34
+Info (13000): Registers with preset signals will power-up high File: I:/ece551~1/modelsim/project/SPI_mstr.sv Line: 5
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LED[0]" is stuck at GND File: I:/ece551~1/modelsim/project/Equalizer.v Line: 7
+    Warning (13410): Pin "LED[1]" is stuck at GND File: I:/ece551~1/modelsim/project/Equalizer.v Line: 7
+    Warning (13410): Pin "LED[2]" is stuck at GND File: I:/ece551~1/modelsim/project/Equalizer.v Line: 7
+    Warning (13410): Pin "LED[3]" is stuck at GND File: I:/ece551~1/modelsim/project/Equalizer.v Line: 7
+    Warning (13410): Pin "LED[4]" is stuck at GND File: I:/ece551~1/modelsim/project/Equalizer.v Line: 7
+    Warning (13410): Pin "LED[5]" is stuck at GND File: I:/ece551~1/modelsim/project/Equalizer.v Line: 7
+    Warning (13410): Pin "LED[6]" is stuck at GND File: I:/ece551~1/modelsim/project/Equalizer.v Line: 7
+    Warning (13410): Pin "LED[7]" is stuck at GND File: I:/ece551~1/modelsim/project/Equalizer.v Line: 7
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 97 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file I:/ece551~1/modelsim/project/Equalizer.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "I2S_data" File: I:/ece551~1/modelsim/project/Equalizer.v Line: 12
+    Warning (15610): No output dependent on input pin "I2S_ws" File: I:/ece551~1/modelsim/project/Equalizer.v Line: 13
+    Warning (15610): No output dependent on input pin "I2S_sclk" File: I:/ece551~1/modelsim/project/Equalizer.v Line: 14
+Info (21057): Implemented 290 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 10 input pins
+    Info (21059): Implemented 16 output pins
+    Info (21061): Implemented 264 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 75 warnings
+    Info: Peak virtual memory: 4854 megabytes
+    Info: Processing ended: Thu May 02 10:09:07 2019
+    Info: Elapsed time: 00:00:29
+    Info: Total CPU time (on all processors): 00:00:32
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in I:/ece551~1/modelsim/project/Equalizer.map.smsg.
+
+

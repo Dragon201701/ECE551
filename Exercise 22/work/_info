@@ -1,0 +1,579 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/ECE551/HW5
+vA2D_with_Pots
+Z0 DXx6 sv_std 3 std 0 22 WmjPaeP=7F5?QFXzJ>D[Q2
+Z1 !s110 1556516558
+!i10b 1
+!s100 ^OUHiDYAUB_i[5AAKAKho0
+IoJ4?eJb1iDX:15cEzi3B=3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+!s105 A2D_with_Pots_sv_unit
+S1
+Z3 dD:/ECE551/Exercise 22
+w1553020470
+8D:/ECE551/Exercise 22/A2D_with_Pots.sv
+FD:/ECE551/Exercise 22/A2D_with_Pots.sv
+L0 1
+Z4 OP;L;10.4a;61
+r1
+!s85 0
+31
+Z5 !s108 1556516558.000000
+!s107 D:/ECE551/Exercise 22/A2D_with_Pots.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/ECE551/Exercise 22/A2D_with_Pots.sv|
+!s101 -O0
+!i113 1
+Z6 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0
+n@a2@d_with_@pots
+vADC128S
+R0
+R1
+!i10b 1
+!s100 mVh2:Pn919M@E`eRdlI1_3
+IMUY8=iTXlMIi@]BXG5bIK0
+R2
+!s105 ADC128S_sv_unit
+S1
+R3
+w1550093534
+8D:/ECE551/Exercise 22/ADC128S.sv
+FD:/ECE551/Exercise 22/ADC128S.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/ECE551/Exercise 22/ADC128S.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/ECE551/Exercise 22/ADC128S.sv|
+!s101 -O0
+!i113 1
+R6
+n@a@d@c128@s
+vBT_intf
+R0
+Z7 !s110 1556516553
+!i10b 1
+!s100 gYlWiG=DaT]i7jN_g19kU2
+IJ:B]IZUB2flXZSnB`OzcP2
+R2
+!s105 BT_intf_sv_unit
+S1
+R3
+Z8 w1556502254
+8D:/ECE551/Exercise 22/BT_intf.sv
+FD:/ECE551/Exercise 22/BT_intf.sv
+L0 1
+R4
+r1
+!s85 0
+31
+Z9 !s108 1556516553.000000
+!s107 D:/ECE551/Exercise 22/BT_intf.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/ECE551/Exercise 22/BT_intf.sv|
+!s101 -O0
+!i113 1
+R6
+n@b@t_intf
+vBT_intf_tb
+R0
+R7
+!i10b 1
+!s100 c8h2Kl8?V@PGP0z694?il0
+ITk2PlgT5l8R9LGX><z7;=3
+R2
+!s105 BT_intf_tb_sv_unit
+S1
+R3
+R8
+8D:/ECE551/Exercise 22/BT_intf_tb.sv
+FD:/ECE551/Exercise 22/BT_intf_tb.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R9
+!s107 D:/ECE551/Exercise 22/BT_intf_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/ECE551/Exercise 22/BT_intf_tb.sv|
+!s101 -O0
+!i113 1
+R6
+n@b@t_intf_tb
+vcmdROM
+!s110 1556516559
+!i10b 1
+!s100 C6G@16NhT=]SZO3kHo53j2
+IX?a5`7:UC9R9`gnbzF2<03
+R2
+R3
+w1555623260
+8D:/ECE551/Exercise 22/cmdROM.v
+FD:/ECE551/Exercise 22/cmdROM.v
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1556516559.000000
+!s107 D:/ECE551/Exercise 22/cmdROM.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/ECE551/Exercise 22/cmdROM.v|
+!s101 -O0
+!i113 1
+Z10 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0
+ncmd@r@o@m
+vdualPort1536x16
+Z11 !s110 1556516556
+!i10b 1
+!s100 bNYM:I_zX`>fij9`a9IO02
+IEnj6^g^T<YCT0g3L1oGM73
+R2
+R3
+w1555622934
+8D:/ECE551/Exercise 22/dualPort1536x16.v
+FD:/ECE551/Exercise 22/dualPort1536x16.v
+L0 1
+R4
+r1
+!s85 0
+31
+Z12 !s108 1556516556.000000
+!s107 D:/ECE551/Exercise 22/dualPort1536x16.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/ECE551/Exercise 22/dualPort1536x16.v|
+!s101 -O0
+!i113 1
+R10
+ndual@port1536x16
+vEqualizer
+R1
+!i10b 1
+!s100 KB<127WJj79^_6fVYXLLG0
+IdVQ7MBjV:;hNCaHX8<TWJ2
+R2
+R3
+w1555446170
+8D:/ECE551/Exercise 22/Equalizer.v
+FD:/ECE551/Exercise 22/Equalizer.v
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/ECE551/Exercise 22/Equalizer.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/ECE551/Exercise 22/Equalizer.v|
+!s101 -O0
+!i113 1
+R10
+n@equalizer
+vFIR_B2
+R0
+Z13 !s110 1556565239
+!i10b 1
+!s100 HhVW:3Z5JY4hE753B^fXW3
+IW04HVgm9_@RdlA2;PLfYQ3
+R2
+!s105 FIR_B2_sv_unit
+S1
+R3
+w1556565202
+8D:/ECE551/Exercise 22/FIR_B2.sv
+FD:/ECE551/Exercise 22/FIR_B2.sv
+L0 1
+R4
+r1
+!s85 0
+31
+Z14 !s108 1556565239.000000
+!s107 D:/ECE551/Exercise 22/FIR_B2.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/ECE551/Exercise 22/FIR_B2.sv|
+!s101 -O0
+!i113 1
+R6
+n@f@i@r_@b2
+vFIR_B2_tb
+R0
+R13
+!i10b 1
+!s100 OQTj23D0HFD=c^RP>KfXM0
+I;?U2jFIi54[bc`MCY=2fm2
+R2
+!s105 FIR_B2_tb_sv_unit
+S1
+R3
+w1556565212
+8D:/ECE551/Exercise 22/FIR_B2_tb.sv
+FD:/ECE551/Exercise 22/FIR_B2_tb.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R14
+!s107 D:/ECE551/Exercise 22/FIR_B2_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/ECE551/Exercise 22/FIR_B2_tb.sv|
+!s101 -O0
+!i113 1
+R6
+n@f@i@r_@b2_tb
+vhigh_freq_queue
+R0
+!s110 1556565240
+!i10b 1
+!s100 6RGo:L0m`;GRM31cM7aCl0
+I=iTLPYWFedXS1PN>chGIa1
+R2
+!s105 high_freq_queue_sv_unit
+S1
+R3
+w1556565147
+8D:/ECE551/Exercise 22/high_freq_queue.sv
+FD:/ECE551/Exercise 22/high_freq_queue.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1556565240.000000
+!s107 D:/ECE551/Exercise 22/high_freq_queue.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/ECE551/Exercise 22/high_freq_queue.sv|
+!s101 -O0
+!i113 1
+R6
+vhigh_freq_queue_tb
+R0
+!s110 1556518719
+!i10b 1
+!s100 Zek5CaBn5kGGzc>f]dWTF0
+IbIGO;W3_Q>nD=h]bamH6Q2
+R2
+!s105 high_freq_queue_tb_sv_unit
+S1
+R3
+w1556518695
+8D:/ECE551/Exercise 22/high_freq_queue_tb.sv
+FD:/ECE551/Exercise 22/high_freq_queue_tb.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1556518719.000000
+!s107 D:/ECE551/Exercise 22/high_freq_queue_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/ECE551/Exercise 22/high_freq_queue_tb.sv|
+!s101 -O0
+!i113 1
+R6
+vI2S_Master
+R0
+Z15 !s110 1556516557
+!i10b 1
+!s100 W;k]ZjAD744oi?oclU?E90
+I<oLhzhBJEJZ=n=X<E0[]R0
+R2
+!s105 I2S_Master_sv_unit
+S1
+R3
+w1555287548
+8D:/ECE551/Exercise 22/I2S_Master.sv
+FD:/ECE551/Exercise 22/I2S_Master.sv
+L0 1
+R4
+r1
+!s85 0
+31
+Z16 !s108 1556516557.000000
+!s107 D:/ECE551/Exercise 22/I2S_Master.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/ECE551/Exercise 22/I2S_Master.sv|
+!s101 -O0
+!i113 1
+R6
+n@i2@s_@master
+vI2S_Slave
+R0
+!s110 1556516555
+!i10b 1
+!s100 B45gLDzA:27^D:3?lh`eL2
+I>9ijVn8BFUn@MXBILd2f72
+R2
+!s105 I2S_Slave_sv_unit
+S1
+R3
+w1556511408
+8D:/ECE551/Exercise 22/I2S_Slave.sv
+FD:/ECE551/Exercise 22/I2S_Slave.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1556516555.000000
+!s107 D:/ECE551/Exercise 22/I2S_Slave.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/ECE551/Exercise 22/I2S_Slave.sv|
+!s101 -O0
+!i113 1
+R6
+n@i2@s_@slave
+vPB_rise
+R0
+R11
+!i10b 1
+!s100 3KVN^`;VadeG=bc;QcnYH2
+IS:2Iaz7kLnYXk<VJ@8Gmb1
+R2
+!s105 PB_rise_sv_unit
+S1
+R3
+Z17 w1556502256
+8D:/ECE551/Exercise 22/PB_rise.sv
+FD:/ECE551/Exercise 22/PB_rise.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R12
+!s107 D:/ECE551/Exercise 22/PB_rise.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/ECE551/Exercise 22/PB_rise.sv|
+!s101 -O0
+!i113 1
+R6
+n@p@b_rise
+vresp_ROM
+R15
+!i10b 1
+!s100 @Czn`ok@4mH;RKdP0Anz]1
+IO[aT_i<@K]AF0]W50I>c=2
+R2
+R3
+w1546383366
+8D:/ECE551/Exercise 22/resp_ROM.v
+FD:/ECE551/Exercise 22/resp_ROM.v
+L0 1
+R4
+r1
+!s85 0
+31
+R16
+!s107 D:/ECE551/Exercise 22/resp_ROM.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/ECE551/Exercise 22/resp_ROM.v|
+!s101 -O0
+!i113 1
+R10
+nresp_@r@o@m
+vRN52
+R0
+R11
+!i10b 1
+!s100 =ho3hLnFb71l8[@=[B1me0
+IO3=LaImbd@jml:eL9`TFo2
+R2
+!s105 RN52_sv_unit
+S1
+R3
+w1555017268
+8D:/ECE551/Exercise 22/RN52.sv
+FD:/ECE551/Exercise 22/RN52.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R12
+!s107 D:/ECE551/Exercise 22/RN52.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/ECE551/Exercise 22/RN52.sv|
+!s101 -O0
+!i113 1
+R6
+n@r@n52
+vROM_B1
+R1
+!i10b 1
+!s100 7kWZAPVWeiDHcgJNkM1]R2
+IPS6BQhodci4Y<gRQRl_Df0
+R2
+R3
+w1555622756
+8D:/ECE551/Exercise 22/ROM_B1.v
+FD:/ECE551/Exercise 22/ROM_B1.v
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/ECE551/Exercise 22/ROM_B1.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/ECE551/Exercise 22/ROM_B1.v|
+!s101 -O0
+!i113 1
+R10
+n@r@o@m_@b1
+vROM_B2
+R11
+!i10b 1
+!s100 49AVDUoT1i0bibAz<<>Je3
+IFd2j]A4Z>MX;IA47D17ze2
+R2
+R3
+w1555622798
+8D:/ECE551/Exercise 22/ROM_B2.v
+FD:/ECE551/Exercise 22/ROM_B2.v
+L0 1
+R4
+r1
+!s85 0
+31
+R12
+!s107 D:/ECE551/Exercise 22/ROM_B2.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/ECE551/Exercise 22/ROM_B2.v|
+!s101 -O0
+!i113 1
+R10
+n@r@o@m_@b2
+vROM_B3
+R1
+!i10b 1
+!s100 >U0g1H4?FRzXo7dmLcTMl3
+I;@7fFZT[PQ:O8O@Qi1WK01
+R2
+R3
+w1555622836
+8D:/ECE551/Exercise 22/ROM_B3.v
+FD:/ECE551/Exercise 22/ROM_B3.v
+L0 1
+R4
+r1
+!s85 0
+31
+R16
+!s107 D:/ECE551/Exercise 22/ROM_B3.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/ECE551/Exercise 22/ROM_B3.v|
+!s101 -O0
+!i113 1
+R10
+n@r@o@m_@b3
+vrst_synch
+R0
+R7
+!i10b 1
+!s100 l`NVOK4OLR@XMnCf^cSP[0
+IhAVe1<0TOU6D6I7V;00hA2
+R2
+!s105 rst_synch_sv_unit
+S1
+R3
+R17
+8D:/ECE551/Exercise 22/rst_synch.sv
+FD:/ECE551/Exercise 22/rst_synch.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R9
+!s107 D:/ECE551/Exercise 22/rst_synch.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/ECE551/Exercise 22/rst_synch.sv|
+!s101 -O0
+!i113 1
+R6
+vsnd_cmd
+R0
+R15
+!i10b 1
+!s100 zWPcTR6@EMSHSO=BBU=9=3
+IEYiez23k6Wn5zG>lQTN<G0
+R2
+!s105 snd_cmd_sv_unit
+S1
+R3
+w1556516246
+8D:/ECE551/Exercise 22/snd_cmd.sv
+FD:/ECE551/Exercise 22/snd_cmd.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R16
+!s107 D:/ECE551/Exercise 22/snd_cmd.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/ECE551/Exercise 22/snd_cmd.sv|
+!s101 -O0
+!i113 1
+R6
+vtone_ROM_lft
+Z18 !s110 1556516707
+!i10b 1
+!s100 1H^IMVM>V_fkZ<YB6:`X;1
+IJRTBo@9MdXZg_6l2B1nP51
+R2
+R3
+w1556516673
+8D:/ECE551/Exercise 22/tone_ROM_lft.v
+FD:/ECE551/Exercise 22/tone_ROM_lft.v
+L0 1
+R4
+r1
+!s85 0
+31
+Z19 !s108 1556516707.000000
+!s107 D:/ECE551/Exercise 22/tone_ROM_lft.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/ECE551/Exercise 22/tone_ROM_lft.v|
+!s101 -O0
+!i113 1
+R10
+ntone_@r@o@m_lft
+vtone_ROM_rght
+R18
+!i10b 1
+!s100 <zn8]6R;^fB<gQnY=@FJ>2
+IjiHoQFP4TL?o4A:XYD7>z0
+R2
+R3
+w1556516666
+8D:/ECE551/Exercise 22/tone_ROM_rght.v
+FD:/ECE551/Exercise 22/tone_ROM_rght.v
+L0 1
+R4
+r1
+!s85 0
+31
+R19
+!s107 D:/ECE551/Exercise 22/tone_ROM_rght.v|
+!s90 -reportprogress|300|-work|work|-stats=none|D:/ECE551/Exercise 22/tone_ROM_rght.v|
+!s101 -O0
+!i113 1
+R10
+ntone_@r@o@m_rght
+vUART
+R0
+R15
+!i10b 1
+!s100 UNEgJUgGHPmn^Ih<Q7V432
+IfAOoOo;FlAJGUd]Rfj6>V0
+R2
+!s105 UART_sv_unit
+S1
+R3
+w1556515818
+8D:/ECE551/Exercise 22/UART.sv
+FD:/ECE551/Exercise 22/UART.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R12
+!s107 D:/ECE551/Exercise 22/UART.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/ECE551/Exercise 22/UART.sv|
+!s101 -O0
+!i113 1
+R6
+n@u@a@r@t

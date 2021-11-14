@@ -1,0 +1,30 @@
+module SPI_mstr(clk, rst_n, SS_n, SCLK, MOSI, MISO, wrt, wt_data, done, rd_data);
+	input clk, rst_n, wrt, MISO;
+	input [15:0] wt_data;
+	output done, SS_n, SCLK, MOSI;
+	output [15:0] rd_data;
+	wire shift, init;
+
+	//localparam ld_SCLK;
+
+	// Bit counter
+	//wire [4:0] bitcount;
+	logic [4:0] bitcountout;
+	wire done16;
+	//assign bitcountout = (init == 1)? 5'b00000 :
+	//			 		 (shift == 1)? bitcountout + 1 : bitcountout;
+	assign done16 = (bitcountout[4] == 1)? 1 : 0;
+	always @(posedge clk or negedge rst_n) begin
+		if (!rst_n) 
+			bitcountout <= 5'b00000;
+		else begin
+			if(init == 1)
+				bitcountout <= 5'b00000;
+			else if(shift == 1) 
+				bitcountout <= bitcountout + 1;
+			else
+				bitcountout <= bitcountout;
+		end
+	end
+	
+endmodule

@@ -1,0 +1,49 @@
+
+State Machine - |Equalizer|EQ_Engine:iEQ|low_freq_queue:ilow_freq|state
+Name state.VACANCY state.READ state.FULL 
+state.VACANCY 0 0 0 
+state.FULL 1 0 1 
+state.READ 1 1 0 
+
+State Machine - |Equalizer|EQ_Engine:iEQ|high_freq_queue:ihigh_freq|state
+Name state.VACANCY state.READ state.FULL 
+state.VACANCY 0 0 0 
+state.FULL 1 0 1 
+state.READ 1 1 0 
+
+State Machine - |Equalizer|I2S_Slave:iSlave|state
+Name state.RIGHT state.LEFT state.SKIP state.SYNC 
+state.SYNC 0 0 0 0 
+state.SKIP 0 0 1 1 
+state.LEFT 0 1 0 1 
+state.RIGHT 1 0 0 1 
+
+State Machine - |Equalizer|BT_intf:iBT|state
+Name state.Prev state.Next state.Idle state.Name state.Start state.Check state.Wait 
+state.Wait 0 0 0 0 0 0 0 
+state.Check 0 0 0 0 0 1 1 
+state.Start 0 0 0 0 1 0 1 
+state.Name 0 0 0 1 0 0 1 
+state.Idle 0 0 1 0 0 0 1 
+state.Next 0 1 0 0 0 0 1 
+state.Prev 1 0 0 0 0 0 1 
+
+State Machine - |Equalizer|BT_intf:iBT|snd_cmd:SC|state
+Name state.DATA state.WAIT2 state.WAIT1 state.IDLE 
+state.IDLE 0 0 0 0 
+state.WAIT1 0 0 1 1 
+state.WAIT2 0 1 0 1 
+state.DATA 1 0 0 1 
+
+State Machine - |Equalizer|slide_intf:islide|A2D_intf:iA2D_intf|state
+Name state.READ state.WAIT state.TRANS state.IDLE 
+state.IDLE 0 0 0 0 
+state.TRANS 0 0 1 1 
+state.WAIT 0 1 0 1 
+state.READ 1 0 0 1 
+
+State Machine - |Equalizer|slide_intf:islide|A2D_intf:iA2D_intf|SPI_mstr:SPI_mstr|state
+Name state.IDLE state.BackPorch state.SHIFT 
+state.IDLE 0 0 0 
+state.SHIFT 1 0 1 
+state.BackPorch 1 1 0 

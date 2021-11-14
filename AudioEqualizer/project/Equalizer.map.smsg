@@ -1,0 +1,5 @@
+Info (10281): Verilog HDL Declaration information at SPI_mstr.sv(7): object "shift" differs only in case from object "SHIFT" in the same scope File: I:/ece551~1/modelsim/project/SPI_mstr.sv Line: 7
+Info (10281): Verilog HDL Declaration information at Equalizer.v(6): object "RST_n" differs only in case from object "rst_n" in the same scope File: I:/ece551~1/modelsim/project/Equalizer.v Line: 6
+Info (10281): Verilog HDL Declaration information at BT_intf.sv(8): object "next" differs only in case from object "Next" in the same scope File: I:/ece551~1/modelsim/project/BT_intf.sv Line: 8
+Info (10281): Verilog HDL Declaration information at BT_intf.sv(8): object "prev" differs only in case from object "Prev" in the same scope File: I:/ece551~1/modelsim/project/BT_intf.sv Line: 8
+Info (10281): Verilog HDL Declaration information at rst_synch.sv(3): object "RST_n" differs only in case from object "rst_n" in the same scope File: I:/ece551~1/modelsim/project/rst_synch.sv Line: 3
